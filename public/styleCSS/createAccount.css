@@ -1,0 +1,63 @@
+body {
+    background-color: rgba(3, 3, 3, 0.959);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(30, 30, 30, 0.8);
+}
+
+#textCreateAccount {
+    font-weight: bold;
+    color: white;
+    font-size: 35px;
+    margin: 0;
+    text-align: center;
+}
+
+.divInput {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 22px;
+    justify-content: center;
+}
+
+.label {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.inputs {
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgba(85, 81, 81, 0.493);
+    box-shadow: 0 0 10px blue;
+    height: 25px;
+    width: 250px;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#buttonCreate {
+    border-radius: 35px;
+    height: 50px;
+    background-color: greenyellow;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
