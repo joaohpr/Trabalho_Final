@@ -56,7 +56,7 @@ body {
     gap: 8px;
 }
 
-#buttonLogin{
+#buttonLogin {
     border-radius: 35px;
     height: 50px;
     background-color: greenyellow;
@@ -64,14 +64,14 @@ body {
     font-size: 15px;
 }
 
-#createAccount{
+#createAccount {
     font-size: 15px;
     color: white;
     text-align: center;
 
 }
 
-#createAccount a{
+#createAccount a {
     text-decoration: none;
     color: yellowgreen;
 }
