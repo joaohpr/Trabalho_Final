@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 35px;
     border-radius: 20px;
     background-color: rgba(30, 30, 30, 0.8);
 }
@@ -23,41 +23,71 @@ body {
     font-size: 35px;
     margin: 0;
     text-align: center;
+    height: 50px;
+}
+
+.rowInputs {
+    display: flex;
+    gap: 25px;
+    margin-top: 22px;
 }
 
 .divInput {
     display: flex;
     flex-direction: column;
-    gap: 3px;
-    margin-top: 22px;
-    justify-content: center;
+    gap: 10px;
+    padding-bottom: 15px;
 }
 
 .label {
     font-weight: bold;
     color: white;
     font-size: 20px;
-    margin-bottom: 0;
 }
 
 .inputs {
     border: 1px solid gray;
     border-radius: 10px;
     background-color: rgba(85, 81, 81, 0.493);
-    box-shadow: 0 0 10px blue;
+    box-shadow: 2px 2px 5px 5px rgb(65, 137, 170);
     height: 25px;
     width: 250px;
     color: white;
     font-size: 15px;
-    padding: 5px;
+    padding: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
 }
 
 #buttonCreate {
     border-radius: 35px;
     height: 50px;
-    background-color: greenyellow;
+    width: 290px;
+    background-color: deepskyblue;
     color: black;
     font-size: 15px;
     cursor: pointer;
     border: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#buttonCreate:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px deepskyblue;
+}
+
+
+.inputs:hover{
+    border: 1px solid deepskyblue;
+    box-shadow: 0 0 15px deepskyblue;
+    transform: scale(1.05);
 }
