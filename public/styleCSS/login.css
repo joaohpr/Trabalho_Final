@@ -1,56 +1,72 @@
 body {
     background-color: rgba(3, 3, 3, 0.959);
-    padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
     min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
 }
 
-#container {
+#continerGlobal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+
+#CineSearch {
+    width: 100%;
+    padding: 12px 0;
+
+    
+    color: black;
+
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+
+    box-sizing: border-box;
+}
+#containerConteudo {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #Login {
     display: flex;
+    
     flex-direction: column;
+    justify-content: center;
+    
     gap: 20px;
-    padding: 30px;
-    background-color: rgba(30, 30, 30, 0.8);
-    border-radius: 15px;
-}
 
-.inputs {
-     border: 1px solid gray;
-    border-radius: 10px;
-    background-color: rgba(85, 81, 81, 0.493);
-    box-shadow: 2px 2px 5px 5px rgb(65, 137, 170);
-    height: 25px;
-    width: 250px;
-    color: white;
-    font-size: 15px;
-    padding: 8px;
-    outline: none;
-    transition: 0.3s;
+    width: 100%;
+    max-width: 400px;
+
+    padding: 30px;
+    border-radius: 15px;
+
+    background-color: rgba(30, 30, 30, 0.8);
+    box-sizing: border-box;
 }
 
 #textLogin {
-    font-weight: bold;
-    color: white;
-    font-size: 35px;
     margin: 0;
-    text-align: center;
-}
 
-.labelInput {
-    font-weight: bold;
     color: white;
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 .divInput {
@@ -59,37 +75,103 @@ body {
     gap: 8px;
 }
 
+.labelInput {
+    margin-bottom: 5px;
+
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.inputs {
+    width: 100%;
+    height: 35px;
+    padding: 8px;
+
+    color: white;
+    font-size: 15px;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+
+    background-color: rgba(85, 81, 81, 0.493);
+    box-shadow: 2px 2px 5px 5px rgb(65, 137, 170);
+
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
 #buttonLogin {
-    border-radius: 35px;
     height: 50px;
+
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+
     background-color: deepskyblue;
     color: black;
     font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.3s;
 }
 
 #createAccount {
-    font-size: 15px;
     color: white;
+    font-size: 15px;
     text-align: center;
-    transition: 035s;
 }
 
-#createAccount a {
-    text-decoration: none;
+#ancoraCreateAccount {
     color: deepskyblue;
+    text-decoration: none;
 }
 
+/* Hover desktop */
+@media (hover: hover) {
+    .inputs:hover {
+        border: 1px solid deepskyblue;
+        box-shadow: 0 0 15px deepskyblue;
+        transform: scale(1.02);
+    }
 
-.inputs:hover{
-    border: 1px solid deepskyblue;
-    box-shadow: 0 0 15px deepskyblue;
-    transform: scale(1.05);
+    #buttonLogin:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px deepskyblue;
+    }
+
+    #ancoraCreateAccount:hover {
+        text-decoration: underline;
+    }
 }
 
+/* Mobile */
+@media (max-width: 480px) {
+    #CineSearch {
+        font-size: 1.8rem;
+        padding: 20px 0;
+    }
 
-#buttonLogin:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 15px deepskyblue;
-    max-height: 70px;
+    #Login {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    #textLogin {
+        font-size: 1.7rem;
+    }
+
+    .labelInput {
+        font-size: 1rem;
+    }
+
+    .inputs {
+        font-size: 14px;
+    }
+
+    #buttonLogin {
+        height: 45px;
+        font-size: 14px;
+    }
 }
-
