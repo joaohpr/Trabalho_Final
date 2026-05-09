@@ -7,28 +7,27 @@
     <link rel="stylesheet" href="../styleCSS/login.css">
     <title>Login</title>
 </head>
-
 <body>
     <div id="continerGlobal">
-        </div>
+
         <div id="barraVertical">
-            
             <div id="CineSearch">CineSearch</div>
         </div>
-        <div id="containerConteudo">
-            <form action="">
 
-                <div id="Login">
+        <div id="containerConteudo">
+            <div id="Login">
+                <form method="post">
+
                     <h1 id="textLogin">Login</h1>
 
                     <div class="divInput">
                         <label for="name" class="labelInput">Name</label>
-                        <input type="text" id="name" class="inputs">
+                        <input type="text" id="name" name="name" class="inputs" required autocomplete="username">
                     </div>
 
                     <div class="divInput">
                         <label for="password" class="labelInput">Password</label>
-                        <input type="password" id="password" class="inputs">
+                        <input type="password" id="password" name="password" class="inputs" required autocomplete="current-password">
                     </div>
 
                     <div class="divInput">
@@ -42,10 +41,11 @@
                             <a href="createAccount.html" id="ancoraCreateAccount">Create Your Account</a>
                         </p>
                     </div>
-                </div>
-            </form>
+
+                </form>
+            </div>
         </div>
+
     </div>
 </body>
-
 </html>

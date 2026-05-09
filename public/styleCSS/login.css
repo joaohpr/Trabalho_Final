@@ -1,30 +1,34 @@
 body {
     background-color: rgba(3, 3, 3, 0.959);
     margin: 0;
-    padding: 0;
     min-height: 100vh;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
 #continerGlobal {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Barra superior */
+#barraVertical {
     width: 100%;
-    gap: 40px;
 }
 
 #CineSearch {
     width: 100%;
-    padding: 12px 0;
+    padding: 14px 0;
 
-    
-    color: black;
+    background-color: rgb(70, 70, 70);
+    color: white;
 
     font-size: 2rem;
     font-weight: bold;
@@ -32,32 +36,35 @@ body {
 
     box-sizing: border-box;
 }
+
+/* Área central */
 #containerConteudo {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 40px;
-    padding: 20px;
+
+    padding: 40px 20px;
     box-sizing: border-box;
 }
 
+/* Card login */
 #Login {
-    display: flex;
-    
-    flex-direction: column;
-    justify-content: center;
-    
-    gap: 20px;
-
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
 
     padding: 30px;
     border-radius: 15px;
 
-    background-color: rgba(30, 30, 30, 0.8);
+    background-color: rgba(30, 30, 30, 0.85);
     box-sizing: border-box;
+}
+
+/* Form dentro do card */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 #textLogin {
@@ -76,34 +83,33 @@ body {
 }
 
 .labelInput {
-    margin-bottom: 5px;
-
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
+/* Inputs */
 .inputs {
     width: 100%;
-    height: 35px;
-    padding: 8px;
-
-    color: white;
-    font-size: 15px;
+    height: 42px;
+    padding: 10px 12px;
 
     border: 1px solid gray;
     border-radius: 10px;
     outline: none;
 
     background-color: rgba(85, 81, 81, 0.493);
-    box-shadow: 2px 2px 5px 5px rgb(65, 137, 170);
+    color: white;
+    font-size: 15px;
 
+    box-shadow: 0 0 8px rgba(65, 137, 170, 0.7);
     box-sizing: border-box;
     transition: 0.3s;
 }
 
+/* Botão */
 #buttonLogin {
-    height: 50px;
+    height: 48px;
 
     border: none;
     border-radius: 35px;
@@ -117,28 +123,33 @@ body {
     transition: 0.3s;
 }
 
+/* Texto final */
 #createAccount {
+    margin: 0;
+
     color: white;
     font-size: 15px;
     text-align: center;
+    line-height: 1.5;
 }
 
 #ancoraCreateAccount {
     color: deepskyblue;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* Hover desktop */
 @media (hover: hover) {
     .inputs:hover {
-        border: 1px solid deepskyblue;
-        box-shadow: 0 0 15px deepskyblue;
+        border-color: deepskyblue;
+        box-shadow: 0 0 12px deepskyblue;
         transform: scale(1.02);
     }
 
     #buttonLogin:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px deepskyblue;
+        transform: scale(1.04);
+        box-shadow: 0 0 12px deepskyblue;
     }
 
     #ancoraCreateAccount:hover {
@@ -149,29 +160,37 @@ body {
 /* Mobile */
 @media (max-width: 480px) {
     #CineSearch {
-        font-size: 1.8rem;
-        padding: 20px 0;
+        font-size: 1.6rem;
+        padding: 12px 0;
+    }
+
+    #containerConteudo {
+        padding: 25px 15px;
     }
 
     #Login {
-        padding: 20px;
-        gap: 15px;
+        padding: 22px;
+    }
+
+    form {
+        gap: 16px;
     }
 
     #textLogin {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 
     .labelInput {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .inputs {
+        height: 40px;
         font-size: 14px;
     }
 
     #buttonLogin {
-        height: 45px;
+        height: 44px;
         font-size: 14px;
     }
 }
