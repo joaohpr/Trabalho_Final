@@ -1,11 +1,12 @@
 body {
     background-color: rgba(3, 3, 3, 0.959);
-    padding: 0;
+    padding: 20px;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 #container {
@@ -15,21 +16,25 @@ body {
     padding: 35px;
     border-radius: 20px;
     background-color: rgba(30, 30, 30, 0.8);
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
 }
 
 #textCreateAccount {
     font-weight: bold;
     color: white;
-    font-size: 35px;
+    font-size: 2rem;
     margin: 0;
     text-align: center;
-    height: 50px;
+    min-height: 50px;
 }
 
 .rowInputs {
     display: flex;
     gap: 25px;
     margin-top: 22px;
+    flex-wrap: wrap;
 }
 
 .divInput {
@@ -37,12 +42,14 @@ body {
     flex-direction: column;
     gap: 10px;
     padding-bottom: 15px;
+    flex: 1;
+    min-width: 250px;
 }
 
 .label {
     font-weight: bold;
     color: white;
-    font-size: 20px;
+    font-size: 1.1rem;
 }
 
 .inputs {
@@ -50,27 +57,27 @@ body {
     border-radius: 10px;
     background-color: rgba(85, 81, 81, 0.493);
     box-shadow: 2px 2px 5px 5px rgb(65, 137, 170);
-    height: 25px;
-    width: 250px;
+    height: 35px;
+    width: 100%;
     color: white;
     font-size: 15px;
     padding: 8px;
     outline: none;
     transition: 0.3s;
+    box-sizing: border-box;
 }
-
-
 
 .buttonContainer {
     display: flex;
     justify-content: center;
-    margin-top: 28px;
+    margin-top: 29px;
 }
 
 #buttonCreate {
     border-radius: 35px;
     height: 50px;
-    width: 290px;
+    width: 100%;
+    max-width: 290px;
     background-color: deepskyblue;
     color: black;
     font-size: 15px;
@@ -81,13 +88,32 @@ body {
 }
 
 #buttonCreate:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
     box-shadow: 0 0 15px deepskyblue;
 }
 
-
-.inputs:hover{
+.inputs:hover {
     border: 1px solid deepskyblue;
     box-shadow: 0 0 15px deepskyblue;
     transform: scale(1.05);
+}
+
+/* telas menores */
+@media (max-width: 768px) {
+    #container {
+        padding: 20px;
+    }
+
+    #textCreateAccount {
+        font-size: 1.6rem;
+    }
+
+    .rowInputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .divInput {
+        min-width: 100%;
+    }
 }
