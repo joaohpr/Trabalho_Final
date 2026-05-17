@@ -9,34 +9,46 @@
 </head>
 
 <body>
-    <div id="container">
-        <form action="">
+    <div id="continerGlobal">
+
+        <div id="barraVertical">
+            <div id="CineSearch">CineSearch</div>
+        </div>
+
+        <div id="containerConteudo">
             <div id="Login">
-                <h1 id="textLogin">Login</h1>
+                <form action="">
 
-                <div class="divInput">
-                    <label for="name" class="labelInput">Name</label>
-                    <input type="text" id="name" class="inputs">
-                </div>
+                    <h1 id="textLogin">Login</h1>
 
-                <div class="divInput">
-                    <label for="password" class="labelInput">Password</label>
-                    <input type="password" id="password" class="inputs">
-                </div>
+                    <div class="divInput">
+                        <label for="name" class="labelInput">Name</label>
+                        <input type="text" id="name" name="name" class="inputs" required autocomplete="username"
+                            placeholder="Enter your name">
+                    </div>
 
-                <div class="divInput">
-                    <button type="submit" class="inputs" id="buttonLogin">Login</button>
-                </div>
+                    <div class="divInput">
+                        <label for="password" class="labelInput">Password</label>
+                        <input type="password" id="password" name="password" class="inputs" required
+                            autocomplete="current-password" placeholder="Enter your password">
+                    </div>
 
-                <div>
-                    <p id="createAccount">
-                        Don't have an account?
-                        <br>
-                        <a href="createAccount.html">Create Your Account</a>
-                    </p>
-                </div>
+                    <div class="divInput">
+                        <button type="submit" class="inputs" id="buttonLogin">Login</button>
+                    </div>
+
+                    <div>
+                        <p id="createAccount">
+                            Don't have an account?
+                            <br>
+                            <a href="createAccount.html" id="ancoraCreateAccount">Create Your Account</a>
+                        </p>
+                    </div>
+
+                </form>
             </div>
-        </form>
+        </div>
+
     </div>
 </body>
 
