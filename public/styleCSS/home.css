@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.808);
+    overflow: hidden;
+}
+
+/* Layout principal */
+#Global {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 5px;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+/* Sidebar */
+#side-Bar {
+    background-color: rgba(0, 0, 0, 0.808);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-height: 100vh;
+    padding-top: 20px;
+    border-radius: 12px;
+    position: relative;
+   
+}
+
+/*Rows dos button da Side-bar*/
+    #options-sidebar {
+        display: flex;
+        flex-direction: column;
+       margin-top: 84vh;
+       gap: 15px;
+    }
+
+
+/* Botões da sidebar */
+.button-sideBar {
+    background-color: transparent;
+    border: none;
+    color: deepskyblue;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0;
+    
+}
+
+.button-sideBar:hover {
+    box-shadow: 0 0 15px deepskyblue;
+    transform: scale(1.2);
+}
+
+/* Ícone Profile */
+#profile,
+#settings {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+#profile i,
+#settings i {
+    color: deepskyblue;
+}
+
+
+/* Conteúdo principal */
+#Container-main {
+    background-color: rgba(0, 0, 0, 0.808);
+    padding: 20px;
+    border-radius: 12px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+
+/* Headers */
+.headers {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#header-recommendation {
+    margin-top: 45px;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Barra de pesquisa */
+#Search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.inputs {
+    padding: 10px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+.inputs:hover {
+    transform: scale(1.03);
+    border-color: deepskyblue;
+    box-shadow: 0 0 10px deepskyblue;
+    outline: none;
+    font-size: 18px;
+}
+
+.search-button {
+    border: none;
+    background-color: deepskyblue;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px deepskyblue;
+}
+
+/* Cards */
+#cards-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+#recommendation-bar {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+#cards-row {
+    overflow-x: scroll;
+    display: flex;
+    gap: 20px;
+}
+
+#cards-row .cards {
+    min-width: 220px;
+    min-height: 300px;
+    max-width: 320px;
+    max-height: 420px;
+}
+
+.cards {
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    background-color: rgba(54, 52, 52, 0.719);
+    transition: 0.3s;
+}
+
+.cards img {
+    width: 100%;
+    height: 180px;
+    background-color: #ddd;
+    border-radius: 8px;
+}
+
+.title-cards {
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+}
+
+.description-cards {
+    font-size: 14px;
+    color: white;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px deepskyblue;
+}
+
+/* Footer */
+#footer {
+    text-align: center;
+    height: 80px;
+    background-color: gray;
+}
+
+
+/* RESPONSIVIDADE */
+
+/* tablet */
+@media (max-width: 768px) {
+    #cards-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inputs {
+        width: 200px;
+    }
+}
+
+/* celular */
+@media (max-width: 480px) {
+    #Global {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    #side-Bar {
+        flex-direction: row;
+        min-height: auto;
+        padding: 15px;
+        justify-content: center;
+    }
+
+    #Container-main {
+        height: auto;
+    }
+
+    #Search-bar {
+        flex-direction: column;
+    }
+
+    .inputs {
+        width: 100%;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+}
