@@ -2,7 +2,7 @@ const cards = document.querySelectorAll(".cards");
 
 cards.forEach((card) => {
 
-    card.addEventListener("click", () => {
+    card.addEventListener("dblclick", () => {
 
         if(document.querySelector(".expanded-card")){
             return;
@@ -19,7 +19,7 @@ cards.forEach((card) => {
                 <div class="x-bar">
 
                     <button class="close-btn">
-                        X
+                        <
                     </button>
 
                     <header>
