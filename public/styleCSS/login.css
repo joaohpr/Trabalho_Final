@@ -1,6 +1,12 @@
+/* ========================= */
+/* reset global */
+/* ========================= */
+
 body {
     background-color: rgba(3, 3, 3, 0.959);
+
     margin: 0;
+
     min-height: 100vh;
 
     display: flex;
@@ -8,148 +14,275 @@ body {
     align-items: center;
 
     font-family: Arial, Helvetica, sans-serif;
+
     box-sizing: border-box;
 }
 
+
+/* ========================= */
+/* container global */
+/* ========================= */
+
 #continerGlobal {
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Barra superior */
+
+/* ========================= */
+/* barra superior */
+/* ========================= */
+
 #barraVertical {
     width: 100%;
 }
 
+
+/* titulo principal */
+
 #CineSearch {
     width: 100%;
+
     padding: 14px 0;
 
     background-color: rgb(70, 70, 70);
+
     color: white;
 
     font-size: 2rem;
+
     font-weight: bold;
+
     text-align: center;
 
     box-sizing: border-box;
 }
 
-/* Área central */
+
+/* ========================= */
+/* area central */
+/* ========================= */
+
 #containerConteudo {
     width: 100%;
+
+    height: 80vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
 
     padding: 40px 20px;
+
     box-sizing: border-box;
 }
 
-/* Card login */
+
+/* ========================= */
+/* card de login */
+/* ========================= */
+
 #Login {
     width: 100%;
+
     max-width: 420px;
 
     padding: 30px;
+
     border-radius: 15px;
 
     background-color: rgba(30, 30, 30, 0.85);
+
     box-sizing: border-box;
 }
 
-/* Form dentro do card */
+
+/* ========================= */
+/* formulario */
+/* ========================= */
+
 form {
     display: flex;
+
     flex-direction: column;
+
     gap: 20px;
 }
+
+
+/* titulo do login */
 
 #textLogin {
     margin: 0;
 
     color: white;
+
     font-size: 2rem;
+
     font-weight: bold;
+
     text-align: center;
 }
 
+
+/* ========================= */
+/* areas dos inputs */
+/* ========================= */
+
 .divInput {
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
 }
 
+
+/* labels */
+
 .labelInput {
     color: white;
+
     font-size: 1rem;
+
     font-weight: bold;
 }
 
-/* Inputs */
+
+/* ========================= */
+/* inputs */
+/* ========================= */
+
 .inputs {
     width: 100%;
+
     height: 42px;
+
     padding: 10px 12px;
 
     border: 1px solid gray;
+
     border-radius: 10px;
+
     outline: none;
 
     background-color: rgba(85, 81, 81, 0.493);
+
     color: white;
+
     font-size: 15px;
 
     box-shadow: 0 0 8px rgba(65, 137, 170, 0.7);
+
     box-sizing: border-box;
+
     transition: 0.3s;
 }
 
-/* Botão */
+
+/* hover dos inputs */
+
+.inputs:hover {
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 12px deepskyblue;
+
+    transform: scale(1.02);
+}
+
+
+/* ========================= */
+/* botao login */
+/* ========================= */
+
 #buttonLogin {
     height: 48px;
 
     border: none;
+
     border-radius: 35px;
+
     cursor: pointer;
 
     background-color: deepskyblue;
+
     color: black;
+
     font-size: 15px;
+
     font-weight: bold;
 
     transition: 0.3s;
 }
 
-/* Texto final */
+
+/* hover do botao */
+
+#buttonLogin:hover {
+    transform: scale(1.04);
+
+    box-shadow: 0 0 12px deepskyblue;
+}
+
+
+/* ========================= */
+/* texto final */
+/* ========================= */
+
 #createAccount {
     margin: 0;
 
     color: white;
+
     font-size: 15px;
+
     text-align: center;
+
     line-height: 1.5;
 }
 
+
+/* link criar conta */
+
 #ancoraCreateAccount {
     color: deepskyblue;
+
     text-decoration: none;
+
     font-weight: bold;
 }
 
-/* Hover desktop */
+
+/* hover do link */
+
+#ancoraCreateAccount:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* responsividade */
+/* ========================= */
+
+
+/* hover apenas em desktop */
+
 @media (hover: hover) {
+
     .inputs:hover {
         border-color: deepskyblue;
+
         box-shadow: 0 0 12px deepskyblue;
+
         transform: scale(1.02);
     }
 
     #buttonLogin:hover {
         transform: scale(1.04);
+
         box-shadow: 0 0 12px deepskyblue;
     }
 
@@ -158,10 +291,16 @@ form {
     }
 }
 
-/* Mobile */
+
+/* ========================= */
+/* mobile */
+/* ========================= */
+
 @media (max-width: 480px) {
+
     #CineSearch {
         font-size: 1.6rem;
+
         padding: 12px 0;
     }
 
@@ -187,11 +326,13 @@ form {
 
     .inputs {
         height: 40px;
+
         font-size: 14px;
     }
 
     #buttonLogin {
         height: 44px;
+
         font-size: 14px;
     }
 }

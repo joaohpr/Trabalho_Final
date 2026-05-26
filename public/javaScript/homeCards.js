@@ -2,7 +2,7 @@ const cards = document.querySelectorAll(".cards");
 
 cards.forEach((card) => {
 
-    card.addEventListener("click", () => {
+    card.addEventListener("dblclick", () => {
 
         if(document.querySelector(".expanded-card")){
             return;
@@ -33,7 +33,7 @@ cards.forEach((card) => {
                     <div class="poster">
 
                         <img
-                            src="https://via.placeholder.com/300x450"
+                            src=""
                             alt="Poster do Filme"
                         >
 
