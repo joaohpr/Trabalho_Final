@@ -19,7 +19,7 @@ cards.forEach((card) => {
                 <div class="x-bar">
 
                     <button class="close-btn">
-                        <
+                        X
                     </button>
 
                     <header>
@@ -33,7 +33,7 @@ cards.forEach((card) => {
                     <div class="poster">
 
                         <img
-                            src="https://via.placeholder.com/300x450"
+                            src=""
                             alt="Poster do Filme"
                         >
 
