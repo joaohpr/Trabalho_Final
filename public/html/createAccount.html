@@ -3,47 +3,110 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../styleCSS/createAccount.css">
+
     <title>Create Account</title>
 </head>
 
 <body>
+
     <div id="container">
-        <div id="CreateAccount">
-            <form action="">
-                <h1 id="textCreateAccount">Create Your Account</h1>
+
+        <form id="formCreateAccount" method="POST">
+
+            <div id="CreateAccount">
+
+                <!-- title -->
+
+                <h1 id="textCreateAccount">
+                    Create Your Account
+                </h1>
+
+                <!-- nome e email inputs -->
 
                 <div class="rowInputs">
+
                     <div class="divInput">
-                        <label for="nameInput" class="label">Name</label>
-                        <input type="text" class="inputs" id="nameInput" placeholder="Enter your name">
+
+                        <label for="nameInput" class="label">
+
+                            Name
+
+                        </label>
+
+                        <input type="text" id="nameInput" name="name" class="inputs" placeholder="Enter your name"
+                            autocomplete="name" required>
+
                     </div>
 
                     <div class="divInput">
-                        <label for="emailInput" class="label">Your Email</label>
-                        <input type="email" class="inputs" id="emailInput" placeholder="Enter your email">
+
+                        <label for="emailInput" class="label">
+
+                            Email
+
+                        </label>
+
+                        <input type="email" id="emailInput" name="email" class="inputs" placeholder="Enter your email"
+                            autocomplete="email" required>
+
                     </div>
+
                 </div>
+
+                <!-- inputs de senha -->
 
                 <div class="rowInputs">
+
                     <div class="divInput">
-                        <label for="passwordInput" class="label">Password</label>
-                        <input type="password" class="inputs" id="passwordInput" placeholder="Enter your password">
+
+                        <label for="passwordInput" class="label">
+
+                            Password
+
+                        </label>
+
+                        <input type="password" id="passwordInput" name="password" class="inputs"
+                            placeholder="Enter your password" autocomplete="new-password" required>
+
                     </div>
 
                     <div class="divInput">
-                        <label for="confirmPassword" class="label">Confirm your password</label>
-                        <input type="password" class="inputs" id="confirmPassword" placeholder="Confirm your password">
+
+                        <label for="confirmPasswordInput" class="label">
+
+                            Confirm Password
+
+                        </label>
+
+                        <input type="password" id="confirmPasswordInput" name="confirmPassword" class="inputs"
+                            placeholder="Confirm your password" autocomplete="new-password" required>
+
                     </div>
+
                 </div>
+
+                <!-- button -->
 
                 <div class="buttonContainer">
-                    <button type="submit" id="buttonCreate">Create</button>
+
+                    <button type="submit" id="buttonCreate">
+
+                        Create Account
+
+                    </button>
+
                 </div>
-            </form>
-        </div>
+
+            </div>
+
+        </form>
+
     </div>
+
 </body>
 
 </html>

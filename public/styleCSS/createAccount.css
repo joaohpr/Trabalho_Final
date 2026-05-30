@@ -1,31 +1,39 @@
 /* ========================= */
-/* reset global */
+/* RESET GLOBAL */
 /* ========================= */
 
-body {
-    background-color: rgba(3, 3, 3, 0.959);
-
-    padding: 20px;
-
+* {
     margin: 0;
-
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    padding: 0;
     box-sizing: border-box;
 }
 
 
 /* ========================= */
-/* container principal */
+/* BODY */
+/* ========================= */
+
+body {
+    background-color: rgba(3, 3, 3, 0.959);
+
+    min-height: 100vh;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================= */
+/* CONTAINER PRINCIPAL */
 /* ========================= */
 
 #container {
     width: 100%;
-
     max-width: 700px;
 
     padding: 35px;
@@ -38,90 +46,90 @@ body {
     justify-content: center;
     align-items: center;
 
-    box-sizing: border-box;
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 191, 255, 0.15);
 }
 
 
 /* ========================= */
-/* titulo principal */
+/* FORM */
+/* ========================= */
+
+form {
+    width: 100%;
+}
+
+
+/* ========================= */
+/* TITULO PRINCIPAL */
 /* ========================= */
 
 #textCreateAccount {
-    font-weight: bold;
-
     color: white;
 
     font-size: 2rem;
-
-    margin: 0;
+    font-weight: bold;
 
     text-align: center;
 
-    min-height: 50px;
+    margin-bottom: 40px;
 }
 
 
 /* ========================= */
-/* linhas dos inputs */
+/* LINHAS DOS INPUTS */
 /* ========================= */
 
 .rowInputs {
-    display: flex;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 25px;
 
-    margin-top: 22px;
-
-    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 
 /* ========================= */
-/* container individual input */
+/* CONTAINER DOS INPUTS */
 /* ========================= */
 
 .divInput {
     display: flex;
-
     flex-direction: column;
 
-    gap: 10px;
-
-    padding-bottom: 15px;
-
-    flex: 1;
-
-    min-width: 250px;
+    gap: 8px;
 }
 
 
 /* ========================= */
-/* labels */
+/* LABELS */
 /* ========================= */
 
 .label {
-    font-weight: bold;
-
     color: white;
 
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 
 /* ========================= */
-/* inputs */
+/* INPUTS */
 /* ========================= */
 
 .inputs {
     width: 100%;
+    height: 42px;
 
-    height: 35px;
-
-    padding: 8px;
+    padding: 10px 12px;
 
     border: 1px solid gray;
-
     border-radius: 10px;
+
+    outline: none;
 
     background-color: rgba(85, 81, 81, 0.493);
 
@@ -129,29 +137,44 @@ body {
 
     font-size: 15px;
 
-    outline: none;
+    box-shadow: 0 0 8px rgba(65, 137, 170, 0.7);
 
-    transition: 0.3s;
-
-    box-sizing: border-box;
-
-    box-shadow: 2px 2px 5px 5px rgb(65, 137, 170);
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s,
+        transform 0.3s;
 }
 
 
-/* hover dos inputs */
+/* PLACEHOLDER */
+
+.inputs::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* FOCUS */
+
+.inputs:focus {
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 12px deepskyblue;
+}
+
+
+/* HOVER */
 
 .inputs:hover {
-    border: 1px solid deepskyblue;
+    border-color: deepskyblue;
 
-    box-shadow: 0 0 15px deepskyblue;
+    box-shadow: 0 0 12px deepskyblue;
 
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 
 /* ========================= */
-/* container do botao */
+/* CONTAINER DO BOTAO */
 /* ========================= */
 
 .buttonContainer {
@@ -159,72 +182,103 @@ body {
 
     justify-content: center;
 
-    margin-top: 29px;
+    margin-top: 30px;
 }
 
 
 /* ========================= */
-/* botao criar conta */
+/* BOTAO CRIAR CONTA */
 /* ========================= */
 
 #buttonCreate {
     width: 100%;
-
     max-width: 290px;
 
     height: 50px;
 
     border: none;
-
     border-radius: 35px;
+
+    cursor: pointer;
 
     background-color: deepskyblue;
 
     color: black;
 
     font-size: 15px;
-
     font-weight: bold;
 
-    cursor: pointer;
-
-    transition: 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 }
 
 
-/* hover do botao */
+/* HOVER BOTAO */
 
 #buttonCreate:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 
     box-shadow: 0 0 15px deepskyblue;
 }
 
 
-/* ========================= */
-/* responsividade */
-/* ========================= */
+/* ACTIVE BOTAO */
+
+#buttonCreate:active {
+    transform: scale(0.98);
+}
 
 
-/* telas menores */
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
 
 @media (max-width: 768px) {
+
+    #container {
+        padding: 25px;
+    }
+
+    #textCreateAccount {
+        font-size: 1.7rem;
+    }
+
+    .rowInputs {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
 
     #container {
         padding: 20px;
     }
 
     #textCreateAccount {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
-    .rowInputs {
-        flex-direction: column;
-
-        gap: 10px;
+    .label {
+        font-size: 0.95rem;
     }
 
-    .divInput {
-        min-width: 100%;
+    .inputs {
+        height: 40px;
+
+        font-size: 14px;
+    }
+
+    #buttonCreate {
+        height: 45px;
+
+        font-size: 14px;
     }
 }
