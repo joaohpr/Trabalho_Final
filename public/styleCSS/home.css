@@ -352,11 +352,22 @@ body {
 
 #footer {
     text-align: center;
+    color: white;
+    
+    height: 30px;
+    margin-bottom: 30px;
+    margin-top: 10px;
 
-    height: 80px;
 
-    background-color: gray;
+    background-color: transparent;
+
+    a{
+        color :deepskyblue;
+        
+    }
 }
+
+
 
 
 /* ========================= */

@@ -3,21 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../styleCSS/login.css">
-    <title>Login - CineSearch</title>
+
+
+    <title>Login-CineSearch</title>
 </head>
 
 <body>
 
     <!-- ========================= -->
-    <!-- CONTAINER GLOBAL -->
+    <!-- container global -->
     <!-- ========================= -->
 
     <div id="continerGlobal">
 
         <!-- ========================= -->
-        <!-- HEADER -->
+        <!-- barra superior -->
         <!-- ========================= -->
 
         <header id="barraVertical">
@@ -29,81 +33,73 @@
         </header>
 
         <!-- ========================= -->
-        <!-- CONTEÚDO PRINCIPAL -->
+        <!-- conteudo principal -->
         <!-- ========================= -->
 
         <main id="containerConteudo">
 
             <!-- ========================= -->
-            <!-- CARD LOGIN -->
+            <!-- card login -->
             <!-- ========================= -->
 
             <section id="Login">
 
                 <form id="formLogin">
 
-                    <!-- TÍTULO -->
+                    <!-- titulo -->
 
                     <h1 id="textLogin">
                         Login
                     </h1>
 
-                    <!-- GRUPO DE INPUTS -->
+                    <!-- username -->
 
-                    <fieldset id="grupoInputs">
+                    <div class="divInput">
 
-                        <!-- USERNAME -->
+                        <label for="inputUsername" class="labelInput">
 
-                        <div class="divInput">
+                            Username
 
-                            <label for="inputUsername" class="labelInput">
-                                Username
-                            </label>
+                        </label>
 
-                            <input
-                                type="text"
-                                id="inputUsername"
-                                class="inputs"
-                                placeholder="Username"
-                                autocomplete="username"
-                                required>
+                        <input type="text" id="inputUsername" class="inputs" placeholder="Username"
+                            autocomplete="username" required>
 
-                        </div>
+                    </div>
 
-                        <!-- PASSWORD -->
+                    <!-- password -->
 
-                        <div class="divInput">
+                    <div class="divInput">
 
-                            <label for="inputPassword" class="labelInput">
-                                Password
-                            </label>
+                        <label for="inputPassword" class="labelInput">
 
-                            <input
-                                type="password"
-                                id="inputPassword"
-                                class="inputs"
-                                placeholder="Password"
-                                autocomplete="current-password"
-                                required>
+                            Password
 
-                        </div>
+                        </label>
 
-                    </fieldset>
+                        <input type="password" id="inputPassword" class="inputs" placeholder="Password"
+                            autocomplete="current-password" required>
 
-                    <!-- BOTÃO -->
+                    </div>
+
+                    <!-- button -->
 
                     <button type="submit" id="buttonLogin">
+
                         Entrar
+
                     </button>
 
-                    <!-- CRIAR CONTA -->
+                    <!-- criar conta -->
 
                     <p id="createAccount">
 
                         Don't have an account?
 
                         <a href="createAccount.html" id="ancoraCreateAccount">
+
                             Create your Account
+
                         </a>
 
                     </p>
@@ -114,18 +110,16 @@
 
         </main>
 
-        <!-- ========================= -->
-        <!-- RODAPÉ -->
-        <!-- ========================= -->
-
         <footer id="rodape">
 
             <p id="textRodape">
-                &copy; 2024 CineSearch. All rights reserved.
+
+                &copy; 2026 Your Company. All rights reserved.<a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" 
+                target="_blank">
+                    Know More
+                </a>
             </p>
-
         </footer>
-
     </div>
 
 </body>
