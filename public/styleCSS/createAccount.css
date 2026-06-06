@@ -1,217 +1,278 @@
 /* ========================= */
 /* RESET GLOBAL */
 /* ========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 /* ========================= */
 /* BODY */
 /* ========================= */
+
 body {
-    background-color: black;
+    font-family: Arial, sans-serif;
+
+    background-color: rgb(10, 10, 10);
+}
+
+
+/* ========================= */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#global-container {
+    width: 100%;
     min-height: 100vh;
-    padding: 20px 20px 0;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* ========================= */
+/* CARD PRINCIPAL */
+/* ========================= */
+
+#container {
+    width: 600px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-/* ========================= */
-/* CONTAINER PRINCIPAL */
-/* ========================= */
-#container {
-    display: flex;
-    margin-top: auto;
-    width: 100%;
-    max-width: 700px;
-    padding: 35px;
-    border-radius: 20px;
-    background-color: rgba(30, 30, 30, 0.8);
-    padding: 40px;
-      box-shadow:
+    background-color: rgb(30, 30, 30);
+
+    box-shadow:
         0 0 20px rgba(0, 0, 0, 0.5),
-        0 0 10px rgba(0, 191, 255, 0.15);
+        0 0 10px rgba(0, 191, 255, 0.2);
 }
 
-/* ========================= */
-/* FORM */
-/* ========================= */
-form {
-    width: 100%;
-}
 
 /* ========================= */
-/* TITULO PRINCIPAL */
+/* TITULO */
 /* ========================= */
-#textCreateAccount {
-    color: white;
-    font-size: 2rem;
+
+#textHeader {
+    font-size: 36px;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
-}
 
-/* ========================= */
-/* LINHAS DOS INPUTS */
-/* ========================= */
-.rowInputs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    color: deepskyblue;
+
+    text-align: center;
+
     margin-bottom: 20px;
 }
 
+
 /* ========================= */
-/* CONTAINER DOS INPUTS */
+/* CONTAINER INPUTS */
 /* ========================= */
-.divInput {
+
+#input-container {
+    width: 100%;
+
+    display: grid;
+
+    gap: 15px;
+}
+
+
+/* ========================= */
+/* LINHAS */
+/* ========================= */
+
+.row-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+/* ========================= */
+/* BOX INPUT */
+/* ========================= */
+
+.box-input {
+    padding: 20px;
+
     display: flex;
     flex-direction: column;
+
     gap: 8px;
 }
 
-/* ========================= */
-/* LABELS */
-/* ========================= */
-.label {
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 5px;
-}
 
 /* ========================= */
-/* INPUTS */
+/* LABEL */
 /* ========================= */
+
+.label-input {
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+/* ========================= */
+/* INPUT */
+/* ========================= */
+
 .inputs {
     width: 100%;
-    height: 42px;
-    padding: 10px 12px;
-    
-    border: 1px solid gray;
-    border-radius: 10px;
+
+    padding: 10px;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+
     outline: none;
-    background-color: rgba(85, 81, 81, 0.493);
+
+    background-color: rgba(85, 81, 81, 0.35);
+
     color: white;
-    font-size: 15px;
-    box-shadow: 0 0 8px steelblue;
+
     transition:
-        border-color 0.3s,
+        transform 0.3s,
         box-shadow 0.3s,
-        transform 0.3s;
+        border-color 0.3s;
 }
 
 .inputs::placeholder {
-    color: silver;
+    color: rgba(255, 255, 255, 0.6);
 }
 
-.inputs:focus,
-.inputs:hover {
+.inputs:focus {
     border-color: deepskyblue;
-    box-shadow: 0 0 12px deepskyblue;
-}
 
-.inputs:hover {
+    box-shadow: 0 0 5px deepskyblue;
+
     transform: scale(1.02);
 }
 
+.inputs:hover {
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 5px deepskyblue;
+
+    transform: scale(1.02);
+}
+
+
 /* ========================= */
-/* CONTAINER DO BOTAO */
+/* BOTAO */
 /* ========================= */
-.buttonContainer {
+
+.row-btn {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+
+    margin-top: 20px;
 }
 
-/* ========================= */
-/* BOTAO CRIAR CONTA */
-/* ========================= */
-#buttonCreate {
-    width: 100%;
-    max-width: 290px;
-    height: 50px;
+.buttons {
+    width: 220px;
+    height: 48px;
+
     border: none;
     border-radius: 35px;
+
     cursor: pointer;
+
     background-color: deepskyblue;
+
     color: black;
+
     font-size: 15px;
     font-weight: bold;
+
     transition:
         transform 0.3s,
-        box-shadow 0.3s;
+        box-shadow 0.3s,
+        opacity 0.3s;
 }
 
-#buttonCreate:hover {
+.buttons:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 15px deepskyblue;
+
+    box-shadow: 0 0 14px deepskyblue;
 }
 
-#buttonCreate:active {
+.buttons:active {
+    opacity: 0.8;
+
+    box-shadow: 0 0 10px deepskyblue;
+
     transform: scale(0.98);
 }
 
-/* ========================= */
-/* RODAPÉ */
-/* ========================= */
-#footer {
-    width: 100%;
-    text-align: center;
-    padding: 16px 20px;
-    margin-top: auto;
-    color: silver;
-    font-size: 0.85rem;
-    background-color: transparent;
 
+/* ========================= */
+/* RODAPE */
+/* ========================= */
+
+#rodape {
+    width: 100%;
+
+    padding: 16px;
+
+    text-align: center;
+
+    background-color: transparent;
 }
+
+#textRodape {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.knowMore-ancora {
+    margin-left: 5px;
+
+    color: deepskyblue;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.knowMore-ancora:hover {
+    text-decoration: underline;
+}
+
 
 /* ========================= */
 /* RESPONSIVIDADE */
 /* ========================= */
+
 @media (max-width: 768px) {
+
     #container {
-        padding: 25px;
+        width: 90%;
     }
 
-    #textCreateAccount {
-        font-size: 1.7rem;
-    }
-
-    .rowInputs {
+    .row-input {
         grid-template-columns: 1fr;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 10px 10px 0;
     }
 
-    #container {
-        padding: 20px;
+    #textHeader {
+        font-size: 28px;
     }
 
-    #textCreateAccount {
-        font-size: 1.5rem;
-    }
-
-    .label {
-        font-size: 0.95rem;
-    }
-
-    .inputs {
-        height: 40px;
-        font-size: 14px;
-    }
-
-    #buttonCreate {
-        height: 45px;
-        font-size: 14px;
+    .box-input {
+        padding: 10px;
     }
 }
