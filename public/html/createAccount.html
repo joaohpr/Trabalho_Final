@@ -3,126 +3,103 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../styleCSS/createAccount.css">
-
     <title>Create Account</title>
 </head>
 
 <body>
 
-    <div id="container">
+    <div id="global-container">
 
-        <form id="formCreateAccount" method="POST">
+        <div id="container">
 
-            <div id="CreateAccount">
+            <header id="textHeader">
+                Create Account
+            </header>
 
-                <!-- title -->
+            <div id="input-container">
 
-                <h1 id="textCreateAccount">
-                    Create Your Account
-                </h1>
+                <div class="row-input">
 
-                <!-- nome e email inputs -->
+                    <div class="box-input">
 
-                <div class="rowInputs">
-
-                    <div class="divInput">
-
-                        <label for="nameInput" class="label">
-
-                            Name
-
+                        <label for="username" class="label-input">
+                            Username
                         </label>
 
-                        <input type="text" id="nameInput" name="name" class="inputs" placeholder="Enter your name"
-                            autocomplete="name" required>
+                        <input type="text" id="username" class="inputs" placeholder="Username" required>
 
                     </div>
 
-                    <div class="divInput">
+                    <div class="box-input">
 
-                        <label for="emailInput" class="label">
-
+                        <label for="email" class="label-input">
                             Email
-
                         </label>
 
-                        <input type="email" id="emailInput" name="email" class="inputs" placeholder="Enter your email"
-                            autocomplete="email" required>
+                        <input type="email" id="email" name="email" class="inputs" placeholder="Email" required>
 
                     </div>
 
                 </div>
 
-                <!-- inputs de senha -->
+                <div class="row-input">
 
-                <div class="rowInputs">
+                    <div class="box-input">
 
-                    <div class="divInput">
-
-                        <label for="passwordInput" class="label">
-
+                        <label for="password" class="label-input">
                             Password
-
                         </label>
 
-                        <input type="password" id="passwordInput" name="password" class="inputs"
-                            placeholder="Enter your password" autocomplete="new-password" required>
+                        <input type="password" id="password" name="password" class="inputs" placeholder="Password"
+                            required>
 
                     </div>
 
-                    <div class="divInput">
+                    <div class="box-input">
 
-                        <label for="confirmPasswordInput" class="label">
-
+                        <label for="confirm-password" class="label-input">
                             Confirm Password
-
                         </label>
 
-                        <input type="password" id="confirmPasswordInput" name="confirmPassword" class="inputs"
-                            placeholder="Confirm your password" autocomplete="new-password" required>
+                        <input type="password" id="confirm-password" name="confirm-password" class="inputs"
+                            placeholder="Confirm Password" required>
 
                     </div>
 
                 </div>
 
-                <!-- button -->
+                <div class="row-btn">
 
-                <div class="buttonContainer">
-
-                    <button type="submit" id="buttonCreate">
-
+                    <button type="submit" class="buttons">
                         Create Account
-
                     </button>
 
                 </div>
 
             </div>
 
-        </form>
+        </div>
+
+        <footer id="rodape">
+
+            <p id="textRodape">
+
+                &copy; 2026 Your Company. All rights reserved.
+
+                <a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" target="_blank"
+                    rel="noopener noreferrer">
+
+                    Know More
+
+                </a>
+
+            </p>
+
+        </footer>
 
     </div>
-
-    <footer id="footer">
-
-        <p id="footerText">
-
-            &copy; 2026 Your Company. All rights reserved.
-
-            <a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" target="_blank"
-                rel="noopener noreferrer">
-
-                Know More
-
-            </a>
-
-        </p>
-
-    </footer>
 
 </body>
 
