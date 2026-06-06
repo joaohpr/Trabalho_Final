@@ -117,11 +117,11 @@ body{
 /* ========================= */
 
 #textLogin{
-    color: white;
+    color: deepskyblue;
 
     text-align: center;
 
-    font-size: 2rem;
+    font-size: 38px;
     font-weight: bold;
 
     margin-bottom: 10px;
@@ -286,7 +286,7 @@ body{
 
     padding: 16px;
 
-    background-color: rgb(20, 20, 20);
+    background-color: transparent;
 
     display: flex;
     justify-content: center;
