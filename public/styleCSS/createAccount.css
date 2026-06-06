@@ -1,230 +1,278 @@
 /* ========================= */
-/* reset global */
+/* RESET GLOBAL */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================= */
+/* BODY */
 /* ========================= */
 
 body {
-    background-color: rgba(3, 3, 3, 0.959);
+    font-family: Arial, sans-serif;
 
-    padding: 20px;
-
-    margin: 0;
-
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    box-sizing: border-box;
+    background-color: rgb(10, 10, 10);
 }
 
 
 /* ========================= */
-/* container principal */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#global-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* ========================= */
+/* CARD PRINCIPAL */
 /* ========================= */
 
 #container {
-    width: 100%;
+    width: 600px;
 
-    max-width: 700px;
+    padding: 20px;
 
-    padding: 35px;
-
-    border-radius: 20px;
-
-    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 12px;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 
-    box-sizing: border-box;
+    background-color: rgb(30, 30, 30);
+
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 191, 255, 0.2);
 }
 
 
 /* ========================= */
-/* titulo principal */
+/* TITULO */
 /* ========================= */
 
-#textCreateAccount {
+#textHeader {
+    font-size: 36px;
     font-weight: bold;
 
-    color: white;
-
-    font-size: 2rem;
-
-    margin: 0;
+    color: deepskyblue;
 
     text-align: center;
 
-    min-height: 50px;
+    margin-bottom: 20px;
 }
 
 
 /* ========================= */
-/* linhas dos inputs */
+/* CONTAINER INPUTS */
 /* ========================= */
 
-.rowInputs {
-    display: flex;
+#input-container {
+    width: 100%;
 
-    gap: 25px;
+    display: grid;
 
-    margin-top: 22px;
-
-    flex-wrap: wrap;
+    gap: 15px;
 }
 
 
 /* ========================= */
-/* container individual input */
+/* LINHAS */
 /* ========================= */
 
-.divInput {
-    display: flex;
-
-    flex-direction: column;
+.row-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     gap: 10px;
-
-    padding-bottom: 15px;
-
-    flex: 1;
-
-    min-width: 250px;
 }
 
 
 /* ========================= */
-/* labels */
+/* BOX INPUT */
 /* ========================= */
 
-.label {
-    font-weight: bold;
+.box-input {
+    padding: 20px;
 
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* ========================= */
+/* LABEL */
+/* ========================= */
+
+.label-input {
     color: white;
 
-    font-size: 1.1rem;
+    font-size: 16px;
+
+    font-weight: bold;
 }
 
 
 /* ========================= */
-/* inputs */
+/* INPUT */
 /* ========================= */
 
 .inputs {
     width: 100%;
 
-    height: 35px;
+    padding: 10px;
 
-    padding: 8px;
-
-    border: 1px solid gray;
-
-    border-radius: 10px;
-
-    background-color: rgba(85, 81, 81, 0.493);
-
-    color: white;
-
-    font-size: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
 
     outline: none;
 
-    transition: 0.3s;
+    background-color: rgba(85, 81, 81, 0.35);
 
-    box-sizing: border-box;
+    color: white;
 
-    box-shadow: 2px 2px 5px 5px rgb(65, 137, 170);
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
 }
 
+.inputs::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
 
-/* hover dos inputs */
+.inputs:focus {
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 5px deepskyblue;
+
+    transform: scale(1.02);
+}
 
 .inputs:hover {
-    border: 1px solid deepskyblue;
+    border-color: deepskyblue;
 
-    box-shadow: 0 0 15px deepskyblue;
+    box-shadow: 0 0 5px deepskyblue;
 
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 
 /* ========================= */
-/* container do botao */
+/* BOTAO */
 /* ========================= */
 
-.buttonContainer {
+.row-btn {
     display: flex;
-
     justify-content: center;
+    align-items: center;
 
-    margin-top: 29px;
+    margin-top: 20px;
 }
 
-
-/* ========================= */
-/* botao criar conta */
-/* ========================= */
-
-#buttonCreate {
-    width: 100%;
-
-    max-width: 290px;
-
-    height: 50px;
+.buttons {
+    width: 220px;
+    height: 48px;
 
     border: none;
-
     border-radius: 35px;
+
+    cursor: pointer;
 
     background-color: deepskyblue;
 
     color: black;
 
     font-size: 15px;
-
     font-weight: bold;
 
-    cursor: pointer;
-
-    transition: 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        opacity 0.3s;
 }
 
+.buttons:hover {
+    transform: scale(1.03);
 
-/* hover do botao */
+    box-shadow: 0 0 14px deepskyblue;
+}
 
-#buttonCreate:hover {
-    transform: scale(1.05);
+.buttons:active {
+    opacity: 0.8;
 
-    box-shadow: 0 0 15px deepskyblue;
+    box-shadow: 0 0 10px deepskyblue;
+
+    transform: scale(0.98);
 }
 
 
 /* ========================= */
-/* responsividade */
+/* RODAPE */
 /* ========================= */
 
+#rodape {
+    width: 100%;
 
-/* telas menores */
+    padding: 16px;
+
+    text-align: center;
+
+    background-color: transparent;
+}
+
+#textRodape {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.knowMore-ancora {
+    margin-left: 5px;
+
+    color: deepskyblue;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.knowMore-ancora:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
 
 @media (max-width: 768px) {
 
     #container {
-        padding: 20px;
+        width: 90%;
     }
 
-    #textCreateAccount {
-        font-size: 1.6rem;
+    .row-input {
+        grid-template-columns: 1fr;
     }
 
-    .rowInputs {
-        flex-direction: column;
-
-        gap: 10px;
+    #textHeader {
+        font-size: 28px;
     }
 
-    .divInput {
-        min-width: 100%;
+    .box-input {
+        padding: 10px;
     }
 }

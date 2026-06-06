@@ -1,208 +1,211 @@
 /* ========================= */
-/* reset global */
+/* RESET GLOBAL */
 /* ========================= */
 
-body {
-    background-color: rgba(3, 3, 3, 0.959);
-
+*{
     margin: 0;
-
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: Arial, Helvetica, sans-serif;
-
+    padding: 0;
     box-sizing: border-box;
 }
 
 
 /* ========================= */
-/* container global */
+/* BODY */
 /* ========================= */
 
-#continerGlobal {
-    width: 100%;
+body{
+    min-height: 100vh;
+
+    background-color: rgba(3, 3, 3, 0.96);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================= */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#continerGlobal{
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 
 /* ========================= */
-/* barra superior */
+/* HEADER */
 /* ========================= */
 
-#barraVertical {
+#barraVertical{
     width: 100%;
 }
 
 
-/* titulo principal */
+/* titulo superior */
 
-#CineSearch {
+#CineSearch{
     width: 100%;
 
-    padding: 14px 0;
+    padding: 16px;
 
     background-color: rgb(70, 70, 70);
 
     color: white;
 
-    font-size: 2rem;
-
-    font-weight: bold;
-
     text-align: center;
 
-    box-sizing: border-box;
+    font-size: 2rem;
+    font-weight: bold;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 
 /* ========================= */
-/* area central */
+/* MAIN */
 /* ========================= */
 
-#containerConteudo {
-    width: 100%;
-
-    height: 80vh;
+#containerConteudo{
+    flex: 1;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     padding: 40px 20px;
-
-    box-sizing: border-box;
 }
 
 
 /* ========================= */
-/* card de login */
+/* CARD LOGIN */
 /* ========================= */
 
-#Login {
+#Login{
     width: 100%;
-
     max-width: 420px;
 
-    padding: 30px;
+    padding: 32px;
 
-    border-radius: 15px;
+    border-radius: 18px;
 
-    background-color: rgba(30, 30, 30, 0.85);
+    background-color: rgba(30, 30, 30, 0.90);
 
-    box-sizing: border-box;
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 191, 255, 0.15);
+
+    backdrop-filter: blur(5px);
 }
 
 
 /* ========================= */
-/* formulario */
+/* FORM */
 /* ========================= */
 
-form {
+#formLogin{
     display: flex;
-
     flex-direction: column;
 
-    gap: 20px;
+    gap: 40px;
 }
 
 
-/* titulo do login */
+/* ========================= */
+/* TITULO LOGIN */
+/* ========================= */
 
-#textLogin {
-    margin: 0;
-
-    color: white;
-
-    font-size: 2rem;
-
-    font-weight: bold;
+#textLogin{
+    color: deepskyblue;
 
     text-align: center;
+
+    font-size: 38px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
 }
 
 
 /* ========================= */
-/* areas dos inputs */
+/* DIV INPUT */
 /* ========================= */
 
-.divInput {
+.divInput{
     display: flex;
-
     flex-direction: column;
 
     gap: 8px;
 }
 
 
-/* labels */
+/* ========================= */
+/* LABELS */
+/* ========================= */
 
-.labelInput {
+.labelInput{
     color: white;
 
-    font-size: 1rem;
-
+    font-size: 0.95rem;
     font-weight: bold;
 }
 
 
 /* ========================= */
-/* inputs */
+/* INPUTS */
 /* ========================= */
 
-.inputs {
+.inputs{
     width: 100%;
+    height: 45px;
 
-    height: 42px;
+    padding: 12px;
 
-    padding: 10px 12px;
-
-    border: 1px solid gray;
-
-    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 12px;
 
     outline: none;
 
-    background-color: rgba(85, 81, 81, 0.493);
+    background-color: rgba(85, 81, 81, 0.35);
 
     color: white;
 
     font-size: 15px;
 
-    box-shadow: 0 0 8px rgba(65, 137, 170, 0.7);
-
-    box-sizing: border-box;
-
-    transition: 0.3s;
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s,
+        transform 0.3s;
 }
 
 
-/* hover dos inputs */
+/* placeholder */
 
-.inputs:hover {
+.inputs::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* focus */
+
+.inputs:focus{
     border-color: deepskyblue;
 
-    box-shadow: 0 0 12px deepskyblue;
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.7);
 
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
 
 /* ========================= */
-/* botao login */
+/* BOTAO LOGIN */
 /* ========================= */
 
-#buttonLogin {
+#buttonLogin{
     height: 48px;
 
     border: none;
-
     border-radius: 35px;
 
     cursor: pointer;
@@ -212,127 +215,131 @@ form {
     color: black;
 
     font-size: 15px;
-
     font-weight: bold;
 
-    transition: 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        opacity 0.3s;
 }
 
 
-/* hover do botao */
+/* hover */
 
-#buttonLogin:hover {
-    transform: scale(1.04);
+#buttonLogin:hover{
+    transform: scale(1.03);
 
-    box-shadow: 0 0 12px deepskyblue;
+    box-shadow: 0 0 14px deepskyblue;
+}
+
+
+/* active */
+
+#buttonLogin:active{
+    transform: scale(0.98);
 }
 
 
 /* ========================= */
-/* texto final */
+/* TEXTO CREATE ACCOUNT */
 /* ========================= */
 
-#createAccount {
-    margin: 0;
-
+#createAccount{
     color: white;
 
-    font-size: 15px;
-
     text-align: center;
+
+    font-size: 14px;
 
     line-height: 1.5;
 }
 
 
-/* link criar conta */
+/* ========================= */
+/* LINK */
+/* ========================= */
 
-#ancoraCreateAccount {
+#ancoraCreateAccount{
     color: deepskyblue;
 
     text-decoration: none;
 
     font-weight: bold;
+
+    transition: opacity 0.3s;
 }
 
 
-/* hover do link */
+/* hover link */
 
-#ancoraCreateAccount:hover {
+#ancoraCreateAccount:hover{
     text-decoration: underline;
 }
 
 
 /* ========================= */
-/* responsividade */
+/* RODAPE */
 /* ========================= */
 
+#rodape{
+    width: 100%;
 
-/* hover apenas em desktop */
+    padding: 16px;
 
-@media (hover: hover) {
+    background-color: transparent;
 
-    .inputs:hover {
-        border-color: deepskyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        box-shadow: 0 0 12px deepskyblue;
 
-        transform: scale(1.02);
-    }
+/* texto rodape */
 
-    #buttonLogin:hover {
-        transform: scale(1.04);
+#textRodape{
+    color: rgba(255, 255, 255, 0.7);
 
-        box-shadow: 0 0 12px deepskyblue;
-    }
+    font-size: 14px;
 
-    #ancoraCreateAccount:hover {
-        text-decoration: underline;
-    }
+    text-align: center;
 }
 
 
 /* ========================= */
-/* mobile */
+/* RESPONSIVIDADE */
 /* ========================= */
 
-@media (max-width: 480px) {
+@media (max-width: 480px){
 
-    #CineSearch {
-        font-size: 1.6rem;
-
-        padding: 12px 0;
+    #containerConteudo{
+        padding: 20px;
     }
 
-    #containerConteudo {
-        padding: 25px 15px;
+    #Login{
+        padding: 24px;
     }
 
-    #Login {
-        padding: 22px;
+    #CineSearch{
+        font-size: 1.5rem;
     }
 
-    form {
-        gap: 16px;
+    #textLogin{
+        font-size: 1.7rem;
     }
 
-    #textLogin {
-        font-size: 1.6rem;
-    }
-
-    .labelInput {
-        font-size: 0.95rem;
-    }
-
-    .inputs {
-        height: 40px;
+    .inputs{
+        height: 42px;
 
         font-size: 14px;
     }
 
-    #buttonLogin {
+    #buttonLogin{
         height: 44px;
 
         font-size: 14px;
+    }
+
+    #textRodape{
+        font-size: 12px;
     }
 }
