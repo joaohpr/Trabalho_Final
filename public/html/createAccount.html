@@ -9,41 +9,98 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="CreateAccount">
-            <form action="">
-                <h1 id="textCreateAccount">Create Your Account</h1>
 
-                <div class="rowInputs">
-                    <div class="divInput">
-                        <label for="nameInput" class="label">Name</label>
-                        <input type="text" class="inputs" id="nameInput" placeholder="Enter your name">
+    <div id="global-container">
+
+        <div id="container">
+
+            <header id="textHeader">
+                Create Account
+            </header>
+
+            <div id="input-container">
+
+                <div class="row-input">
+
+                    <div class="box-input">
+
+                        <label for="username" class="label-input">
+                            Username
+                        </label>
+
+                        <input type="text" id="username" class="inputs" placeholder="Username" required>
+
                     </div>
 
-                    <div class="divInput">
-                        <label for="emailInput" class="label">Your Email</label>
-                        <input type="email" class="inputs" id="emailInput" placeholder="Enter your email">
+                    <div class="box-input">
+
+                        <label for="email" class="label-input">
+                            Email
+                        </label>
+
+                        <input type="email" id="email" name="email" class="inputs" placeholder="Email" required>
+
                     </div>
+
                 </div>
 
-                <div class="rowInputs">
-                    <div class="divInput">
-                        <label for="passwordInput" class="label">Password</label>
-                        <input type="password" class="inputs" id="passwordInput" placeholder="Enter your password">
+                <div class="row-input">
+
+                    <div class="box-input">
+
+                        <label for="password" class="label-input">
+                            Password
+                        </label>
+
+                        <input type="password" id="password" name="password" class="inputs" placeholder="Password"
+                            required>
+
                     </div>
 
-                    <div class="divInput">
-                        <label for="confirmPassword" class="label">Confirm your password</label>
-                        <input type="password" class="inputs" id="confirmPassword" placeholder="Confirm your password">
+                    <div class="box-input">
+
+                        <label for="confirm-password" class="label-input">
+                            Confirm Password
+                        </label>
+
+                        <input type="password" id="confirm-password" name="confirm-password" class="inputs"
+                            placeholder="Confirm Password" required>
+
                     </div>
+
                 </div>
 
-                <div class="buttonContainer">
-                    <button type="submit" id="buttonCreate">Create</button>
+                <div class="row-btn">
+
+                    <button type="submit" class="buttons">
+                        Create Account
+                    </button>
+
                 </div>
-            </form>
+
+            </div>
+
         </div>
+
+        <footer id="rodape">
+
+            <p id="textRodape">
+
+                &copy; 2026 Your Company. All rights reserved.
+
+                <a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" target="_blank"
+                    rel="noopener noreferrer">
+
+                    Know More
+
+                </a>
+
+            </p>
+
+        </footer>
+
     </div>
+
 </body>
 
 </html>
