@@ -1,338 +1,406 @@
 /* ========================= */
-/* reset global */
+/* IMPORTAÇÃO DE FONTES */
 /* ========================= */
 
-body {
-    background-color: rgba(3, 3, 3, 0.959);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
 
+
+/* ========================= */
+/* RESET E VARIÁVEIS GLOBAIS */
+/* ========================= */
+
+:root {
+    --primary-color: #0f3460;
+    --secondary-color: #16213e;
+    --accent-color: #00d4ff;
+    --accent-hover: #00a8cc;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --bg-dark: #0a0e27;
+    --bg-card: #132340;
+    --border-color: #1e3a5f;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+
+* {
     margin: 0;
-
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: Arial, Helvetica, sans-serif;
-
+    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
-/* ========================= */
-/* container global */
-/* ========================= */
-
-#continerGlobal {
-    width: 100%;
-
+body {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #0f1b2e 100%);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 
 /* ========================= */
-/* barra superior */
+/* BARRA SUPERIOR */
 /* ========================= */
 
 #barraVertical {
     width: 100%;
 }
 
-
-/* titulo principal */
-
 #CineSearch {
     width: 100%;
-
-    padding: 14px 0;
-
-    background-color: rgb(70, 70, 70);
-
-    color: white;
-
-    font-size: 2rem;
-
-    font-weight: bold;
-
+    padding: 20px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-
-    box-sizing: border-box;
+    letter-spacing: -0.5px;
 }
 
 
 /* ========================= */
-/* area central */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#continerGlobal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+
+/* ========================= */
+/* ÁREA CENTRAL DE CONTEÚDO */
 /* ========================= */
 
 #containerConteudo {
     width: 100%;
-
-    height: 80vh;
-
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 40px 20px;
-
-    box-sizing: border-box;
+    padding: 60px 20px;
 }
 
 
 /* ========================= */
-/* card de login */
+/* CARD DE LOGIN */
 /* ========================= */
 
 #Login {
     width: 100%;
-
     max-width: 420px;
+    padding: 50px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--bg-card), rgba(22, 33, 62, 0.5));
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    padding: 30px;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-    border-radius: 15px;
-
-    background-color: rgba(30, 30, 30, 0.85);
-
-    box-sizing: border-box;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
 /* ========================= */
-/* formulario */
+/* FORMULÁRIO */
 /* ========================= */
 
 form {
     display: flex;
-
     flex-direction: column;
-
-    gap: 20px;
-}
-
-
-/* titulo do login */
-
-#textLogin {
-    margin: 0;
-
-    color: white;
-
-    font-size: 2rem;
-
-    font-weight: bold;
-
-    text-align: center;
+    gap: 28px;
 }
 
 
 /* ========================= */
-/* areas dos inputs */
+/* TÍTULOS */
+/* ========================= */
+
+#textLogin {
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+
+/* ========================= */
+/* CONTAINERS DE INPUTS */
 /* ========================= */
 
 .divInput {
     display: flex;
-
     flex-direction: column;
-
-    gap: 8px;
-}
-
-
-/* labels */
-
-.labelInput {
-    color: white;
-
-    font-size: 1rem;
-
-    font-weight: bold;
+    gap: 10px;
 }
 
 
 /* ========================= */
-/* inputs */
+/* LABELS */
+/* ========================= */
+
+.labelInput {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.divInput:focus-within .labelInput {
+    color: var(--accent-color);
+}
+
+
+/* ========================= */
+/* INPUTS */
 /* ========================= */
 
 .inputs {
     width: 100%;
-
-    height: 42px;
-
-    padding: 10px 12px;
-
-    border: 1px solid gray;
-
+    height: 48px;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
-
-    outline: none;
-
-    background-color: rgba(85, 81, 81, 0.493);
-
-    color: white;
-
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
     font-size: 15px;
-
-    box-shadow: 0 0 8px rgba(65, 137, 170, 0.7);
-
-    box-sizing: border-box;
-
-    transition: 0.3s;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-/* hover dos inputs */
+.inputs::placeholder {
+    color: var(--text-secondary);
+}
 
 .inputs:hover {
-    border-color: deepskyblue;
+    border-color: var(--accent-color);
+    background: rgba(0, 212, 255, 0.03);
+}
 
-    box-shadow: 0 0 12px deepskyblue;
-
-    transform: scale(1.02);
+.inputs:focus {
+    border-color: var(--accent-color);
+    background: rgba(0, 212, 255, 0.05);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
 }
 
 
 /* ========================= */
-/* botao login */
+/* BOTÃO LOGIN */
 /* ========================= */
 
 #buttonLogin {
     height: 48px;
-
     border: none;
-
-    border-radius: 35px;
-
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: var(--bg-dark);
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
     cursor: pointer;
-
-    background-color: deepskyblue;
-
-    color: black;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
 }
 
-
-/* hover do botao */
-
 #buttonLogin:hover {
-    transform: scale(1.04);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 212, 255, 0.3);
+}
 
-    box-shadow: 0 0 12px deepskyblue;
+#buttonLogin:active {
+    transform: translateY(0);
 }
 
 
 /* ========================= */
-/* texto final */
+/* TEXTO CRIAR CONTA */
 /* ========================= */
 
 #createAccount {
     margin: 0;
-
-    color: white;
-
-    font-size: 15px;
-
+    color: var(--text-secondary);
+    font-size: 14px;
     text-align: center;
-
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 
-/* link criar conta */
+/* ========================= */
+/* LINK CRIAR CONTA */
+/* ========================= */
 
 #ancoraCreateAccount {
-    color: deepskyblue;
-
+    color: var(--accent-color);
     text-decoration: none;
-
-    font-weight: bold;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
+#ancoraCreateAccount::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
 
-/* hover do link */
+#ancoraCreateAccount:hover::after {
+    width: 100%;
+}
 
 #ancoraCreateAccount:hover {
-    text-decoration: underline;
+    color: var(--accent-hover);
 }
 
 
 /* ========================= */
-/* responsividade */
+/* RESPONSIVIDADE - TABLET */
 /* ========================= */
 
-
-/* hover apenas em desktop */
-
-@media (hover: hover) {
-
-    .inputs:hover {
-        border-color: deepskyblue;
-
-        box-shadow: 0 0 12px deepskyblue;
-
-        transform: scale(1.02);
-    }
-
-    #buttonLogin:hover {
-        transform: scale(1.04);
-
-        box-shadow: 0 0 12px deepskyblue;
-    }
-
-    #ancoraCreateAccount:hover {
-        text-decoration: underline;
-    }
-}
-
-
-/* ========================= */
-/* mobile */
-/* ========================= */
-
-@media (max-width: 480px) {
-
+@media (max-width: 768px) {
     #CineSearch {
-        font-size: 1.6rem;
-
-        padding: 12px 0;
+        font-size: 24px;
+        padding: 16px 0;
     }
 
     #containerConteudo {
-        padding: 25px 15px;
+        padding: 40px 20px;
     }
 
     #Login {
-        padding: 22px;
+        padding: 40px 30px;
+        max-width: 100%;
     }
 
     form {
-        gap: 16px;
+        gap: 24px;
     }
 
     #textLogin {
-        font-size: 1.6rem;
-    }
-
-    .labelInput {
-        font-size: 0.95rem;
+        font-size: 24px;
     }
 
     .inputs {
-        height: 40px;
-
+        height: 44px;
         font-size: 14px;
     }
 
     #buttonLogin {
         height: 44px;
+        font-size: 15px;
+    }
+}
 
+
+/* ========================= */
+/* RESPONSIVIDADE - MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+    #CineSearch {
+        font-size: 20px;
+        padding: 14px 0;
+    }
+
+    #containerConteudo {
+        padding: 30px 16px;
+    }
+
+    #Login {
+        padding: 30px 20px;
+    }
+
+    form {
+        gap: 20px;
+    }
+
+    #textLogin {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .divInput {
+        gap: 8px;
+    }
+
+    .labelInput {
+        font-size: 13px;
+    }
+
+    .inputs {
+        height: 44px;
+        padding: 10px 14px;
         font-size: 14px;
+    }
+
+    #buttonLogin {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    #createAccount {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================= */
+/* ACESSIBILIDADE */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Foco visível para navegação por teclado */
+.inputs:focus-visible,
+#buttonLogin:focus-visible,
+#ancoraCreateAccount:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color-scheme: dark;
     }
 }
