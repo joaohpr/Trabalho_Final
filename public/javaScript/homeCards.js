@@ -1,19 +1,20 @@
-const cards = document.querySelectorAll(".cards");
+$(document).ready(function () {
 
-cards.forEach((card) => {
+    $(".cards").on("dblclick", function () {
 
-    card.addEventListener("dblclick", () => {
-
-        if(document.querySelector(".expanded-card")){
+        // Impede abrir mais de um modal
+        if ($(".expanded-card").length > 0) {
             return;
         }
 
-        const expandedCard = document.createElement("div");
+        // Cria a div principal
+        const expandedCard = $("<div>");
 
-        expandedCard.classList.add("expanded-card");
+        // Adiciona a classe
+        expandedCard.addClass("expanded-card");
 
-        expandedCard.innerHTML = `
-
+        // Adiciona o conteúdo interno
+        expandedCard.html(`
             <div class="container">
 
                 <div class="x-bar">
@@ -50,14 +51,13 @@ cards.forEach((card) => {
                 </div>
 
             </div>
+        `);
 
-        `;
+        // Adiciona o modal ao body
+        $("body").append(expandedCard);
 
-        document.body.appendChild(expandedCard);
-
-        const closeBtn = expandedCard.querySelector(".close-btn");
-
-        closeBtn.addEventListener("click", () => {
+        // Botão de fechar
+        expandedCard.find(".close-btn").on("click", function () {
 
             expandedCard.remove();
 
