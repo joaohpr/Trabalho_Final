@@ -147,9 +147,11 @@ body {
 
     text-align: center;
 
-    color: white;
+    color: deepskyblue;
 
     font-family: Georgia, 'Times New Roman', Times, serif;
+
+    
 }
 
 
@@ -254,6 +256,13 @@ body {
     gap: 20px;
 }
 
+#modal-content{
+    width: 650px;
+    height: 400px;
+
+}
+
+
 
 /* area de recomendacoes */
 
@@ -269,7 +278,7 @@ body {
 /* linha horizontal dos cards */
 
 #cards-row {
-    overflow-x: scroll;
+    overflow-x: auto;
 
     display: flex;
 
@@ -472,7 +481,7 @@ body {
 
     gap: 10px;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid hsl(0, 100%, 42%);
 
     padding-bottom: 15px;
 }

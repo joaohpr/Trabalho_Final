@@ -1,0 +1,410 @@
+/* ========================= */
+/* reset global */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.808);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+
+/* ========================= */
+/* container global */
+/* ========================= */
+
+#continerGlobal {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+
+    background-image:url('../html/home.html');
+}
+
+
+/* ========================= */
+/* barra superior */
+/* ========================= */
+
+#barraVertical {
+    display: flex;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background-color: rgba(0, 0, 0, 0.808);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* logo */
+
+#CineSearch {
+    font-size: 26px;
+    font-weight: bold;
+
+    color: deepskyblue;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+}
+
+
+/* ========================= */
+/* conteudo principal */
+/* ========================= */
+
+#containerConteudo {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ========================= */
+/* card de settings */
+/* ========================= */
+
+#Settings {
+    width: 420px;
+
+    background-color: #1b1b1b;
+
+    border-radius: 20px;
+
+    padding: 35px 30px;
+
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+
+    transition: 0.3s;
+}
+
+#Settings:hover {
+    box-shadow: 0px 0px 30px rgba(0, 191, 255, 0.15);
+}
+
+
+/* formulario */
+
+#formSettings {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* titulo */
+
+#textSettings {
+    font-size: 28px;
+
+    text-align: center;
+
+    color: deepskyblue;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    margin-bottom: 10px;
+}
+
+
+/* ========================= */
+/* linhas de configuracao */
+/* ========================= */
+
+.divInput {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+/* label */
+
+.labelInput {
+    font-size: 15px;
+
+    color: #d1d1d1;
+}
+
+
+/* ========================= */
+/* selects (language / difficulty) */
+/* ========================= */
+
+.inputs {
+    padding: 8px 10px;
+
+    width: 150px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+    background-color: rgba(54, 52, 52, 0.719);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.inputs:hover,
+.inputs:focus {
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 10px deepskyblue;
+
+    outline: none;
+}
+
+
+/* ========================= */
+/* toggle switch (dark mode / music / sound) */
+/* ========================= */
+
+.switch {
+    position: relative;
+    display: inline-block;
+
+    width: 46px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+
+    cursor: pointer;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(54, 52, 52, 0.719);
+
+    border-radius: 24px;
+
+    transition: 0.3s;
+}
+
+.slider::before {
+    position: absolute;
+
+    content: "";
+
+    height: 18px;
+    width: 18px;
+
+    left: 3px;
+    bottom: 3px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.switch input:checked+.slider {
+    background-color: deepskyblue;
+
+    box-shadow: 0 0 10px deepskyblue;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(22px);
+}
+
+
+/* ========================= */
+/* botoes save/cancel */
+/* ========================= */
+
+#buttonsRow {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+#buttonSave,
+#buttonCancel {
+    flex: 1;
+
+    border: none;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#buttonSave {
+    background-color: deepskyblue;
+
+    color: white;
+}
+
+#buttonSave:hover {
+    transform: scale(1.03);
+
+    box-shadow: 0 0 15px deepskyblue;
+}
+
+#buttonCancel {
+    background-color: #2c2c2c;
+
+    color: white;
+}
+
+#buttonCancel:hover {
+    background-color: crimson;
+
+    transform: scale(1.03);
+
+    box-shadow: 0 0 15px crimson;
+}
+
+
+/* ========================= */
+/* voltar para home */
+/* ========================= */
+
+#backHome {
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #d1d1d1;
+
+    margin-top: 5px;
+}
+
+#ancoraBackHome {
+    color: deepskyblue;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+#ancoraBackHome:hover {
+    text-decoration: underline;
+
+    text-shadow: 0 0 8px deepskyblue;
+}
+
+
+/* ========================= */
+/* rodape */
+/* ========================= */
+
+#rodape {
+    text-align: center;
+
+    padding: 15px;
+
+    background-color: transparent;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#textRodape {
+    font-size: 13px;
+
+    color: #a0a0a0;
+}
+
+.knowMore-ancora {
+    color: deepskyblue;
+
+    margin-left: 8px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.knowMore-ancora:hover {
+    text-decoration: underline;
+
+    text-shadow: 0 0 8px deepskyblue;
+}
+
+
+/* ========================= */
+/* responsividade */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    #barraVertical {
+        padding: 15px 20px;
+    }
+
+    #Settings {
+        width: 100%;
+
+        padding: 25px 20px;
+    }
+
+    #textSettings {
+        font-size: 24px;
+    }
+
+    .inputs {
+        width: 120px;
+    }
+
+    #buttonsRow {
+        flex-direction: column;
+    }
+}
+
+
+#buttonClose{
+    width: 75px;
+    height: 40px;
+    background-color: deepskyblue;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#buttonClose:hover{
+    background-color: red;
+    box-shadow: 0 0 10px deepskyblue;
+}
