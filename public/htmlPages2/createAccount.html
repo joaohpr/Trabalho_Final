@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crie sua conta CineSearch e comece a buscar e receber recomendações de filmes.">
+
+    <link rel="icon" href="../public/img/CineSearch.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styleCSS/theme.css">
+    <link rel="stylesheet" href="../styleCSS/posterWall.css">
+    <link rel="stylesheet" href="../styleCSS/createAccount.css">
+
+    <title>Criar Conta · CineSearch</title>
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- mosaico de capas de filme (gerado via JS) -->
+    <!-- ========================= -->
+    <div id="posterWall"></div>
+
+    <header id="topBar">
+        <img src="../public/img/CineSearch.png" alt="">
+        CineSearch
+    </header>
+
+    <div id="global-container">
+
+        <div id="container">
+
+            <section id="CreateAccount" class="glassPanel">
+
+                <form id="formCreateAccount" novalidate>
+
+                    <header id="textHeader">Crie sua conta</header>
+                    <p id="subtextHeader">Leva menos de um minuto</p>
+
+                    <div class="row-input">
+
+                        <div class="box-input" id="divUsername">
+
+                            <label for="username" class="label-input">Usuário</label>
+
+                            <div class="inputWrap">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="username" class="inputs" placeholder="Escolha um usuário"
+                                    autocomplete="username" required minlength="3">
+                            </div>
+
+                            <span class="field-error" id="errorUsername"></span>
+
+                        </div>
+
+                        <div class="box-input" id="divEmail">
+
+                            <label for="email" class="label-input">Email</label>
+
+                            <div class="inputWrap">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="email" name="email" class="inputs" placeholder="voce@email.com"
+                                    autocomplete="email" required>
+                            </div>
+
+                            <span class="field-error" id="errorEmail"></span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row-input">
+
+                        <div class="box-input" id="divPassword">
+
+                            <label for="password" class="label-input">Senha</label>
+
+                            <div class="inputWrap">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="password" name="password" class="inputs"
+                                    placeholder="Crie uma senha" autocomplete="new-password" required minlength="6">
+                                <button type="button" class="toggle-password" id="togglePassword"
+                                    aria-label="Mostrar senha" aria-pressed="false">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+
+                            <div id="passwordStrength" aria-hidden="true">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                            <span id="passwordStrengthLabel"></span>
+
+                            <span class="field-error" id="errorPassword"></span>
+
+                        </div>
+
+                        <div class="box-input" id="divConfirmPassword">
+
+                            <label for="confirm-password" class="label-input">Confirmar senha</label>
+
+                            <div class="inputWrap">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="confirm-password" name="confirm-password" class="inputs"
+                                    placeholder="Repita a senha" autocomplete="new-password" required minlength="6">
+                                <button type="button" class="toggle-password" id="toggleConfirmPassword"
+                                    aria-label="Mostrar senha" aria-pressed="false">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+
+                            <span class="field-error" id="errorConfirmPassword"></span>
+
+                        </div>
+
+                    </div>
+
+                    <label class="termsRow">
+                        <input type="checkbox" id="acceptTerms" required>
+                        <span>
+                            Eu li e concordo com os
+                            <a href="https://github.com/joaohpr/Trabalho_Final" target="_blank" rel="noopener noreferrer">Termos de Uso</a>
+                            e a Política de Privacidade.
+                        </span>
+                    </label>
+
+                    <div class="row-btn">
+                        <button type="submit" class="buttons" id="buttonCreate">
+                            <span class="btnLabel">Criar Conta</span>
+                            <span class="spinner" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                    <p id="backToLogin">
+                        Já tem uma conta?
+                        <a href="login.html">Fazer login</a>
+                    </p>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <footer id="rodape">
+        <p id="textRodape">
+            &copy; 2026 CineSearch. Todos os direitos reservados.
+            <a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" target="_blank"
+                rel="noopener noreferrer">
+                Saiba mais
+            </a>
+        </p>
+    </footer>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="../javaScript/jquery-4_0_0_min.js"></script>
+    <script src="../javaScript/posterWall.js" defer></script>
+    <script src="../javaScript/formUtils.js" defer></script>
+    <script src="../javaScript/createAccount.js" defer></script>
+
+</body>
+
+</html>

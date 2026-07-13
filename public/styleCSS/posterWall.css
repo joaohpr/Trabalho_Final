@@ -1,0 +1,141 @@
+/* =========================================================
+   POSTER WALL — mosaico de capas de filme (login / createAccount)
+   As capas são geradas em CSS (gradiente + título), sem usar
+   imagens de terceiros protegidas por direitos autorais.
+   ========================================================= */
+
+#posterWall {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: var(--bg-darker);
+}
+
+#posterWall .wallTrack {
+    position: absolute;
+    inset: -10% -5%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    transform: rotate(-6deg) scale(1.15);
+    animation: wallDrift 90s linear infinite;
+}
+
+@keyframes wallDrift {
+    0%   { transform: rotate(-6deg) scale(1.15) translateY(0); }
+    50%  { transform: rotate(-6deg) scale(1.15) translateY(-3%); }
+    100% { transform: rotate(-6deg) scale(1.15) translateY(0); }
+}
+
+.posterTile {
+    position: relative;
+    aspect-ratio: 2 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(155deg, var(--tile-a, #16213e), var(--tile-b, #0a0e27));
+    box-shadow: var(--shadow-sm);
+    opacity: 0.55;
+    transform: scale(0.96);
+    transition: opacity var(--transition-slow), transform var(--transition-slow), box-shadow var(--transition-slow);
+    display: flex;
+    align-items: flex-end;
+    isolation: isolate;
+}
+
+.posterTile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.14), transparent 55%),
+        linear-gradient(0deg, rgba(0,0,0,0.55), transparent 60%);
+    z-index: 1;
+}
+
+.posterTile::after {
+    content: '\f144';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.35);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.posterTile .posterLabel {
+    position: relative;
+    z-index: 2;
+    padding: 10px 8px;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.posterTile .posterGenre {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 2;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    background: rgba(10, 14, 39, 0.55);
+    padding: 3px 7px;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 212, 255, 0.35);
+}
+
+/* Interação: destaque ao passar o mouse — efeito "cinema em foco" */
+.posterTile:hover,
+.posterTile.is-focused {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow), var(--shadow-lg);
+    z-index: 3;
+}
+
+.posterTile:hover::after,
+.posterTile.is-focused::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Camada de escurecimento para dar legibilidade ao formulário por cima */
+#posterWall .wallOverlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at var(--mx, 50%) var(--my, 40%), rgba(10, 14, 39, 0.35), rgba(6, 8, 21, 0.86) 55%),
+        linear-gradient(180deg, rgba(6, 8, 21, 0.55) 0%, rgba(6, 8, 21, 0.92) 100%);
+    transition: background 0.15s linear;
+}
+
+/* Painel de vidro por cima do mosaico */
+.glassPanel {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    #posterWall .wallTrack {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #posterWall .wallTrack {
+        animation: none;
+    }
+}
