@@ -1,186 +1,149 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../styleCSS/menuConfig.css">
+<div id="container-Global">
 
 
-    <title>Settings-CineSearch</title>
-</head>
+    <div id="header">
+        <button id="close-Settings" class="buttons">X</button>
 
-<body>
-
-    <!-- ========================= -->
-    <!-- container global -->
-    <!-- ========================= -->
-
-    <div id="continerGlobal">
-
-        <!-- ========================= -->
-        <!-- barra superior -->
-        <!-- ========================= -->
-
-        <header id="barraVertical">
-
-            <div id="CineSearch">
-                CineSearch
-            </div>
-
-        </header>
-
-        <!-- ========================= -->
-        <!-- conteudo principal -->
-        <!-- ========================= -->
-
-        <main id="containerConteudo">
-
-            <!-- ========================= -->
-            <!-- card settings -->
-            <!-- ========================= -->
-
-            <section id="Settings">
-
-                <button id="buttonClose">X</button>
-
-                <form id="formSettings">
-
-                    <!-- titulo -->
-
-                    <h1 id="textSettings">
-                        Settings
-                    </h1>
-
-                    <!-- dark mode -->
-
-                    <div class="divInput">
-
-                        <label for="toggleDarkMode" class="labelInput">
-                            Dark Mode
-                        </label>
-
-                        <label class="switch">
-                            <input type="checkbox" id="toggleDarkMode" checked>
-                            <span class="slider"></span>
-                        </label>
-
-                    </div>
-
-                    <!-- autoplay trailers -->
-
-                    <div class="divInput">
-
-                        <label for="toggleAutoplay" class="labelInput">
-                            Autoplay Trailers
-                        </label>
-
-                        <label class="switch">
-                            <input type="checkbox" id="toggleAutoplay" checked>
-                            <span class="slider"></span>
-                        </label>
-
-                    </div>
-
-                    <!-- adult content filter -->
-
-                    <div class="divInput">
-
-                        <label for="toggleAdultFilter" class="labelInput">
-                            Adult Content Filter
-                        </label>
-
-                        <label class="switch">
-                            <input type="checkbox" id="toggleAdultFilter" checked>
-                            <span class="slider"></span>
-                        </label>
-
-                    </div>
-
-                    <!-- genero preferido -->
-
-                    <div class="divInput">
-
-                        <label for="selectGenre" class="labelInput">
-                            Preferred Genre
-                        </label>
-
-                        <select id="selectGenre" class="inputs">
-                            <option value="all" selected>All</option>
-                            <option value="action">Action</option>
-                            <option value="comedy">Comedy</option>
-                            <option value="drama">Drama</option>
-                            <option value="horror">Horror</option>
-                            <option value="sci-fi">Sci-Fi</option>
-                            <option value="romance">Romance</option>
-                            <option value="documentary">Documentary</option>
-                        </select>
-
-                    </div>
-
-                    <!-- language -->
-
-                    <div class="divInput">
-
-                        <label for="selectLanguage" class="labelInput">
-                            Language
-                        </label>
-
-                        <select id="selectLanguage" class="inputs">
-                            <option value="pt-br">Portuguese</option>
-                            <option value="en">English</option>
-                            <option value="es">Spanish</option>
-                        </select>
-
-                    </div>
-
-                    <!-- buttons -->
-
-                    <div id="buttonsRow">
-
-                        <button type="submit" id="buttonSave">
-                            Save
-                        </button>
-
-                        <button type="button" id="buttonCancel">
-                            Cancel
-                        </button>
-
-                    </div>
-
-                    <!-- voltar -->
-
-                    <p id="backHome">
-
-                        <a href="/public/html/home.html" id="ancoraBackHome">
-                            Back to Home
-                        </a>
-
-                    </p>
-
-                </form>
-
-            </section>
-
-        </main>
-
-        <footer id="rodape">
-
-            <p id="textRodape">
-
-                &copy; 2026 Your Company. All rights reserved.<a class="knowMore-ancora"
-                    href="https://github.com/joaohpr/Trabalho_Final" target="_blank">
-                    Know More
-                </a>
-            </p>
-        </footer>
+        <header class="header-text">Settings</header>
     </div>
 
-</body>
 
-<script src="../javaScript/jquery-4.0.0.min.js"></script>
-<script src="../javaScript/menuConfig.js"></script>
 
-</html>
+    <div id="container-preferencias" class="containers">
+
+        <div class="row-header">
+            <img src="" alt="icone" class="icons">
+
+            <header class="header-text">Preferências de conteúdo</header>
+        </div>
+
+        <div class="rows">
+            <h2 class="subTitle">Gêneros favoritos</h2>
+        </div>
+
+        <div class="rows" id="row-generos"></div>
+
+    </div>
+
+
+    <div id="container-recomendacoes" class="containers">
+
+        <div class="row-header">
+            <img src="" alt="icone" class="icons">
+
+            <h2 class="header-text">Motor de Recomendação</h2>
+        </div>
+
+        <div class="rows">
+            <header class="subTitle">Basear recomendações nos :</header>
+
+
+            <div id="block-options">
+
+                <div class="rows">
+                    <label for="option1" class="labels">Gêneros favoritos</label>
+                    <input type="checkbox" class="options-checkbox" id="option1" name="option1" value="generos">
+
+
+                </div>
+
+                <div class="rows">
+                    <label for="option2" class="labels">Pesquisas </label>
+                    <input type="checkbox" class="options-checkbox" id="option2" name="option2" value="Pesquisas">
+>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="rows">
+
+            <h2 class="subTitle"> Seus Streamings </h2>
+
+            <div id="rowCards">
+
+                <div class="cards">
+                    <img src="../img/imgStreaming/hboMax.png" alt="HBOMAX" value="HBOMAX">
+                    <header>HBOMAX</header>
+                </div>
+
+                <div class="cards">
+                    <img src="../img/imgStreaming/netflix.png" alt="NETFLIX" value="NETFLIX">
+                    <header>NETFLIX</header>
+                </div>
+
+                <div class="cards">
+                    <img src="../img/imgStreaming/primeVideo.png" alt="AMAZON PRIME" value="AMAZONPRIME">
+                    <header>AMAZON PRIME</header>
+                </div>
+
+                <div class="cards">
+                    <img src="../img/imgStreaming/disneyPlus.png" alt="DISNEY PLUS" value="DISNEYPLUS">
+                    <header>DISNEY PLUS</header>
+                </div>
+
+                <div class="cards">
+                    <img src="../img/imgStreaming/appleTv.png" alt="APPLETV" value="APPLETV">
+                    <header>APPLETV</header>
+                </div>
+
+                <div class="cards">
+                    <img src="../img/imgStreaming/crunchyroll.png" alt="CRUNCHYROLL" value="CRUNCHYROLL">
+                    <header>CRUNCHYROLL</header>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<script>
+    const genres = ["Ação", "Comédia", "Drama", "Ficção científica", "Terror", "Romance", "Suspense", "Animação"];
+
+    // gêneros que já começam selecionados
+    let selectedGenres = ["Ficção científica", "Drama"];
+
+    function renderGenres() {
+        const container = document.getElementById("row-generos"); // usando seu id
+        container.innerHTML = ""; // limpa antes de redesenhar
+
+        genres.forEach(genre => {
+            const chip = document.createElement("button");
+            chip.textContent = genre;
+            chip.className = "genre-chip";
+
+            // se o gênero estiver na lista de selecionados, marca visualmente
+            if (selectedGenres.includes(genre)) {
+                chip.classList.add("active");
+            }
+
+            // ao clicar, alterna a seleção
+            chip.addEventListener("click", () => toggleGenre(genre));
+
+            container.appendChild(chip);
+        });
+    }
+
+    function toggleGenre(genre) {
+        if (selectedGenres.includes(genre)) {
+            // já estava selecionado -> remove
+            selectedGenres = selectedGenres.filter(g => g !== genre);
+        } else {
+            // não estava -> adiciona
+            selectedGenres.push(genre);
+        }
+
+        renderGenres(); // redesenha os botões com o novo estado
+        console.log("Selecionados:", selectedGenres);
+    }
+
+    renderGenres(); // chamada inicial
+</script>
