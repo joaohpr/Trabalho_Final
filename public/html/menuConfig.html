@@ -1,149 +1,197 @@
-<div id="container-Global">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styleCSS/menuConfig.css">
+
+</head>
 
 
-    <div id="header">
-        <button id="close-Settings" class="buttons">X</button>
+<body>
 
-        <header class="header-text">Settings</header>
-    </div>
+    <div id="container-Global">
 
 
+        <div id="header">
 
-    <div id="container-preferencias" class="containers">
+            <button id="close-settings" class="buttons">X</button>
 
-        <div class="row-header">
-            <img src="" alt="icone" class="icons">
+            <header class="header-text" id="text-settings">Settings</header>
 
-            <header class="header-text">Preferências de conteúdo</header>
         </div>
 
-        <div class="rows">
-            <h2 class="subTitle">Gêneros favoritos</h2>
+
+        <div id="container-preferencias" class="containers">
+
+
+            <div class="row-header">
+
+                <img src="" alt="icone" class="icons">
+
+                <header class="header-text">Preferências de conteúdo</header>
+
+            </div>
+
+
+            <div class="rows">
+
+                <h2 class="subTitle">Gêneros favoritos</h2>
+
+            </div>
+
+
+            <div class="rows" id="row-generos"></div>
+
+
         </div>
 
-        <div class="rows" id="row-generos"></div>
 
-    </div>
-
-
-    <div id="container-recomendacoes" class="containers">
-
-        <div class="row-header">
-            <img src="" alt="icone" class="icons">
-
-            <h2 class="header-text">Motor de Recomendação</h2>
-        </div>
-
-        <div class="rows">
-            <header class="subTitle">Basear recomendações nos :</header>
+        <div id="container-recomendacoes" class="containers">
 
 
-            <div id="block-options">
+            <div class="row-header">
 
-                <div class="rows">
-                    <label for="option1" class="labels">Gêneros favoritos</label>
-                    <input type="checkbox" class="options-checkbox" id="option1" name="option1" value="generos">
+                <img src="" alt="icone" class="icons">
 
+                <h2 class="header-text">Motor de Recomendação</h2>
+
+            </div>
+
+
+            <div class="rows">
+
+                <header class="subTitle">Basear recomendações nos:</header>
+
+
+                <div id="block-options">
+
+                    <div class="option-row">
+
+                        <label for="option1" class="labels">
+                            Gêneros favoritos
+                        </label>
+
+                        <input type="checkbox" class="options-checkbox" id="option1" name="option1" value="generos">
+
+                    </div>
+
+
+                    <div class="option-row">
+
+                        <label for="option2" class="labels">
+                            Pesquisas
+                        </label>
+
+                        <input type="checkbox" class="options-checkbox" id="option2" name="option2" value="pesquisas">
+
+                    </div>
 
                 </div>
 
-                <div class="rows">
-                    <label for="option2" class="labels">Pesquisas </label>
-                    <input type="checkbox" class="options-checkbox" id="option2" name="option2" value="Pesquisas">
->
+            </div>
+
+
+            <div class="rows">
+
+
+                <h2 class="subTitle">
+                    Seus Streamings
+                </h2>
+
+
+                <div id="rowCards">
+
+
+                    <div class="cards">
+
+                        <img src="../img/imgStreaming/hboMax.png" alt="HBOMAX" value="HBOMAX" class="icons-streaming">
+
+                        <header class="header-cards">
+                            HBOMAX
+                        </header>
+
+                    </div>
+
+
+                    <div class="cards">
+
+                        <img src="../img/imgStreaming/netflix.png" alt="NETFLIX" value="NETFLIX"
+                            class="icons-streaming">
+
+                        <header class="header-cards">
+                            NETFLIX
+                        </header>
+
+                    </div>
+
+
+                    <div class="cards">
+
+                        <img src="../img/imgStreaming/primeVideo.png" alt="AMAZON PRIME" value="AMAZONPRIME"
+                            class="icons-streaming">
+
+                        <header class="header-cards">
+                            AMAZON PRIME
+                        </header>
+
+                    </div>
+
+
+                    <div class="cards">
+
+                        <img src="../img/imgStreaming/disneyPlus.png" alt="DISNEY PLUS" value="DISNEYPLUS"
+                            class="icons-streaming">
+
+                        <header class="header-cards">
+                            DISNEY PLUS
+                        </header>
+
+                    </div>
+
+
+                    <div class="cards">
+
+                        <img src="../img/imgStreaming/appleTv.png" alt="APPLETV" value="APPLETV"
+                            class="icons-streaming">
+
+                        <header class="header-cards">
+                            APPLETV
+                        </header>
+
+                    </div>
+
+
+                    <div class="cards">
+
+                        <img src="../img/imgStreaming/crunchyroll.png" alt="CRUNCHYROLL" value="CRUNCHYROLL"
+                            class="icons-streaming">
+
+                        <header class="header-cards">
+                            CRUNCHYROLL
+                        </header>
+
+                    </div>
+
 
                 </div>
 
 
             </div>
-        </div>
 
-        <div class="rows">
-
-            <h2 class="subTitle"> Seus Streamings </h2>
-
-            <div id="rowCards">
-
-                <div class="cards">
-                    <img src="../img/imgStreaming/hboMax.png" alt="HBOMAX" value="HBOMAX">
-                    <header>HBOMAX</header>
-                </div>
-
-                <div class="cards">
-                    <img src="../img/imgStreaming/netflix.png" alt="NETFLIX" value="NETFLIX">
-                    <header>NETFLIX</header>
-                </div>
-
-                <div class="cards">
-                    <img src="../img/imgStreaming/primeVideo.png" alt="AMAZON PRIME" value="AMAZONPRIME">
-                    <header>AMAZON PRIME</header>
-                </div>
-
-                <div class="cards">
-                    <img src="../img/imgStreaming/disneyPlus.png" alt="DISNEY PLUS" value="DISNEYPLUS">
-                    <header>DISNEY PLUS</header>
-                </div>
-
-                <div class="cards">
-                    <img src="../img/imgStreaming/appleTv.png" alt="APPLETV" value="APPLETV">
-                    <header>APPLETV</header>
-                </div>
-
-                <div class="cards">
-                    <img src="../img/imgStreaming/crunchyroll.png" alt="CRUNCHYROLL" value="CRUNCHYROLL">
-                    <header>CRUNCHYROLL</header>
-                </div>
-
-            </div>
 
         </div>
+
 
     </div>
 
 
+</body>
 
-
-</div>
-
-<script>
-    const genres = ["Ação", "Comédia", "Drama", "Ficção científica", "Terror", "Romance", "Suspense", "Animação"];
-
-    // gêneros que já começam selecionados
-    let selectedGenres = ["Ficção científica", "Drama"];
-
-    function renderGenres() {
-        const container = document.getElementById("row-generos"); // usando seu id
-        container.innerHTML = ""; // limpa antes de redesenhar
-
-        genres.forEach(genre => {
-            const chip = document.createElement("button");
-            chip.textContent = genre;
-            chip.className = "genre-chip";
-
-            // se o gênero estiver na lista de selecionados, marca visualmente
-            if (selectedGenres.includes(genre)) {
-                chip.classList.add("active");
-            }
-
-            // ao clicar, alterna a seleção
-            chip.addEventListener("click", () => toggleGenre(genre));
-
-            container.appendChild(chip);
-        });
-    }
-
-    function toggleGenre(genre) {
-        if (selectedGenres.includes(genre)) {
-            // já estava selecionado -> remove
-            selectedGenres = selectedGenres.filter(g => g !== genre);
-        } else {
-            // não estava -> adiciona
-            selectedGenres.push(genre);
-        }
-
-        renderGenres(); // redesenha os botões com o novo estado
-        console.log("Selecionados:", selectedGenres);
-    }
-
-    renderGenres(); // chamada inicial
-</script>
+</html>

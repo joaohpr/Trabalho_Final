@@ -1,1 +1,188 @@
+#container-Global {
+    display: grid;
+
+
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 10px;
+}
+
+#close-settings {
+    margin-right: 80%;
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#text-settings {
+    border-bottom: 0px;
+}
+
+.header-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid white;
+}
+
+
+.containers {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border: 2px solid gray;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+.row-header {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: 50px auto;
+    column-gap: 45px;
+}
+
+.icons {
+    background-image: url("../img/CineSearch.png");
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.rows {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+}
+
+
+.subTitle{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 25px;
     
+}
+
+
+#block-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.option-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+    
+    
+    
+    
+}
+
+
+.labels {
+    font-size: 20px;
+
+    
+
+    cursor: pointer;
+}
+
+
+.options-checkbox {
+    appearance: none;
+
+    width: 20px;
+
+    height: 20px;
+
+    border: 2px solid black;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+
+.options-checkbox:checked {
+    background-color: hwb(120 2% 1%);
+}
+
+
+
+
+
+
+
+
+
+.cards {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.header-cards {
+    text-align: center;
+    margin-left: 5px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#rowCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+
+.icons-streaming {
+    align-self: center;
+    justify-self: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
