@@ -1,9 +1,13 @@
+/* ================================================== */
+/* CONFIGURAÇÕES GERAIS */
+/* ================================================== */
 #container-Global {
     display: grid;
-
-
 }
 
+/* ================================================== */
+/* CABEÇALHO PRINCIPAL */
+/* ================================================== */
 #header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -12,49 +16,51 @@
     margin-bottom: 10px;
 }
 
-#close-settings {
-    margin-right: 80%;
+/* Botão de fechar as configurações */
+#close-Settings {
     width: 60px;
     height: 30px;
-    font-size: 20px;
-    border-radius: 5px;
+    margin-right: 80%;
     margin-bottom: 10px;
-    font-weight: bold;
+    border-radius: 5px;
     font-size: 20px;
+    font-weight: bold;
+    transform: scale(1);
+    transition: transform 1s ease;
 }
 
-#text-settings {
-    border-bottom: 0px;
+#close-Settings:hover{
+    transform:scale(1.2);
+    background-color: red;
+   
 }
 
+/* Estilo geral dos títulos */
 .header-text {
+    font-family: Arial, sans-serif;
     font-size: 30px;
     font-weight: bold;
     color: black;
-    font-family: Arial, sans-serif;
     border-bottom: 1px solid white;
 }
 
-
+/* ================================================== */
+/* CONTAINERS PRINCIPAIS */
+/* ================================================== */
 .containers {
     display: grid;
-
     grid-template-columns: 1fr;
-
     gap: 20px;
-
     margin-top: 25px;
-
     padding: 20px;
-
-    border: 2px solid gray;
-
-    border-radius: 10px;
-
     box-sizing: border-box;
+    border: 2px solid gray;
+    border-radius: 10px;
 }
 
-
+/* ================================================== */
+/* CABEÇALHO DOS CONTAINERS */
+/* ================================================== */
 .row-header {
     display: grid;
     grid-template-columns: 40px auto;
@@ -62,111 +68,109 @@
     column-gap: 45px;
 }
 
+/* Ícone do cabeçalho */
 .icons {
-    background-image: url("../img/CineSearch.png");
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    background-image: url("../img/CineSearch.png");
     background-position: center;
     background-size: cover;
 }
 
-
+/* ================================================== */
+/* SEÇÕES INTERNAS */
+/* ================================================== */
 .rows {
-    width: 100%;
-
     display: flex;
     flex-direction: column;
-
     gap: 10px;
-
+    width: 100%;
     box-sizing: border-box;
 }
 
-
-.subTitle{
+/* Subtítulos das seções */
+.subTitle {
+    margin-top: 25px;
     font-size: 25px;
     font-weight: bold;
-    margin-top: 25px;
-    
 }
 
-
+/* ================================================== */
+/* OPÇÕES DE RECOMENDAÇÃO */
+/* ================================================== */
 #block-options {
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
-
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-
-.option-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 10px;
-    
-    
-    
-    
+/* Linha individual de uma opção (label + switch) */
+.toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-
-.labels {
+.toggle-label-text {
+    font-family: Arial, sans-serif;
     font-size: 20px;
-
-    
-
-    cursor: pointer;
+    transform: scale(1);
+    transition: transform.3s ease-in-out;
 }
 
+.toggle-label-text:hover{
+    transform:scale(1.1);
+    color: deepskyblue;
+;
+}
 
-.options-checkbox {
-    appearance: none;
+.switch {
+    display: none;
+}
 
-    width: 20px;
+/* Fundo */
+.toggle {
+    width: 60px;
+    height: 30px;
+    background: gray;
+    border-radius: 30px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    transition: .3s;
+    flex-shrink: 0;
+}
 
-    height: 20px;
-
-    border: 2px solid black;
-
+/* Bolinha */
+.toggle::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: white;
     border-radius: 50%;
-
-    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: .3s;
 }
 
-
-.options-checkbox:checked {
-    background-color: hwb(120 2% 1%);
+/* Quando estiver marcado */
+.switch:checked + .toggle {
+    background: deepskyblue;
 }
 
-
-
-
-
-
-
-
-
-.cards {
-    display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
-    padding: 10px;
+.switch:checked + .toggle::before {
+    left: 33px;
 }
 
-.header-cards {
-    text-align: center;
-    margin-left: 5px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
+/* ================================================== */
+/* CARDS DE STREAMING */
+/* ================================================== */
+/* Container de todos os cards */
 #rowCards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -175,8 +179,24 @@
     padding: 10px;
 }
 
+/* Card individual */
+.cards {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
 
+/* Nome do streaming */
+.cards header {
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
 
+/* Imagem do streaming */
 .icons-streaming {
     align-self: center;
     justify-self: center;
@@ -185,4 +205,10 @@
     border-radius: 50%;
     background-position: center;
     background-size: cover;
+    border: 2px solid transparent;
+    transition: 25ms;
+}
+
+.icons-streaming:hover {
+    border: 2px solid deepskyblue;
 }

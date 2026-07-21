@@ -21,7 +21,7 @@
 
         <div id="header">
 
-            <button id="close-settings" class="buttons">X</button>
+            <button id="close-Settings" class="buttons">X</button>
 
             <header class="header-text" id="text-settings">Settings</header>
 
@@ -43,6 +43,8 @@
             <div class="rows">
 
                 <h2 class="subTitle">Gêneros favoritos</h2>
+
+                <div id=""></div>
 
             </div>
 
@@ -72,25 +74,16 @@
 
                 <div id="block-options">
 
-                    <div class="option-row">
-
-                        <label for="option1" class="labels">
-                            Gêneros favoritos
-                        </label>
-
-                        <input type="checkbox" class="options-checkbox" id="option1" name="option1" value="generos">
-
+                    <div class="toggle-row">
+                        <span class="toggle-label-text">Meus streamings</span>
+                        <input type="checkbox" id="switch-myStreamings" class="switch" value="myStreamings">
+                        <label for="switch-myStreamings" class="toggle"></label>
                     </div>
 
-
-                    <div class="option-row">
-
-                        <label for="option2" class="labels">
-                            Pesquisas
-                        </label>
-
-                        <input type="checkbox" class="options-checkbox" id="option2" name="option2" value="pesquisas">
-
+                    <div class="toggle-row">
+                        <span class="toggle-label-text">Pesquisas</span>
+                        <input type="checkbox" id="switch-pesquisas" class="switch" value="pesquisas">
+                        <label for="switch-pesquisas" class="toggle"></label>
                     </div>
 
                 </div>
