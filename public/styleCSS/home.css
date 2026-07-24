@@ -65,29 +65,18 @@ body {
 
 .button-sideBar {
     background-color: transparent;
-
     border: none;
-
     color: deepskyblue;
-
     font-size: 24px;
-
     cursor: pointer;
-
     transition: 0.3s;
-
     padding: 0;
 }
 
-
-/* hover dos botoes */
-
 .button-sideBar:hover {
     box-shadow: 0 0 15px deepskyblue;
-
     transform: scale(1.2);
 }
-
 
 /* ========================= */
 /* profile e settings */
@@ -594,14 +583,28 @@ body {
 
 #modal-window {
     display: none;
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     z-index: 9999;
+
+    background-color: rgba(0, 0, 0, 0.808);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-window #cfg-container {
+    background-color: #1b1b1b;
+    width: 700px;
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+
+    padding: 25px;
+    border-radius: 20px;
+
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
 }

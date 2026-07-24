@@ -1,53 +1,56 @@
 /* ================================================== */
 /* CONFIGURAÇÕES GERAIS */
 /* ================================================== */
-#container-Global {
+#cfg-container {
     display: grid;
+    
 }
 
 /* ================================================== */
 /* CABEÇALHO PRINCIPAL */
 /* ================================================== */
-#header {
+#cfg-header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
     margin-bottom: 10px;
+    color: white;
 }
 
 /* Botão de fechar as configurações */
-#close-Settings {
+#cfg-close-btn {
     width: 60px;
     height: 30px;
     margin-right: 80%;
     margin-bottom: 10px;
     border-radius: 5px;
+    background-color: gray;
     font-size: 20px;
     font-weight: bold;
     transform: scale(1);
     transition: transform 1s ease;
 }
 
-#close-Settings:hover{
-    transform:scale(1.2);
+#cfg-close-btn:active{
+    transform:scale(1.03 );
     background-color: red;
    
 }
 
 /* Estilo geral dos títulos */
-.header-text {
+.cfg-title-text {
     font-family: Arial, sans-serif;
     font-size: 30px;
     font-weight: bold;
-    color: black;
+    color: white;
     border-bottom: 1px solid white;
 }
 
 /* ================================================== */
 /* CONTAINERS PRINCIPAIS */
 /* ================================================== */
-.containers {
+.cfg-section {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -61,15 +64,16 @@
 /* ================================================== */
 /* CABEÇALHO DOS CONTAINERS */
 /* ================================================== */
-.row-header {
+.cfg-row-header {
     display: grid;
     grid-template-columns: 40px auto;
     grid-template-rows: 50px auto;
     column-gap: 45px;
+   
 }
 
 /* Ícone do cabeçalho */
-.icons {
+.cfg-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -81,7 +85,7 @@
 /* ================================================== */
 /* SEÇÕES INTERNAS */
 /* ================================================== */
-.rows {
+.cfg-row {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -90,50 +94,52 @@
 }
 
 /* Subtítulos das seções */
-.subTitle {
+.cfg-subtitle {
     margin-top: 25px;
     font-size: 25px;
     font-weight: bold;
+    color: white;
 }
 
 /* ================================================== */
 /* OPÇÕES DE RECOMENDAÇÃO */
 /* ================================================== */
-#block-options {
+#cfg-options-block {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
+  
 }
 
 /* Linha individual de uma opção (label + switch) */
-.toggle-row {
+.cfg-toggle-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
 }
 
-.toggle-label-text {
+.cfg-toggle-label {
     font-family: Arial, sans-serif;
     font-size: 20px;
+    color: white;
     transform: scale(1);
     transition: transform.3s ease-in-out;
 }
 
-.toggle-label-text:hover{
+.cfg-toggle-label:hover{
     transform:scale(1.1);
     color: deepskyblue;
-;
 }
 
-.switch {
+.cfg-switch-input {
     display: none;
 }
 
 /* Fundo */
-.toggle {
+.cfg-toggle-slider {
     width: 60px;
     height: 30px;
     background: gray;
@@ -146,7 +152,7 @@
 }
 
 /* Bolinha */
-.toggle::before {
+.cfg-toggle-slider::before {
     content: "";
     width: 24px;
     height: 24px;
@@ -159,11 +165,11 @@
 }
 
 /* Quando estiver marcado */
-.switch:checked + .toggle {
+.cfg-switch-input:checked + .cfg-toggle-slider {
     background: deepskyblue;
 }
 
-.switch:checked + .toggle::before {
+.cfg-switch-input:checked + .cfg-toggle-slider::before {
     left: 33px;
 }
 
@@ -171,7 +177,7 @@
 /* CARDS DE STREAMING */
 /* ================================================== */
 /* Container de todos os cards */
-#rowCards {
+#cfg-streaming-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
@@ -180,7 +186,7 @@
 }
 
 /* Card individual */
-.cards {
+.cfg-card {
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
@@ -189,15 +195,16 @@
 }
 
 /* Nome do streaming */
-.cards header {
+.cfg-card header {
     margin-left: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     text-align: center;
+    color: white;
 }
 
 /* Imagem do streaming */
-.icons-streaming {
+.cfg-card-icon {
     align-self: center;
     justify-self: center;
     width: 150px;
@@ -206,9 +213,10 @@
     background-position: center;
     background-size: cover;
     border: 2px solid transparent;
-    transition: 25ms;
+    transition: 75ms;
 }
 
-.icons-streaming:hover {
-    border: 2px solid deepskyblue;
-}
+.cfg-card-icon:hover {
+    transform: scale(1.1);
+    border: 5px solid deepskyblue;
+};

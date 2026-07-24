@@ -3,187 +3,228 @@
 
 <head>
 
+    <!-- ================================================== -->
+    <!-- CONFIGURAÇÕES DA PÁGINA -->
+    <!-- ================================================== -->
+
     <meta charset="UTF-8">
 
+    <!-- Permite que a página seja responsiva em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Document</title>
 
+    <!-- Arquivo CSS responsável pela estilização da tela de configurações -->
     <link rel="stylesheet" href="../styleCSS/menuConfig.css">
 
 </head>
 
-
 <body>
 
-    <div id="container-Global">
+    <!-- ================================================== -->
+    <!-- CONTAINER PRINCIPAL -->
+    <!-- Engloba todo o conteúdo da tela de configurações -->
+    <!-- ================================================== -->
+    <div id="cfg-container">
 
+        <!-- ================================================== -->
+        <!-- CABEÇALHO -->
+        <!-- Botão para fechar a janela e título da página -->
+        <!-- ================================================== -->
+        <div id="cfg-header">
 
-        <div id="header">
+            <button id="cfg-close-btn" class="cfg-btn">X</button>
 
-            <button id="close-Settings" class="buttons">X</button>
-
-            <header class="header-text" id="text-settings">Settings</header>
+            <header class="cfg-title-text" id="cfg-title">
+                Settings
+            </header>
 
         </div>
 
+        <!-- ================================================== -->
+        <!-- PREFERÊNCIAS DE CONTEÚDO -->
+        <!-- Área destinada às preferências do usuário -->
+        <!-- ================================================== -->
+        <div id="cfg-preferences" class="cfg-section">
 
-        <div id="container-preferencias" class="containers">
+            <!-- Cabeçalho da seção -->
+            <div class="cfg-row-header">
 
+                <img src="" alt="icone" class="cfg-icon">
 
-            <div class="row-header">
-
-                <img src="" alt="icone" class="icons">
-
-                <header class="header-text">Preferências de conteúdo</header>
+                <header class="cfg-title-text">
+                    Preferências de conteúdo
+                </header>
 
             </div>
 
+            <!-- Título da lista de gêneros -->
+            <div class="cfg-row">
 
-            <div class="rows">
+                <h2 class="cfg-subtitle">
+                    Gêneros favoritos
+                </h2>
 
-                <h2 class="subTitle">Gêneros favoritos</h2>
-
+                <!-- Espaço reservado para futuros elementos -->
                 <div id=""></div>
 
             </div>
 
-
-            <div class="rows" id="row-generos"></div>
-
+            <!-- Local onde os gêneros serão adicionados dinamicamente via JavaScript -->
+            <div class="cfg-row" id="cfg-genres-row"></div>
 
         </div>
 
+        <!-- ================================================== -->
+        <!-- MOTOR DE RECOMENDAÇÃO -->
+        <!-- Configurações utilizadas para personalizar as recomendações -->
+        <!-- ================================================== -->
+        <div id="cfg-recommendation" class="cfg-section">
 
-        <div id="container-recomendacoes" class="containers">
+            <!-- Cabeçalho da seção -->
+            <div class="cfg-row-header">
 
+                <img src="" alt="icone" class="cfg-icon">
 
-            <div class="row-header">
-
-                <img src="" alt="icone" class="icons">
-
-                <h2 class="header-text">Motor de Recomendação</h2>
+                <h2 class="cfg-title-text">
+                    Motor de Recomendação
+                </h2>
 
             </div>
 
+            <!-- ================================================== -->
+            <!-- OPÇÕES UTILIZADAS PELO MOTOR DE RECOMENDAÇÃO -->
+            <!-- ================================================== -->
+            <div class="cfg-row">
 
-            <div class="rows">
+                <header class="cfg-subtitle">
+                    Basear recomendações nos:
+                </header>
 
-                <header class="subTitle">Basear recomendações nos:</header>
+                <div id="cfg-options-block">
 
+                    <!-- Opção: utilizar os streamings do usuário -->
+                    <div class="cfg-toggle-row">
 
-                <div id="block-options">
+                        <span class="cfg-toggle-label">
+                            Meus streamings
+                        </span>
 
-                    <div class="toggle-row">
-                        <span class="toggle-label-text">Meus streamings</span>
-                        <input type="checkbox" id="switch-myStreamings" class="switch" value="myStreamings">
-                        <label for="switch-myStreamings" class="toggle"></label>
+                        <input type="checkbox" id="cfg-switch-streamings" class="cfg-switch-input" value="myStreamings">
+
+                        <label for="cfg-switch-streamings" class="cfg-toggle-slider">
+                        </label>
+
                     </div>
 
-                    <div class="toggle-row">
-                        <span class="toggle-label-text">Pesquisas</span>
-                        <input type="checkbox" id="switch-pesquisas" class="switch" value="pesquisas">
-                        <label for="switch-pesquisas" class="toggle"></label>
+                    <!-- Opção: utilizar o histórico de pesquisas -->
+                    <div class="cfg-toggle-row">
+
+                        <span class="cfg-toggle-label">
+                            Pesquisas
+                        </span>
+
+                        <input type="checkbox" id="cfg-switch-search" class="cfg-switch-input" value="pesquisas">
+
+                        <label for="cfg-switch-search" class="cfg-toggle-slider">
+                        </label>
+
                     </div>
 
                 </div>
 
             </div>
 
+            <!-- ================================================== -->
+            <!-- STREAMINGS DO USUÁRIO -->
+            <!-- Cards das plataformas disponíveis -->
+            <!-- ================================================== -->
+            <div class="cfg-row">
 
-            <div class="rows">
-
-
-                <h2 class="subTitle">
+                <h2 class="cfg-subtitle">
                     Seus Streamings
                 </h2>
 
+                <div id="cfg-streaming-row">
 
-                <div id="rowCards">
+                    <!-- HBO MAX -->
+                    <div class="cfg-card">
 
+                        <img src="../img/imgStreaming/hboMax.png" alt="HBOMAX" value="HBOMAX" class="cfg-card-icon">
 
-                    <div class="cards">
-
-                        <img src="../img/imgStreaming/hboMax.png" alt="HBOMAX" value="HBOMAX" class="icons-streaming">
-
-                        <header class="header-cards">
+                        <header class="cfg-card-title">
                             HBOMAX
                         </header>
 
                     </div>
 
-
-                    <div class="cards">
+                    <!-- NETFLIX -->
+                    <div class="cfg-card">
 
                         <img src="../img/imgStreaming/netflix.png" alt="NETFLIX" value="NETFLIX"
-                            class="icons-streaming">
+                            class="cfg-card-icon">
 
-                        <header class="header-cards">
+                        <header class="cfg-card-title">
                             NETFLIX
                         </header>
 
                     </div>
 
-
-                    <div class="cards">
+                    <!-- AMAZON PRIME -->
+                    <div class="cfg-card">
 
                         <img src="../img/imgStreaming/primeVideo.png" alt="AMAZON PRIME" value="AMAZONPRIME"
-                            class="icons-streaming">
+                            class="cfg-card-icon">
 
-                        <header class="header-cards">
+                        <header class="cfg-card-title">
                             AMAZON PRIME
                         </header>
 
                     </div>
 
-
-                    <div class="cards">
+                    <!-- DISNEY PLUS -->
+                    <div class="cfg-card">
 
                         <img src="../img/imgStreaming/disneyPlus.png" alt="DISNEY PLUS" value="DISNEYPLUS"
-                            class="icons-streaming">
+                            class="cfg-card-icon">
 
-                        <header class="header-cards">
+                        <header class="cfg-card-title">
                             DISNEY PLUS
                         </header>
 
                     </div>
 
-
-                    <div class="cards">
+                    <!-- APPLE TV -->
+                    <div class="cfg-card">
 
                         <img src="../img/imgStreaming/appleTv.png" alt="APPLETV" value="APPLETV"
-                            class="icons-streaming">
+                            class="cfg-card-icon">
 
-                        <header class="header-cards">
+                        <header class="cfg-card-title">
                             APPLETV
                         </header>
 
                     </div>
 
-
-                    <div class="cards">
+                    <!-- CRUNCHYROLL -->
+                    <div class="cfg-card">
 
                         <img src="../img/imgStreaming/crunchyroll.png" alt="CRUNCHYROLL" value="CRUNCHYROLL"
-                            class="icons-streaming">
+                            class="cfg-card-icon">
 
-                        <header class="header-cards">
+                        <header class="cfg-card-title">
                             CRUNCHYROLL
                         </header>
 
                     </div>
 
-
                 </div>
-
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 </body>
 
