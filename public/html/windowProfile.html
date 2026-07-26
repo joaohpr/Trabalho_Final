@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styleCSS/windowProfile.css">
+    <script src="../javaScript/windowProfile.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ================================================== -->
+    <!-- CONTAINER PRINCIPAL -->
+    <!-- Engloba toda a modal de perfil -->
+    <!-- ================================================== -->
+    <div id="prof-container">
+
+        <!-- ================================================== -->
+        <!-- BOTÃO DE FECHAR -->
+        <!-- ================================================== -->
+        <div id="prof-top">
+            <button id="prof-close-btn" class="prof-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- ================================================== -->
+        <!-- IDENTIDADE DO USUÁRIO -->
+        <!-- Avatar (com upload de imagem), nome e plano -->
+        <!-- ================================================== -->
+        <div id="prof-identity">
+
+            <div id="prof-avatar-wrap">
+
+                <img id="prof-avatar-preview"
+                    src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23333'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23777'/%3E%3Cpath d='M20 90c0-22 14-36 30-36s30 14 30 36' fill='%23777'/%3E%3C/svg%3E"
+                    alt="Foto de perfil">
+
+                <label for="prof-avatar-input" id="prof-avatar-edit">
+                    <i class="fa-solid fa-camera"></i>
+                </label>
+
+                <input type="file" id="prof-avatar-input" accept="image/*" hidden>
+
+            </div>
+
+            <h1 id="prof-name">Julio Alves</h1>
+            <span id="prof-plan">Plano Premium</span>
+
+        </div>
+
+        <!-- ================================================== -->
+        <!-- SEÇÃO: CONTA -->
+        <!-- ================================================== -->
+        <div class="prof-section">
+
+            <p class="prof-section-title">Conta</p>
+
+            <button class="prof-row" type="button">
+                <i class="fa-solid fa-user"></i> Editar perfil
+            </button>
+
+            <button class="prof-row" type="button">
+                <i class="fa-solid fa-envelope"></i> E-mail e senha
+            </button>
+
+            <button class="prof-row" type="button">
+                <i class="fa-solid fa-heart"></i> Minha lista
+            </button>
+
+        </div>
+
+        <!-- ================================================== -->
+        <!-- SEÇÃO: PREFERÊNCIAS -->
+        <!-- ================================================== -->
+        <div class="prof-section">
+
+            <p class="prof-section-title">Preferências</p>
+
+            <button class="prof-row" id="prof-open-settings" type="button">
+                <i class="fa-solid fa-gear"></i> Configurações de conteúdo
+            </button>
+
+            <button class="prof-row" type="button">
+                <i class="fa-solid fa-bell"></i> Notificações
+            </button>
+
+        </div>
+
+        <!-- ================================================== -->
+        <!-- SAIR DA CONTA -->
+        <!-- ================================================== -->
+        <button id="prof-logout" type="button">
+            <i class="fa-solid fa-right-from-bracket"></i> Sair da conta
+            
+        </button>
+
+    </div>
+
+</body>
+
+</html>
