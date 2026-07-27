@@ -386,7 +386,7 @@ body {
 
 /* celular */
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
 
     #Global {
         grid-template-columns: 1fr;
@@ -395,13 +395,13 @@ body {
     }
 
     #side-Bar {
-        flex-direction: row;
+        flex-direction: column;
 
         min-height: auto;
 
         padding: 15px;
 
-        justify-content: center;
+        justify-content: left;
     }
 
     #Container-main {
