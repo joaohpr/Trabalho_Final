@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // Abre a modal de perfil ao clicar no botão da sidebar
-    $('#openProfile').on('click', function () {
+    $('#openProfile').on('dblclick', function () {
         $('#modal-window').load('../html/windowProfile.html #prof-container', function (response, status) {
             if (status === 'error') {
                 console.error('Erro ao carregar o menu de perfil.');

@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('#openSettings').on('click', function () {
+    $('#openSettings').on('dblclick', function () {
         $('#modal-window').load('../html/menuConfig.html #cfg-container', function (response, status) {
             if (status === 'error') {
                 console.error('Erro ao carregar o menu de configurações.');
