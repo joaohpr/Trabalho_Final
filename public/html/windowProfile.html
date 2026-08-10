@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Perfil</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styleCSS/windowProfile.css">
     <script src="../javaScript/windowProfile.js"></script>
 
@@ -16,30 +17,18 @@
 
 <body>
 
-    <!-- ================================================== -->
-    <!-- CONTAINER PRINCIPAL -->
-    <!-- Engloba toda a modal de perfil -->
-    <!-- ================================================== -->
-    <div id="prof-container">
+    <div id="prof-container" class="p-4">
 
-        <!-- ================================================== -->
-        <!-- BOTÃO DE FECHAR -->
-        <!-- ================================================== -->
-        <div id="prof-top">
-            <button id="prof-close-btn" class="prof-btn">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+        <div id="prof-top" class="d-flex justify-content-end">
+            <button id="prof-close-btn" class="prof-btn btn-close" type="button" aria-label="Fechar"></button>
         </div>
 
-        <!-- ================================================== -->
-        <!-- IDENTIDADE DO USUÁRIO -->
-        <!-- Avatar (com upload de imagem), nome e plano -->
-        <!-- ================================================== -->
-        <div id="prof-identity">
+        <div id="prof-identity" class="d-flex flex-column align-items-center text-center mb-4">
 
-            <div id="prof-avatar-wrap">
+            <div id="prof-avatar-wrap" class="position-relative">
 
                 <img id="prof-avatar-preview"
+                    class="rounded-circle"
                     src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23333'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23777'/%3E%3Cpath d='M20 90c0-22 14-36 30-36s30 14 30 36' fill='%23777'/%3E%3C/svg%3E"
                     alt="Foto de perfil">
 
@@ -51,55 +40,53 @@
 
             </div>
 
-            <h1 id="prof-name">Julio Alves</h1>
+            <h1 id="prof-name" class="mt-3">Julio Alves</h1>
             <span id="prof-plan">Plano Premium</span>
 
         </div>
 
-        <!-- ================================================== -->
-        <!-- SEÇÃO: CONTA -->
-        <!-- ================================================== -->
-        <div class="prof-section">
+        <div class="prof-section mb-3">
 
             <p class="prof-section-title">Conta</p>
 
-            <button class="prof-row" type="button">
-                <i class="fa-solid fa-user"></i> Editar perfil
-            </button>
+            <div class="list-group">
 
-            <button class="prof-row" type="button">
-                <i class="fa-solid fa-envelope"></i> E-mail e senha
-            </button>
+                <button class="prof-row list-group-item d-flex align-items-center gap-2" type="button">
+                    <i class="fa-solid fa-user"></i> Editar perfil
+                </button>
 
-            <button class="prof-row" type="button">
-                <i class="fa-solid fa-heart"></i> Minha lista
-            </button>
+                <button class="prof-row list-group-item d-flex align-items-center gap-2" type="button">
+                    <i class="fa-solid fa-envelope"></i> E-mail e senha
+                </button>
+
+                <button class="prof-row list-group-item d-flex align-items-center gap-2" type="button">
+                    <i class="fa-solid fa-heart"></i> Minha lista
+                </button>
+
+            </div>
 
         </div>
 
-        <!-- ================================================== -->
-        <!-- SEÇÃO: PREFERÊNCIAS -->
-        <!-- ================================================== -->
-        <div class="prof-section">
+        <div class="prof-section mb-3">
 
             <p class="prof-section-title">Preferências</p>
 
-            <button class="prof-row" id="prof-open-settings" type="button">
-                <i class="fa-solid fa-gear"></i> Configurações de conteúdo
-            </button>
+            <div class="list-group">
 
-            <button class="prof-row" type="button">
-                <i class="fa-solid fa-bell"></i> Notificações
-            </button>
+                <button class="prof-row list-group-item d-flex align-items-center gap-2" id="prof-open-settings" type="button">
+                    <i class="fa-solid fa-gear"></i> Configurações de conteúdo
+                </button>
+
+                <button class="prof-row list-group-item d-flex align-items-center gap-2" type="button">
+                    <i class="fa-solid fa-bell"></i> Notificações
+                </button>
+
+            </div>
 
         </div>
 
-        <!-- ================================================== -->
-        <!-- SAIR DA CONTA -->
-        <!-- ================================================== -->
-        <button id="prof-logout" type="button">
+        <button id="prof-logout" class="btn w-100" type="button">
             <i class="fa-solid fa-right-from-bracket"></i> Sair da conta
-
         </button>
 
     </div>
