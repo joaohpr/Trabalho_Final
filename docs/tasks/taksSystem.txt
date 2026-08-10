@@ -1,4 +1,0 @@
-01- Refazer o homeCards usando o jQuery melhor,criando um html  e css externos
-02- Construir uma parte na home page para guardar os filmes favoritos,
-03- Construir uma section para o profile,permitindo colocar fotos e os nicknames
-04-  Melhorar a interatividade em geral globalmente
