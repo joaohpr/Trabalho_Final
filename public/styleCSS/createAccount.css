@@ -34,11 +34,46 @@ body {
     justify-items: center;
     align-items: center;
 
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========================= */
+/* BACKGROUND BLUR */
+/* ========================= */
+
+#global-container::before {
+    content: "";
+
+    position: absolute;
+    inset: -20px;
+
     background-image: url('../img/CineSearch.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(10px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
 }
 
+/* ========================= */
+/* CAMADA ESCURA */
+/* ========================= */
+
+#global-container::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.35);
+
+    z-index: -1;
+}
 
 /* ========================= */
 /* CARD PRINCIPAL */

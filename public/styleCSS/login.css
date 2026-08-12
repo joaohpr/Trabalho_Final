@@ -13,15 +13,31 @@
 /* BODY */
 /* ========================= */
 
-body{
+body {
     min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: -20px;
 
     background-image: url("../img/CineSearch.png");
     background-repeat: no-repeat;
-    background-color: transparent;
     background-size: cover;
+    background-position: center;
 
-    font-family: Arial, Helvetica, sans-serif;
+    filter: blur(10px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
 }
 
 
