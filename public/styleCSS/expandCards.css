@@ -3,7 +3,20 @@
 /* ================================================== */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+
+/* ================================================== */
+/* HTML / BODY */
+/* ================================================== */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
 }
 
 
@@ -18,15 +31,11 @@
     display: flex;
 
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     padding: 30px;
 
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -39,10 +48,6 @@
     width: 100%;
     max-width: 700px;
 
-    min-height: 500px;
-
-    max-height: 90vh;
-
     background: #1d1d1d;
 
     border-radius: 50px;
@@ -51,21 +56,29 @@
 
     color: white;
 
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 0 25px rgba(0, 0, 0, 0.5);
 
-    transition: box-shadow 0.3s ease,
-                transform 0.3s ease,
-                border 0.3s ease;
-
-    overflow-y: auto;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        border 0.3s ease;
 
     border: 2px solid transparent;
+
+    /*
+     * Impede que qualquer conteúdo
+     * ultrapasse os limites do card.
+     */
+    overflow: hidden;
 }
 
 
-.movie-card:hover {
-   
+/* ================================================== */
+/* HOVER CARD */
+/* ================================================== */
 
+.movie-card:hover {
     transform: scale(1.01);
 }
 
@@ -75,9 +88,11 @@
 /* ================================================== */
 
 .header {
+    width: 100%;
+
     display: grid;
 
-    grid-template-columns: 60px 1fr 60px;
+    grid-template-columns: 60px minmax(0, 1fr) 60px;
 
     align-items: center;
 
@@ -87,7 +102,13 @@
 }
 
 
+/* ================================================== */
+/* TITULO */
+/* ================================================== */
+
 .headerText {
+    min-width: 0;
+
     text-align: center;
 
     font-size: 32px;
@@ -98,9 +119,20 @@
 
     cursor: pointer;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease;
+
+    /*
+     * Evita que títulos enormes
+     * estourem o grid.
+     */
+    overflow-wrap: anywhere;
 }
 
+
+/* ================================================== */
+/* HOVER TITULO */
+/* ================================================== */
 
 .headerText:hover {
     transform: scale(1.05);
@@ -113,7 +145,6 @@
 
 .close-btn {
     width: 55px;
-
     height: 44px;
 
     border: none;
@@ -128,10 +159,15 @@
 
     cursor: pointer;
 
-    transition: background 0.3s ease,
-                transform 0.3s ease;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
+
+/* ================================================== */
+/* HOVER BOTÃO */
+/* ================================================== */
 
 .close-btn:hover {
     background: crimson;
@@ -145,14 +181,22 @@
 /* ================================================== */
 
 .content {
-    display: flex;
+    width: 100%;
 
-    flex-direction: column;
+    display: grid;
 
-    gap: 30px;
+    /*
+     * Poster + detalhes no desktop.
+     */
+    grid-template-columns:
+        minmax(200px, 400px)
+        minmax(0, 1fr);
 
-    align-items: center;
-    justify-items: center;
+    gap: 40px;
+
+    align-items: start;
+
+    margin-top: 30px;
 }
 
 
@@ -166,12 +210,19 @@
     display: flex;
 
     justify-content: center;
-
     align-items: center;
+
+    min-width: 0;
 }
 
 
+/* ================================================== */
+/* IMAGEM POSTER */
+/* ================================================== */
+
 .posterImg {
+    display: block;
+
     width: 100%;
 
     max-width: 400px;
@@ -182,11 +233,14 @@
 
     object-fit: contain;
 
-    transition: transform 0.3s ease;
-
-    
+    transition:
+        transform 0.3s ease;
 }
 
+
+/* ================================================== */
+/* HOVER POSTER */
+/* ================================================== */
 
 .posterImg:hover {
     transform: scale(1.03);
@@ -200,15 +254,25 @@
 .details {
     width: 100%;
 
-    display: grid;
+    min-width: 0;
 
-    grid-template-columns: 1fr;
+    display: flex;
+
+    flex-direction: column;
 
     gap: 20px;
 }
 
 
+/* ================================================== */
+/* TEXTO DOS DETALHES */
+/* ================================================== */
+
 .textDetails {
+    width: 100%;
+
+    min-width: 0;
+
     line-height: 1.7;
 
     font-size: 18px;
@@ -217,12 +281,74 @@
 
     text-align: center;
 
-    transition: transform 0.2s ease;
+    /*
+     * Evita que palavras ou strings
+     * gigantes estourem o card.
+     */
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+
+    /*
+     * Evita problemas com elementos
+     * muito largos.
+     */
+    max-width: 100%;
+
+    transition:
+        transform 0.2s ease;
 }
 
 
+/* ================================================== */
+/* HOVER TEXTO */
+/* ================================================== */
+
 .textDetails:hover {
     transform: scale(1.03);
+}
+
+
+/* ================================================== */
+/* ELEMENTOS DE TEXTO */
+/* ================================================== */
+
+.textDetails h1,
+.textDetails h2,
+.textDetails h3,
+.textDetails h4,
+.textDetails h5,
+.textDetails h6,
+.textDetails p,
+.textDetails span {
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+}
+
+
+/* ================================================== */
+/* IMAGENS DENTRO DO CARD */
+/* ================================================== */
+
+.movie-card img {
+    max-width: 100%;
+}
+
+
+/* ================================================== */
+/* ELEMENTOS BOOTSTRAP */
+/* ================================================== */
+
+.movie-card .text-break {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.movie-card .w-100 {
+    max-width: 100%;
 }
 
 
@@ -232,8 +358,14 @@
 
 @media (min-width: 851px) {
 
+    #container-global {
+        padding: 30px;
+    }
+
     .content {
-        grid-template-columns: minmax(200px, 400px) minmax(0, 1fr);
+        grid-template-columns:
+            minmax(200px, 400px)
+            minmax(0, 1fr);
 
         gap: 40px;
     }
@@ -241,7 +373,6 @@
     .poster {
         justify-content: center;
     }
-
 }
 
 
@@ -252,7 +383,7 @@
 @media (max-width: 850px) {
 
     #container-global {
-        position: absolute;
+        width: 100%;
 
         min-height: 100vh;
 
@@ -261,24 +392,43 @@
 
 
     .movie-card {
+        width: 100%;
+
         max-width: 650px;
 
-        max-height: none;
+        padding: 30px;
 
         border-radius: 35px;
+    }
 
-        padding: 30px;
+
+    .header {
+        grid-template-columns:
+            50px
+            minmax(0, 1fr)
+            50px;
+
+        gap: 8px;
+    }
+
+
+    .headerText {
+        font-size: 28px;
     }
 
 
     .content {
         grid-template-columns: 1fr;
 
+        gap: 30px;
+
         justify-items: center;
     }
 
 
     .poster {
+        width: 100%;
+
         justify-content: center;
     }
 
@@ -295,14 +445,21 @@
     .details {
         width: 100%;
 
-        text-align: center;
+        max-width: 100%;
     }
 
 
     .textDetails {
-        text-align: center;
-    }
+        width: 100%;
 
+        max-width: 100%;
+
+        font-size: 18px;
+
+        text-align: center;
+
+        line-height: 1.6;
+    }
 }
 
 
@@ -313,11 +470,13 @@
 @media (max-width: 500px) {
 
     #container-global {
+        width: 100%;
+
+        min-height: 100vh;
+
         padding: 10px;
 
         align-items: flex-start;
-
-        position: absolute;
     }
 
 
@@ -334,10 +493,15 @@
     }
 
 
-    .x-bar {
-        grid-template-columns: 45px 1fr 45px;
+    .header {
+        grid-template-columns:
+            45px
+            minmax(0, 1fr)
+            45px;
 
         gap: 5px;
+
+        margin-top: 5px;
 
         margin-bottom: 25px;
     }
@@ -345,6 +509,8 @@
 
     .headerText {
         font-size: 24px;
+
+        line-height: 1.2;
     }
 
 
@@ -360,7 +526,16 @@
 
 
     .content {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
         gap: 25px;
+    }
+
+
+    .poster {
+        width: 100%;
     }
 
 
@@ -370,15 +545,31 @@
         max-width: 300px;
 
         height: 220px;
+
+        border-radius: 20px;
+    }
+
+
+    .details {
+        width: 100%;
+
+        gap: 15px;
     }
 
 
     .textDetails {
+        width: 100%;
+
         font-size: 16px;
 
         line-height: 1.5;
-    }
 
+        text-align: center;
+
+        overflow-wrap: anywhere;
+
+        word-break: break-word;
+    }
 }
 
 
@@ -388,24 +579,51 @@
 
 @media (max-width: 350px) {
 
+    #container-global {
+        padding: 8px;
+    }
+
+
     .movie-card {
+        width: 100%;
+
         padding: 15px;
 
         border-radius: 20px;
     }
 
 
-    .x-bar {
-        grid-template-columns: 40px 1fr 40px;
+    .header {
+        grid-template-columns:
+            40px
+            minmax(0, 1fr)
+            40px;
+
+        gap: 4px;
     }
 
 
     .headerText {
         font-size: 20px;
+
+        line-height: 1.2;
+    }
+
+
+    .close-btn {
+        width: 36px;
+
+        height: 34px;
+
+        border-radius: 8px;
+
+        font-size: 14px;
     }
 
 
     .posterImg {
+        width: 100%;
+
         max-width: 250px;
 
         height: 190px;
@@ -414,6 +632,7 @@
 
     .textDetails {
         font-size: 15px;
-    }
 
+        line-height: 1.5;
+    }
 }
