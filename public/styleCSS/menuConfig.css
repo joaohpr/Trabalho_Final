@@ -396,7 +396,7 @@ body {
 */
 .cfg-switch-input:checked + .cfg-toggle-slider {
 
-    background-color: deepskyblue;
+    background-color: rgb(103, 248, 103);
 }
 
 
