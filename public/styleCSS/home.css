@@ -2,9 +2,7 @@
 /* reset global */
 /* ========================= */
 
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     margin: 0;
@@ -17,40 +15,40 @@ body {
 
 
 /* ========================= */
-/* layout principal */
+/* LAYOUT PRINCIPAL */
 /* ========================= */
 
 #Global {
     display: grid;
 
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 85px 1fr;
 
-    gap: 5px;
+    gap: 10px;
 
-    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+
+    background-color: rgba(54, 52, 52, 0.719);
 }
 
 
 /* ========================= */
-/* sidebar */
+/* SIDEBAR */
 /* ========================= */
 
 #side-Bar {
-    background-color: rgba(0, 0, 0, 0.808);
+    background-color: black;
 
     display: grid;
 
     grid-auto-flow: row;
 
-    justify-items: center;
-
-    align-content: start;
-
     min-height: 100vh;
 
     position: relative;
-}
 
+    margin: 0;
+}
 
 /* área dos botões da sidebar */
 
@@ -131,11 +129,9 @@ body {
 /* ========================= */
 
 #Container-main {
-    background-color: rgba(0, 0, 0, 0.808);
+    background-color: black;
 
     padding: 20px;
-
-    border-radius: 12px;
 
     overflow-y: auto;
 
@@ -474,7 +470,7 @@ body {
 
         align-items: center;
 
-        justify-content: center;
+        justify-content: space-evenly;
 
         min-height: 60px;
 
@@ -491,7 +487,7 @@ body {
 
         align-items: center;
 
-        justify-content: center;
+        justify-content: space-evenly;
 
         margin-top: 0;
 
