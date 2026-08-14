@@ -18,12 +18,13 @@ body {
 /* LAYOUT PRINCIPAL */
 /* ========================= */
 
+/* ========================= */
+/* LAYOUT PRINCIPAL */
+/* ========================= */
+
 #Global {
-    display: grid;
-
-    grid-template-columns: 85px 1fr;
-
-    gap: 10px;
+    width: 100%;
+    min-height: 100vh;
 
     margin: 0;
     padding: 0;
@@ -37,17 +38,23 @@ body {
 /* ========================= */
 
 #side-Bar {
-    background-color: black;
-
-    display: grid;
-
-    grid-auto-flow: row;
-
-    min-height: 100vh;
+    width: 85px;
+    height: 100vh;
 
     position: relative;
 
-    margin: 0;
+    top: 0;
+    left: 0;
+
+    background-color: black;
+
+    display: grid;
+    grid-auto-flow: row;
+
+    margin-right: 5px;
+    padding: 0;
+
+    z-index: 1000;
 }
 
 /* área dos botões da sidebar */
@@ -166,8 +173,6 @@ body {
     font-size: 28px;
 
     text-align: center;
-
-    color: white;
 
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
