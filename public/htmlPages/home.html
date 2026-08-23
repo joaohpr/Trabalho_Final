@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busque filmes e descubra recomendações personalizadas no CineSearch.">
+
+    <title>Home · CineSearch</title>
+
+    <link rel="icon" href="../public/img/CineSearch.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styleCSS/theme.css">
+    <link rel="stylesheet" href="../styleCSS/home.css">
+
+</head>
+
+<body>
+
+    <div id="Global">
+
+
+        <div id="side-Bar">
+
+            <div id="logo-sidebar">
+                <img src="../public/img/CineSearch.png" alt="CineSearch">
+            </div>
+
+            <nav id="nav-sidebar" aria-label="Navegação principal">
+
+                <button class="button-sideBar active" data-tooltip="Início" type="button">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="tooltip">Início</span>
+                </button>
+
+                <button class="button-sideBar" data-tooltip="Favoritos" id="favoritesNavBtn" type="button">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="tooltip">Favoritos</span>
+                </button>
+
+            </nav>
+
+            <div id="options-sidebar">
+
+                <div id="settings">
+                    <button class="button-sideBar" data-tooltip="Configurações" type="button">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="tooltip">Configurações</span>
+                    </button>
+                </div>
+
+                <div id="profile">
+                    <button class="button-sideBar" data-tooltip="Perfil" type="button">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span class="tooltip">Perfil</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="Container-main">
+
+
+            <div id="header">
+                <header id="TextHeader" class="headers">Bem-vindo de volta</header>
+                <p id="header-sub">Encontre seu próximo filme favorito</p>
+            </div>
+
+
+
+            <div id="Search-bar">
+
+                <div class="searchInputWrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar filmes..." autocomplete="off">
+                    <button class="clear-search" id="clearSearch" type="button" aria-label="Limpar busca">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <button class="search-button" id="searchButton" type="button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Buscar
+                </button>
+
+            </div>
+
+            <div id="genreFilters" role="group" aria-label="Filtrar por gênero"></div>
+
+
+
+            <div id="cards-bar"></div>
+
+            <div id="emptyState">
+                <i class="fa-solid fa-film"></i>
+                <p>Nenhum filme encontrado para essa busca.</p>
+                <button type="button" id="resetFiltersBtn">Limpar filtros</button>
+            </div>
+
+
+
+            <div id="recommendation-bar">
+
+                <div id="header-recommendation">
+                    <header class="headers" id="header-recommended">Recomendado para você</header>
+                </div>
+
+                <div id="cards-row"></div>
+
+            </div>
+
+
+
+            <footer id="footer">
+                <p>
+                    &copy; 2026 CineSearch. Todos os direitos reservados.
+                    <a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" target="_blank"
+                        rel="noopener noreferrer">
+                        Saiba mais
+                    </a>
+                </p>
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="../javaScript/jquery-4_0_0_min.js"></script>
+    <script src="../javaScript/formUtils.js" defer></script>
+    <script src="../javaScript/moviesData.js" defer></script>
+    <script src="../javaScript/homeCards.js" defer></script>
+
+</body>
+
+</html>

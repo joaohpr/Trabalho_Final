@@ -1,0 +1,509 @@
+/* =========================================================
+   CREATE ACCOUNT — CineSearch
+   Depende de theme.css e posterWall.css (importados no HTML)
+   ========================================================= */
+
+body {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* ========================= */
+/* BARRA SUPERIOR */
+/* ========================= */
+
+#topBar {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.55), rgba(22, 33, 62, 0.55));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 26px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    letter-spacing: -0.5px;
+}
+
+#topBar img {
+    height: 32px;
+    width: auto;
+}
+
+
+/* ========================= */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#global-container {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+
+/* ========================= */
+/* CARD PRINCIPAL */
+/* ========================= */
+
+#container {
+    width: 100%;
+    max-width: 640px;
+}
+
+.glassPanel#CreateAccount {
+    padding: 46px 50px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(19, 35, 64, 0.75), rgba(22, 33, 62, 0.55));
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    animation: slideUp var(--transition-slow);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========================= */
+/* FORMULÁRIO */
+/* ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* ========================= */
+/* TÍTULOS */
+/* ========================= */
+
+#textHeader {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 27px;
+    margin: 0 0 2px 0;
+    text-align: center;
+    font-family: var(--font-display);
+    letter-spacing: -0.5px;
+}
+
+#subtextHeader {
+    margin: -16px 0 2px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* ========================= */
+/* LINHAS DE INPUTS */
+/* ========================= */
+
+.row-input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+/* ========================= */
+/* CONTAINERS DE INPUTS */
+/* ========================= */
+
+.box-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* ========================= */
+/* LABELS */
+/* ========================= */
+
+.label-input {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-base);
+}
+
+.box-input:focus-within .label-input {
+    color: var(--accent-color);
+}
+
+
+/* ========================= */
+/* INPUTS */
+/* ========================= */
+
+.inputWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputWrap i {
+    position: absolute;
+    left: 16px;
+    color: var(--text-muted);
+    font-size: 14px;
+    pointer-events: none;
+    transition: color var(--transition-base);
+}
+
+.box-input:focus-within .inputWrap i {
+    color: var(--accent-color);
+}
+
+.inputs {
+    width: 100%;
+    height: 46px;
+    padding: 12px 16px 12px 42px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: rgba(10, 14, 39, 0.6);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+    transition: all var(--transition-base);
+}
+
+.inputs::placeholder {
+    color: var(--text-secondary);
+}
+
+.inputs:hover {
+    border-color: var(--accent-color);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.inputs:focus {
+    border-color: var(--accent-color);
+    background: rgba(0, 212, 255, 0.07);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px;
+    transition: color var(--transition-fast);
+}
+
+.toggle-password:hover {
+    color: var(--accent-color);
+}
+
+
+/* ========================= */
+/* FORÇA DA SENHA */
+/* ========================= */
+
+#passwordStrength {
+    display: flex;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+#passwordStrength .bar {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border-color);
+    transition: background var(--transition-base);
+}
+
+#passwordStrength.weak .bar:nth-child(1) { background: var(--danger-color); }
+#passwordStrength.medium .bar:nth-child(1),
+#passwordStrength.medium .bar:nth-child(2) { background: #f5a623; }
+#passwordStrength.strong .bar { background: #2ecc71; }
+
+#passwordStrengthLabel {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+
+/* ========================= */
+/* TERMOS */
+/* ========================= */
+
+.termsRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.termsRow input {
+    accent-color: var(--accent-color);
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.termsRow a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.termsRow a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* CONTAINER DO BOTÃO */
+/* ========================= */
+
+.row-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+
+/* ========================= */
+/* BOTÃO CRIAR CONTA */
+/* ========================= */
+
+.buttons {
+    width: 100%;
+    max-width: 320px;
+    height: 48px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: var(--bg-dark);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 212, 255, 0.3);
+}
+
+.buttons:active {
+    transform: translateY(0);
+}
+
+.buttons:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.buttons .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(10, 14, 39, 0.3);
+    border-top-color: var(--bg-dark);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    display: none;
+}
+
+.buttons.loading .spinner {
+    display: inline-block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+/* ========================= */
+/* LINK VOLTAR AO LOGIN */
+/* ========================= */
+
+#backToLogin {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+}
+
+#backToLogin a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#backToLogin a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* RODAPÉ */
+/* ========================= */
+
+footer#rodape {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: rgba(6, 8, 21, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.knowMore-ancora {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.knowMore-ancora:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE - TABLET */
+/* ========================= */
+
+@media (max-width: 768px) {
+    .glassPanel#CreateAccount {
+        padding: 36px 30px;
+    }
+
+    #textHeader {
+        font-size: 23px;
+    }
+
+    .row-input {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .inputs {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .buttons {
+        height: 44px;
+        font-size: 14px;
+        max-width: 100%;
+    }
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE - MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+    #topBar {
+        font-size: 19px;
+        padding: 14px 0;
+        gap: 8px;
+    }
+
+    #topBar img {
+        height: 26px;
+    }
+
+    #global-container {
+        padding: 30px 16px;
+    }
+
+    .glassPanel#CreateAccount {
+        padding: 28px 20px;
+    }
+
+    form {
+        gap: 18px;
+    }
+
+    #textHeader {
+        font-size: 20px;
+    }
+
+    .row-input {
+        gap: 16px;
+    }
+
+    .box-input {
+        gap: 6px;
+    }
+
+    .label-input {
+        font-size: 12px;
+    }
+
+    .inputs {
+        height: 44px;
+        padding: 10px 14px 10px 40px;
+        font-size: 14px;
+    }
+
+    .buttons {
+        height: 44px;
+        font-size: 13px;
+        max-width: 100%;
+    }
+}
+
+
+/* ========================= */
+/* ACESSIBILIDADE */
+/* ========================= */
+
+.inputs:focus-visible,
+.buttons:focus-visible,
+.toggle-password:focus-visible,
+#backToLogin a:focus-visible,
+.termsRow a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre na sua conta CineSearch para buscar e receber recomendações de filmes.">
+
+    <link rel="icon" href="../public/img/CineSearch.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styleCSS/theme.css">
+    <link rel="stylesheet" href="../styleCSS/posterWall.css">
+    <link rel="stylesheet" href="../styleCSS/login.css">
+
+    <title>Login · CineSearch</title>
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- mosaico de capas de filme (gerado via JS) -->
+    <!-- ========================= -->
+    <div id="posterWall"></div>
+
+    <!-- ========================= -->
+    <!-- container global -->
+    <!-- ========================= -->
+
+    <div id="continerGlobal">
+
+        <!-- ========================= -->
+        <!-- barra superior -->
+        <!-- ========================= -->
+
+        <header id="barraVertical">
+
+            <div id="CineSearch">
+                <img src="../public/img/CineSearch.png" alt="">
+                CineSearch
+            </div>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- conteudo principal -->
+        <!-- ========================= -->
+
+        <main id="containerConteudo">
+
+            <!-- ========================= -->
+            <!-- card login -->
+            <!-- ========================= -->
+
+            <section id="Login" class="glassPanel">
+
+                <form id="formLogin" novalidate>
+
+                    <!-- titulo -->
+
+                    <h1 id="textLogin">Bem-vindo de volta</h1>
+                    <p id="subtextLogin">Entre para continuar buscando os melhores filmes</p>
+
+                    <!-- username -->
+
+                    <div class="divInput" id="divUsername">
+
+                        <label for="inputUsername" class="labelInput">Usuário</label>
+
+                        <div class="inputWrap">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="inputUsername" class="inputs" placeholder="Seu usuário"
+                                autocomplete="username" required minlength="3">
+                        </div>
+
+                        <span class="field-error" id="errorUsername"></span>
+
+                    </div>
+
+                    <!-- password -->
+
+                    <div class="divInput" id="divPassword">
+
+                        <label for="inputPassword" class="labelInput">Senha</label>
+
+                        <div class="inputWrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="inputPassword" class="inputs" placeholder="Sua senha"
+                                autocomplete="current-password" required minlength="6">
+                            <button type="button" class="toggle-password" id="toggleLoginPassword"
+                                aria-label="Mostrar senha" aria-pressed="false">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <span class="field-error" id="errorPassword"></span>
+
+                    </div>
+
+                    <!-- opções extras -->
+
+                    <div class="formOptions">
+
+                        <label class="rememberMe">
+                            <input type="checkbox" id="rememberMe">
+                            Lembrar de mim
+                        </label>
+
+                        <a href="#" class="forgotPassword" id="forgotPasswordLink">Esqueceu a senha?</a>
+
+                    </div>
+
+                    <!-- button -->
+
+                    <button type="submit" id="buttonLogin">
+                        <span class="btnLabel">Entrar</span>
+                        <span class="spinner" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="divider">ou</div>
+
+                    <!-- criar conta -->
+
+                    <p id="createAccount">
+                        Ainda não tem uma conta?
+                        <a href="createAccount.html" id="ancoraCreateAccount">Crie sua conta</a>
+                    </p>
+
+                </form>
+
+            </section>
+
+        </main>
+
+        <footer id="rodape">
+
+            <p id="textRodape">
+                &copy; 2026 CineSearch. Todos os direitos reservados.
+                <a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" target="_blank"
+                    rel="noopener noreferrer">
+                    Saiba mais
+                </a>
+            </p>
+
+        </footer>
+
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="../javaScript/jquery-4_0_0_min.js"></script>
+    <script src="../javaScript/posterWall.js" defer></script>
+    <script src="../javaScript/formUtils.js" defer></script>
+    <script src="../javaScript/login.js" defer></script>
+
+</body>
+
+</html>

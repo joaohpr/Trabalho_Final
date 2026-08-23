@@ -1,0 +1,536 @@
+/* =========================================================
+   LOGIN — CineSearch
+   Depende de theme.css e posterWall.css (importados no HTML)
+   ========================================================= */
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+
+/* ========================= */
+/* BARRA SUPERIOR */
+/* ========================= */
+
+#barraVertical {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+#CineSearch {
+    width: 100%;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(15, 52, 96, 0.55), rgba(22, 33, 62, 0.55));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 26px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+#CineSearch img {
+    height: 32px;
+    width: auto;
+}
+
+
+/* ========================= */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#continerGlobal {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+}
+
+
+/* ========================= */
+/* ÁREA CENTRAL DE CONTEÚDO */
+/* ========================= */
+
+#containerConteudo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+
+/* ========================= */
+/* CARD DE LOGIN */
+/* ========================= */
+
+#Login {
+    width: 100%;
+    max-width: 420px;
+    padding: 44px 46px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(19, 35, 64, 0.75), rgba(22, 33, 62, 0.55));
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    animation: slideUp var(--transition-slow);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========================= */
+/* FORMULÁRIO */
+/* ========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* ========================= */
+/* TÍTULOS */
+/* ========================= */
+
+#textLogin {
+    margin: 0 0 4px 0;
+    color: var(--text-primary);
+    font-size: 28px;
+    font-weight: 700;
+    font-family: var(--font-display);
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+#subtextLogin {
+    margin: -14px 0 4px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* ========================= */
+/* CONTAINERS DE INPUTS */
+/* ========================= */
+
+.divInput {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* ========================= */
+/* LABELS */
+/* ========================= */
+
+.labelInput {
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-base);
+}
+
+.divInput:focus-within .labelInput {
+    color: var(--accent-color);
+}
+
+
+/* ========================= */
+/* INPUTS */
+/* ========================= */
+
+.inputWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputWrap i {
+    position: absolute;
+    left: 16px;
+    color: var(--text-muted);
+    font-size: 14px;
+    pointer-events: none;
+    transition: color var(--transition-base);
+}
+
+.divInput:focus-within .inputWrap i {
+    color: var(--accent-color);
+}
+
+.inputs {
+    width: 100%;
+    height: 48px;
+    padding: 12px 16px 12px 42px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: rgba(10, 14, 39, 0.6);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+    transition: all var(--transition-base);
+}
+
+.inputs::placeholder {
+    color: var(--text-secondary);
+}
+
+.inputs:hover {
+    border-color: var(--accent-color);
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.inputs:focus {
+    border-color: var(--accent-color);
+    background: rgba(0, 212, 255, 0.07);
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px;
+    transition: color var(--transition-fast);
+}
+
+.toggle-password:hover {
+    color: var(--accent-color);
+}
+
+
+/* ========================= */
+/* OPÇÕES EXTRAS (lembrar / esqueci senha) */
+/* ========================= */
+
+.formOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -8px;
+    font-size: 13px;
+}
+
+.rememberMe {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+}
+
+.rememberMe input {
+    accent-color: var(--accent-color);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.forgotPassword {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.forgotPassword:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* BOTÃO LOGIN */
+/* ========================= */
+
+#buttonLogin {
+    position: relative;
+    height: 48px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: var(--bg-dark);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+}
+
+#buttonLogin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 212, 255, 0.3);
+}
+
+#buttonLogin:active {
+    transform: translateY(0);
+}
+
+#buttonLogin:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#buttonLogin .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(10, 14, 39, 0.3);
+    border-top-color: var(--bg-dark);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    display: none;
+}
+
+#buttonLogin.loading .spinner {
+    display: inline-block;
+}
+
+#buttonLogin.loading .btnLabel {
+    opacity: 0.85;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+/* ========================= */
+/* DIVISOR */
+/* ========================= */
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-color);
+}
+
+
+/* ========================= */
+/* TEXTO CRIAR CONTA */
+/* ========================= */
+
+#createAccount {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+
+/* ========================= */
+/* LINK CRIAR CONTA */
+/* ========================= */
+
+#ancoraCreateAccount {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+#ancoraCreateAccount::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width var(--transition-base);
+}
+
+#ancoraCreateAccount:hover::after {
+    width: 100%;
+}
+
+#ancoraCreateAccount:hover {
+    color: var(--accent-hover);
+}
+
+
+/* ========================= */
+/* RODAPÉ */
+/* ========================= */
+
+#rodape {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    background: rgba(6, 8, 21, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.knowMore-ancora {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.knowMore-ancora:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE - TABLET */
+/* ========================= */
+
+@media (max-width: 768px) {
+    #CineSearch {
+        font-size: 22px;
+        padding: 16px 0;
+    }
+
+    #containerConteudo {
+        padding: 40px 20px;
+    }
+
+    #Login {
+        padding: 36px 28px;
+        max-width: 100%;
+    }
+
+    #textLogin {
+        font-size: 24px;
+    }
+
+    .inputs {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    #buttonLogin {
+        height: 44px;
+        font-size: 14px;
+    }
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE - MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+    #CineSearch {
+        font-size: 19px;
+        padding: 14px 0;
+        gap: 8px;
+    }
+
+    #CineSearch img {
+        height: 26px;
+    }
+
+    #containerConteudo {
+        padding: 30px 16px;
+    }
+
+    #Login {
+        padding: 30px 20px;
+    }
+
+    form {
+        gap: 18px;
+    }
+
+    #textLogin {
+        font-size: 21px;
+    }
+
+    .formOptions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .labelInput {
+        font-size: 12px;
+    }
+
+    .inputs {
+        height: 44px;
+        padding: 10px 14px 10px 40px;
+        font-size: 14px;
+    }
+
+    #buttonLogin {
+        height: 44px;
+        font-size: 13px;
+    }
+
+    #createAccount {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================= */
+/* ACESSIBILIDADE */
+/* ========================= */
+
+.inputs:focus-visible,
+#buttonLogin:focus-visible,
+#ancoraCreateAccount:focus-visible,
+.toggle-password:focus-visible,
+.forgotPassword:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
