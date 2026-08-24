@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../styleCSS/createAccount.css">
+
     <title>Create Account</title>
 </head>
 
@@ -18,67 +20,97 @@
                 Create Account
             </header>
 
-            <div id="input-container">
+            <form id="formCreateAccount">
 
-                <div class="row-input">
+                <div id="input-container">
 
-                    <div class="box-input">
+                    <div class="row-input">
 
-                        <label for="username" class="label-input">
-                            Username
-                        </label>
+                        <div class="box-input">
 
-                        <input type="text" id="username" class="inputs" placeholder="Username" required>
+                            <label for="username" class="label-input">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                class="inputs"
+                                placeholder="Username"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="box-input">
+
+                            <label for="email" class="label-input">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="inputs"
+                                placeholder="Email"
+                                required
+                            >
+
+                        </div>
 
                     </div>
 
-                    <div class="box-input">
+                    <div class="row-input">
 
-                        <label for="email" class="label-input">
-                            Email
-                        </label>
+                        <div class="box-input">
 
-                        <input type="email" id="email" name="email" class="inputs" placeholder="Email" required>
+                            <label for="password" class="label-input">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                class="inputs"
+                                placeholder="Password"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="box-input">
+
+                            <label for="confirm-password" class="label-input">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirm-password"
+                                name="confirm-password"
+                                class="inputs"
+                                placeholder="Confirm Password"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="row-btn">
+
+                        <button type="submit" id="buttonCreateAccount" class="buttons">
+                            Create Account
+                        </button>
 
                     </div>
 
                 </div>
 
-                <div class="row-input">
-
-                    <div class="box-input">
-
-                        <label for="password" class="label-input">
-                            Password
-                        </label>
-
-                        <input type="password" id="password" name="password" class="inputs" placeholder="Password"
-                            required>
-
-                    </div>
-
-                    <div class="box-input">
-
-                        <label for="confirm-password" class="label-input">
-                            Confirm Password
-                        </label>
-
-                        <input type="password" id="confirm-password" name="confirm-password" class="inputs"
-                            placeholder="Confirm Password" required>
-
-                    </div>
-
-                </div>
-
-                <div class="row-btn">
-
-                    <button type="submit" class="buttons">
-                        Create Account
-                    </button>
-
-                </div>
-
-            </div>
+            </form>
 
         </div>
 
@@ -88,11 +120,13 @@
 
                 &copy; 2026 Your Company. All rights reserved.
 
-                <a class="knowMore-ancora" href="https://github.com/joaohpr/Trabalho_Final" target="_blank"
-                    rel="noopener noreferrer">
-
+                <a
+                    class="knowMore-ancora"
+                    href="https://github.com/joaohpr/Trabalho_Final"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Know More
-
                 </a>
 
             </p>
@@ -101,9 +135,9 @@
 
     </div>
 
+    <script src="../javaScript/lib/jquery-4.0.0.min.js"></script>
+    <script src="../javaScript/createaccountToHome.js"></script>
+
 </body>
-<script src="../javaScript/lib/jquery-4.0.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
