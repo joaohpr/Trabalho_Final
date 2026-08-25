@@ -311,6 +311,8 @@ body {
 /* estilo geral dos cards */
 
 .cards {
+    position: relative;
+
     padding: 15px;
 
     border-radius: 12px;
@@ -322,31 +324,54 @@ body {
     background-color: rgba(54, 52, 52, 0.719);
 
     transition: 0.3s;
-
-    .btn-favorito {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-    background: none;
-    border: none;
-
-    font-size: 25px;
-    color: white;
-
-    cursor: pointer;
 }
+
+
+.btn-favorito,
+.btn-curtir {
+    position: absolute;
+    top: 12px;
+
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
 
 .btn-favorito {
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
+    right: 52px;
 }
 
-.btn-favorito.favoritado {
-    color: yellow;
+
+.btn-curtir {
+    right: 12px;
 }
+
+
+.btn-favorito:hover,
+.btn-curtir:hover {
+    transform: scale(1.12);
+}
+
+
+.btn-favorito.favoritado {
+    color: #ffd43b;
+}
+
+
+.btn-curtir.curtiu {
+    color: #ff4d6d;
 }
 
 
