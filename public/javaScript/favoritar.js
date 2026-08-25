@@ -1,19 +1,18 @@
-$(document).ready(function () {
+$(function () {
+    $('.btn-favorito').each(function (index) {
+        const button = $(this);
+        const key = 'filme-favorito-' + index;
 
-    $(document).on("touchend", ".btn-favorito", function (event) {
-
-        event.preventDefault();
-
-        $(this).toggleClass("favoritado");
-
-    });
-
-    $(document).on("click", ".btn-favorito", function () {
-
-        if (!$(this).data("touch")) {
-            $(this).toggleClass("favoritado");
+        function update(isFavorite) {
+            button.toggleClass('favoritado', isFavorite);
+            localStorage.setItem(key, isFavorite);
         }
 
-    });
+        update(localStorage.getItem(key) === 'true');
 
+        button.on('click', function (event) {
+            event.stopPropagation();
+            update(!button.hasClass('favoritado'));
+        });
+    });
 });
