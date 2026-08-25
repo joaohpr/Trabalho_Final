@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $(document).on('dblclick', '.cards', function () {
 
-        $('#modal-window').load('../html/expandCards.html #container-global', function (response, status) {
+        $('#modal-window').load('expandCards.html #container-global', function (response, status) {
 
             if (status === 'error') {
 

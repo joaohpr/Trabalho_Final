@@ -3,7 +3,7 @@ $(document).ready(function () {
     const selectOptions = [];
 
 
-    $('.cfg-card-icon').on('click', function () {
+    $(document).on('click', '.cfg-card-icon', function () {
 
         // Adiciona o elemento clicado ao vetor
         selectOptions.push(this);
