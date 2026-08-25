@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
-    $("#buttonCreateAccount").click(function () {
+    $("#formCreateAccount").submit(function (evento) {
+
+        evento.preventDefault();
 
         let username = $("#username").val().trim();
         let email = $("#email").val().trim();
@@ -17,7 +19,7 @@ $(document).ready(function () {
             return;
         }
 
-        window.location.href = "../../index.html";
+        window.location.href = "home.html";
 
     });
 
