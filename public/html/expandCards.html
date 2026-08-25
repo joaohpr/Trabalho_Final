@@ -13,57 +13,41 @@
 
     <main id="container-global">
 
-        <section class="movie-card">
+        <section class="movie-card" role="dialog" aria-modal="true" aria-labelledby="movieModalLabel">
 
             <header class="header">
 
-                <button class="close-btn" type="button" id="closeButton">
-                    X
-                </button>
-
-                <h1 class="headerText">
+                <h1 class="headerText" id="movieModalLabel">
                     Nome do Filme
                 </h1>
+
+                <button class="close-btn" type="button" id="closeButton" aria-label="Fechar">
+                    &times;
+                </button>
 
             </header>
 
             <div class="content">
 
                 <div class="poster">
-
                     <img
                         class="posterImg"
                         src="../img/CineSearch.png"
                         alt="Poster do Filme">
-
                 </div>
 
-            </div>
+                <article class="details">
 
-            <article class="details">
-
-                    <h2 class="headerText">
-                        Detalhes do filme
-                    </h2>
+                    <h2 class="headerText">Detalhes do filme</h2>
 
                     <p class="textDetails">
-
-                        Aqui serão exibidas informações como sinopse,
-                        gênero, duração, avaliação, data de lançamento,
-                        elenco e outras informações vindas da API.lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            klfajsd;lkfjas;djfsadfasdjfal;skdjfl;aksdjfklajsdlfkjasdl;kf
-                            afkjadsjfkl;jasdl;kfj
-                            as;dfkljasdl;kfj
-                            klfja;klsdjf
-                            akljdfkl;ajsd
-                            aksdjfkl;
-                            askdjfkl
-                            alkdjflk
-                            akjfdlk
-
+                        Aqui serão exibidas informações como sinopse, gênero, duração,
+                        avaliação, data de lançamento e elenco vindos da API.
                     </p>
 
                 </article>
+
+            </div>
 
         </section>
 
