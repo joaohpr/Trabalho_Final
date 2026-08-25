@@ -487,14 +487,26 @@ body {
 }
 
 
+.cfg-card.cfg-card-selecionado {
+    border-color: #198754;
+    box-shadow: 0 0 16px rgba(25, 135, 84, 0.6);
+}
+
+
 /*
     Hover do card.
 */
 .cfg-card:hover {
 
+    .cfg-card-icon{
+        transform: scale(1.05);
+
+    border: 3px solid green;
+    }
+
     transform: scale(1.03);
 
-    border-color: deepskyblue;
+    border-color: green;
 
     box-shadow:
         0 0 15px rgba(0, 191, 255, 0.3);
@@ -523,15 +535,6 @@ body {
 }
 
 
-/*
-    Hover da imagem.
-*/
-.cfg-card-icon:hover {
-
-    transform: scale(1.05);
-
-    border: 3px solid deepskyblue;
-}
 
 
 /* ============================================================
@@ -558,6 +561,45 @@ body {
     */
     overflow-wrap: break-word;
 }
+
+
+.cfg-card-icon-clicked{
+    border: 2px solid green;
+    width: 180px;
+
+    height: 210px;
+
+    /*
+        O card continua sendo um bloco.
+    */
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background-color: rgb(45, 44, 50);
+
+    border: 2px solid transparent;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
 
 
 /* ============================================================

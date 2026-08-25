@@ -156,6 +156,33 @@ body {
 }
 
 
+/* Feedback visual para os estados de validação do Bootstrap. */
+.form-control.is-valid,
+.form-control.is-invalid {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.profile-field-valid {
+    animation: profile-validation-success 0.35s ease-out;
+}
+
+
+@keyframes profile-validation-success {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.015);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 /* =========================================================
    LINHAS DOS CAMPOS
    ========================================================= */
