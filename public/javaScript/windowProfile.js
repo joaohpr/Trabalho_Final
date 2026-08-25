@@ -1,21 +1,62 @@
 $(document).ready(function () {
 
-    /*
-     * =========================================================
-     * ABRIR JANELA DE PERFIL
-     * =========================================================
-     */
+    function onDoubleTapOrClick(selector, handler) {
 
-    $('#openProfile').on('dblclick', function () {
+        $(document).on("dblclick", selector, handler);
 
-        $('#modal-window').load(
-            'windowProfile.html #Global',
-            function (response, status, xhr) {
+        var ultimoToque = {};
 
-                if (status === 'error') {
+        $(document).on("touchend", selector, function (evento) {
+
+            var agora = Date.now();
+            var idElemento = $(this).attr("id") || selector;
+            var toqueAnterior = ultimoToque[idElemento] || 0;
+
+            if (agora - toqueAnterior < 300) {
+
+                evento.preventDefault();
+
+                handler.call(this, evento);
+
+            }
+
+            ultimoToque[idElemento] = agora;
+
+        });
+    }
+
+    var modal = $("#modal-window");
+
+    var fieldsSelector =
+        "#input-name, #input-username, #input-email, #input-password";
+
+
+    function validate(field) {
+
+        var input = $(field);
+
+        var isValid =
+            field.checkValidity() &&
+            input.val().trim() !== "";
+
+        input
+            .toggleClass("is-valid", isValid)
+            .toggleClass("is-invalid", !isValid);
+
+        return isValid;
+    }
+
+
+    onDoubleTapOrClick("#openProfile", function () {
+
+        modal.load(
+            "windowProfile.html #Global",
+            function (_, status, xhr) {
+
+                if (status === "error") {
 
                     console.error(
-                        'Erro ao carregar o perfil:',
+                        "Erro ao carregar o perfil:",
                         xhr.status,
                         xhr.statusText
                     );
@@ -23,12 +64,7 @@ $(document).ready(function () {
                     return;
                 }
 
-                /*
-                 * Mostra o modal somente depois que
-                 * o conteúdo foi carregado.
-                 */
-
-                $('#modal-window').css('display', 'flex');
+                modal.css("display", "flex");
 
             }
         );
@@ -36,105 +72,82 @@ $(document).ready(function () {
     });
 
 
-    /*
-     * =========================================================
-     * FECHAR JANELA DE PERFIL
-     * =========================================================
-     *
-     * O botão #btn-close é criado dinamicamente pelo .load().
-     *
-     * Por isso utilizamos delegação de eventos.
-     */
+    modal.on("click", "#btn-close", function () {
 
-    $('#modal-window').on(
-        'click',
-        '#btn-close',
-        function () {
+        modal.hide().empty();
 
-            $('#modal-window')
-                .css('display', 'none')
-                .empty();
+    });
 
+
+    modal.on("change", "#prof-avatar-input", function (event) {
+
+        var file = event.target.files[0];
+
+        if (!file) {
+            return;
         }
-    );
 
+        if (!file.type.startsWith("image/")) {
 
-    /*
-     * =========================================================
-     * ALTERAR FOTO DE PERFIL
-     * =========================================================
-     *
-     * Também utilizamos delegação porque o input
-     * é carregado dinamicamente.
-     */
-
-    $('#modal-window').on(
-        'change',
-        '#prof-avatar-input',
-        function (event) {
-
-            const file = event.target.files[0];
-
-            if (!file) {
-                return;
-            }
-
-            /*
-             * Verifica se o arquivo selecionado
-             * realmente é uma imagem.
-             */
-
-            if (!file.type.startsWith('image/')) {
-
-                console.error(
-                    'O arquivo selecionado não é uma imagem.'
-                );
-
-                return;
-            }
-
-            /*
-             * Cria uma URL temporária para visualizar
-             * a imagem selecionada.
-             */
-
-            const imageURL = URL.createObjectURL(file);
-
-            $('#prof-avatar-preview').attr(
-                'src',
-                imageURL
+            console.error(
+                "O arquivo selecionado não é uma imagem."
             );
 
+            return;
         }
-    );
+
+        var imageURL = URL.createObjectURL(file);
+
+        $("#prof-avatar-preview").attr(
+            "src",
+            imageURL
+        );
+
+    });
 
 
-    /*
-     * =========================================================
-     * SALVAR
-     * =========================================================
-     *
-     * Por enquanto apenas recuperamos os valores.
-     * Posteriormente essa parte poderá enviar os dados
-     * para o backend.
-     */
-
-    $('#modal-window').on(
-        'click',
-        '#btn-save',
+    modal.on(
+        "input blur",
+        fieldsSelector,
         function () {
 
-            const name = $('#input-name').val();
-            const username = $('#input-username').val();
-            const email = $('#input-email').val();
-            const password = $('#input-password').val();
-
-            console.log('Nome:', name);
-            console.log('Username:', username);
-            console.log('Email:', email);
-            console.log('Password:', password);
+            validate(this);
 
         }
     );
+
+
+    modal.on("click", "#btn-save", function () {
+
+        var fields = modal.find(fieldsSelector);
+
+        var isFormValid =
+            fields.toArray().every(validate);
+
+        if (!isFormValid) {
+
+            fields
+                .filter(".is-invalid")
+                .first()
+                .trigger("focus");
+
+            return;
+        }
+
+        var button = $(this);
+
+        button
+            .prop("disabled", true)
+            .html(
+                '<span class="spinner-border spinner-border-sm"></span> Salvando...'
+            );
+
+        setTimeout(function () {
+
+            window.location.href = "home.html";
+
+        }, 600);
+
+    });
 
 });
