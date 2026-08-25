@@ -1,638 +1,108 @@
-/* ================================================== */
-/* RESET */
-/* ================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-/* ================================================== */
-/* HTML / BODY */
-/* ================================================== */
-
-html,
-body {
-    width: 100%;
-    min-height: 100%;
-}
-
-
-/* ================================================== */
-/* CONTAINER PRINCIPAL */
-/* ================================================== */
-
-#container-global {
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: flex-start;
-
-    padding: 30px;
-
-    overflow-x: hidden;
+#modal-window #container-global {
+    width: min(700px, 92vw);
+    max-height: 86vh;
     overflow-y: auto;
 }
 
-
-/* ================================================== */
-/* CARD */
-/* ================================================== */
-
-.movie-card {
-    width: 100%;
-    max-width: 700px;
-
-    background: #1d1d1d;
-
-    border-radius: 50px;
-
-    padding: 35px;
-
-    color: white;
-
-    box-shadow:
-        0 0 25px rgba(0, 0, 0, 0.5);
-
-    transition:
-        box-shadow 0.3s ease,
-        transform 0.3s ease,
-        border 0.3s ease;
-
-    border: 2px solid transparent;
-
-    /*
-     * Impede que qualquer conteúdo
-     * ultrapasse os limites do card.
-     */
+#modal-window .movie-card {
     overflow: hidden;
+    border: 1px solid #2c2942;
+    border-radius: 16px;
+    background-color: #1c1a2c;
+    color: #f2f0fa;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
-
-/* ================================================== */
-/* HOVER CARD */
-/* ================================================== */
-
-.movie-card:hover {
-    transform: scale(1.01);
-}
-
-
-/* ================================================== */
-/* BARRA SUPERIOR */
-/* ================================================== */
-
-.header {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: 60px minmax(0, 1fr) 60px;
-
+#modal-window .header {
+    display: flex;
     align-items: center;
-
-    gap: 10px;
-
-    margin-top: 15px;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #2c2942;
 }
 
-
-/* ================================================== */
-/* TITULO */
-/* ================================================== */
-
-.headerText {
-    min-width: 0;
-
-    text-align: center;
-
-    font-size: 32px;
-
-    font-weight: bold;
-
-    color: deepskyblue;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease;
-
-    /*
-     * Evita que títulos enormes
-     * estourem o grid.
-     */
-    overflow-wrap: anywhere;
+#modal-window .headerText {
+    margin: 0;
+    color: #f2f0fa;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
-
-/* ================================================== */
-/* HOVER TITULO */
-/* ================================================== */
-
-.headerText:hover {
-    transform: scale(1.05);
-}
-
-
-/* ================================================== */
-/* BOTÃO FECHAR */
-/* ================================================== */
-
-.close-btn {
-    width: 55px;
-    height: 44px;
-
-    border: none;
-
-    border-radius: 15px;
-
-    background: #2d2d2d;
-
-    color: white;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-/* ================================================== */
-/* HOVER BOTÃO */
-/* ================================================== */
-
-.close-btn:hover {
-    background: crimson;
-
-    transform: scale(1.08);
-}
-
-
-/* ================================================== */
-/* CONTEÚDO */
-/* ================================================== */
-
-.content {
-    width: 100%;
-
+#modal-window .close-btn {
     display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #f2f0fa;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
 
-    /*
-     * Poster + detalhes no desktop.
-     */
-    grid-template-columns:
-        minmax(200px, 400px)
-        minmax(0, 1fr);
+#modal-window .close-btn:hover,
+#modal-window .close-btn:focus-visible {
+    background-color: red;
+}
 
-    gap: 40px;
-
+#modal-window .content {
+    display: grid;
+    grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+    gap: 28px;
     align-items: start;
-
-    margin-top: 30px;
+    padding: 24px;
 }
 
-
-/* ================================================== */
-/* POSTER */
-/* ================================================== */
-
-.poster {
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    min-width: 0;
+#modal-window .poster {
+    overflow: hidden;
+    border-radius: 12px;
 }
 
-
-/* ================================================== */
-/* IMAGEM POSTER */
-/* ================================================== */
-
-.posterImg {
+#modal-window .posterImg {
     display: block;
-
     width: 100%;
-
-    max-width: 400px;
-
-    height: 350px;
-
-    border-radius: 25px;
-
-    object-fit: contain;
-
-    transition:
-        transform 0.3s ease;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
 }
 
-
-/* ================================================== */
-/* HOVER POSTER */
-/* ================================================== */
-
-.posterImg:hover {
-    transform: scale(1.03);
-}
-
-
-/* ================================================== */
-/* DETALHES */
-/* ================================================== */
-
-.details {
-    width: 100%;
-
+#modal-window .details {
     min-width: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 20px;
 }
 
+#modal-window .details .headerText {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
 
-/* ================================================== */
-/* TEXTO DOS DETALHES */
-/* ================================================== */
-
-.textDetails {
-    width: 100%;
-
-    min-width: 0;
-
-    line-height: 1.7;
-
-    font-size: 18px;
-
-    color: white;
-
-    text-align: center;
-
-    /*
-     * Evita que palavras ou strings
-     * gigantes estourem o card.
-     */
+#modal-window .textDetails {
+    margin: 0;
+    color: #c2bdd8;
+    font-size: 0.98rem;
+    line-height: 1.6;
     overflow-wrap: anywhere;
-
-    word-break: break-word;
-
-    /*
-     * Evita problemas com elementos
-     * muito largos.
-     */
-    max-width: 100%;
-
-    transition:
-        transform 0.2s ease;
 }
 
-
-/* ================================================== */
-/* HOVER TEXTO */
-/* ================================================== */
-
-.textDetails:hover {
-    transform: scale(1.03);
-}
-
-
-/* ================================================== */
-/* ELEMENTOS DE TEXTO */
-/* ================================================== */
-
-.textDetails h1,
-.textDetails h2,
-.textDetails h3,
-.textDetails h4,
-.textDetails h5,
-.textDetails h6,
-.textDetails p,
-.textDetails span {
-    max-width: 100%;
-
-    overflow-wrap: anywhere;
-
-    word-break: break-word;
-}
-
-
-/* ================================================== */
-/* IMAGENS DENTRO DO CARD */
-/* ================================================== */
-
-.movie-card img {
-    max-width: 100%;
-}
-
-
-/* ================================================== */
-/* ELEMENTOS BOOTSTRAP */
-/* ================================================== */
-
-.movie-card .text-break {
-    overflow-wrap: anywhere;
-    word-break: break-word;
-}
-
-.movie-card .w-100 {
-    max-width: 100%;
-}
-
-
-/* ================================================== */
-/* DESKTOP */
-/* ================================================== */
-
-@media (min-width: 851px) {
-
-    #container-global {
-        padding: 30px;
+@media (max-width: 600px) {
+    #modal-window #container-global {
+        width: 94vw;
+        max-height: 92vh;
     }
 
-    .content {
-        grid-template-columns:
-            minmax(200px, 400px)
-            minmax(0, 1fr);
-
-        gap: 40px;
+    #modal-window .header,
+    #modal-window .content {
+        padding: 16px;
     }
 
-    .poster {
-        justify-content: center;
-    }
-}
-
-
-/* ================================================== */
-/* TABLET */
-/* ================================================== */
-
-@media (max-width: 850px) {
-
-    #container-global {
-        width: 100%;
-
-        min-height: 100vh;
-
-        padding: 20px;
-    }
-
-
-    .movie-card {
-        width: 100%;
-
-        max-width: 650px;
-
-        padding: 30px;
-
-        border-radius: 35px;
-    }
-
-
-    .header {
-        grid-template-columns:
-            50px
-            minmax(0, 1fr)
-            50px;
-
-        gap: 8px;
-    }
-
-
-    .headerText {
-        font-size: 28px;
-    }
-
-
-    .content {
+    #modal-window .content {
         grid-template-columns: 1fr;
-
-        gap: 30px;
-
-        justify-items: center;
     }
 
-
-    .poster {
-        width: 100%;
-
-        justify-content: center;
-    }
-
-
-    .posterImg {
-        width: 100%;
-
-        max-width: 400px;
-
-        height: 300px;
-    }
-
-
-    .details {
-        width: 100%;
-
-        max-width: 100%;
-    }
-
-
-    .textDetails {
-        width: 100%;
-
-        max-width: 100%;
-
-        font-size: 18px;
-
-        text-align: center;
-
-        line-height: 1.6;
-    }
-}
-
-
-/* ================================================== */
-/* CELULAR */
-/* ================================================== */
-
-@media (max-width: 500px) {
-
-    #container-global {
-        width: 100%;
-
-        min-height: 100vh;
-
-        padding: 10px;
-
-        align-items: flex-start;
-    }
-
-
-    .movie-card {
-        width: 100%;
-
-        min-height: auto;
-
-        max-height: none;
-
-        padding: 20px;
-
-        border-radius: 25px;
-    }
-
-
-    .header {
-        grid-template-columns:
-            45px
-            minmax(0, 1fr)
-            45px;
-
-        gap: 5px;
-
-        margin-top: 5px;
-
-        margin-bottom: 25px;
-    }
-
-
-    .headerText {
-        font-size: 24px;
-
-        line-height: 1.2;
-    }
-
-
-    .close-btn {
-        width: 40px;
-
-        height: 38px;
-
-        border-radius: 10px;
-
-        font-size: 16px;
-    }
-
-
-    .content {
-        width: 100%;
-
-        grid-template-columns: 1fr;
-
-        gap: 25px;
-    }
-
-
-    .poster {
-        width: 100%;
-    }
-
-
-    .posterImg {
-        width: 100%;
-
-        max-width: 300px;
-
-        height: 220px;
-
-        border-radius: 20px;
-    }
-
-
-    .details {
-        width: 100%;
-
-        gap: 15px;
-    }
-
-
-    .textDetails {
-        width: 100%;
-
-        font-size: 16px;
-
-        line-height: 1.5;
-
-        text-align: center;
-
-        overflow-wrap: anywhere;
-
-        word-break: break-word;
-    }
-}
-
-
-/* ================================================== */
-/* CELULAR PEQUENO */
-/* ================================================== */
-
-@media (max-width: 350px) {
-
-    #container-global {
-        padding: 8px;
-    }
-
-
-    .movie-card {
-        width: 100%;
-
-        padding: 15px;
-
-        border-radius: 20px;
-    }
-
-
-    .header {
-        grid-template-columns:
-            40px
-            minmax(0, 1fr)
-            40px;
-
-        gap: 4px;
-    }
-
-
-    .headerText {
-        font-size: 20px;
-
-        line-height: 1.2;
-    }
-
-
-    .close-btn {
-        width: 36px;
-
-        height: 34px;
-
-        border-radius: 8px;
-
-        font-size: 14px;
-    }
-
-
-    .posterImg {
-        width: 100%;
-
-        max-width: 250px;
-
-        height: 190px;
-    }
-
-
-    .textDetails {
-        font-size: 15px;
-
-        line-height: 1.5;
+    #modal-window .poster {
+        width: min(240px, 100%);
+        margin: 0 auto;
     }
 }
