@@ -10,6 +10,10 @@ A proposta surgiu da dificuldade enfrentada por muitos usuários ao procurar fil
 
 O projeto está atualmente na etapa de prototipação e geração de interface. Não há back-end implementado; o trabalho até o momento é voltado para a definição visual das telas e da estrutura de dados que futuramente sustentará a aplicação.
 
+## Configuração
+
+O protótipo atual está sendo desenvolvido na branch `joao-branch`, e não na branch `master`. A `master` permanece reservada para versões estáveis do projeto, enquanto o trabalho de prototipação e interface é feito separadamente até que esteja pronto para revisão e integração.
+
 ## Tecnologias e ferramentas utilizadas
 
 * **Bootstrap** — usado na estilização da interface, garantindo responsividade sem a necessidade de escrever CSS customizado para cada componente.
