@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="public/styleCSS/login.css">
+
+
+    <title>Login-CineSearch</title>
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- container global -->
+    <!-- ========================= -->
+
+    <div id="continerGlobal">
+
+        <!-- ========================= -->
+        <!-- barra superior -->
+        <!-- ========================= -->
+
+        <header id="barraVertical">
+
+            <div id="CineSearch">
+                CineSearch
+            </div>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- conteudo principal -->
+        <!-- ========================= -->
+
+        <main id="containerConteudo">
+
+            <!-- ========================= -->
+            <!-- card login -->
+            <!-- ========================= -->
+
+            <section id="Login">
+
+                <form id="formLogin">
+
+                    <!-- titulo -->
+
+                    <h1 id="textLogin">
+                        Login
+                    </h1>
+
+                    <!-- username -->
+
+                    <div class="divInput">
+
+                        <label for="inputUsername" class="labelInput">
+
+                            Username
+
+                        </label>
+
+                        <input type="text" id="inputUsername" class="inputs" placeholder="Username"
+                            autocomplete="username" required>
+
+                    </div>
+
+                    <!-- password -->
+
+                    <div class="divInput">
+
+                        <label for="inputPassword" class="labelInput">
+
+                            Password
+
+                        </label>
+
+                        <input type="password" id="inputPassword" class="inputs" placeholder="Password"
+                            autocomplete="current-password" required >
+
+                    </div>
+
+                    <!-- button -->
+
+                    <button type="submit" id="buttonLogin">
+
+                        Entrar
+
+                    </button>
+
+                    <!-- criar conta -->
+
+                    <p id="createAccount">
+
+                        Don't have an account?
+
+                        <a href="public/html/createAccount.html" id="ancoraCreateAccount">
+
+                            Create your Account
+
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </section>
+
+        </main>
+
+        <footer id="rodape">
+
+            <p id="textRodape">
+
+                &copy; 2026 Your Company. All rights reserved.<a class="knowMore-ancora"
+                    href="https://github.com/joaohpr/Trabalho_Final" target="_blank">
+                    Know More
+                </a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+<script src="public/javaScript/lib/jquery-4.0.0.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="public/javaScript/login.js"></script>
+</html>

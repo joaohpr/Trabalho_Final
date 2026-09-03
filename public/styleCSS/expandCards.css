@@ -1,0 +1,108 @@
+#modal-window #container-global {
+    width: min(700px, 92vw);
+    max-height: 86vh;
+    overflow-y: auto;
+}
+
+#modal-window .movie-card {
+    overflow: hidden;
+    border: 1px solid #2c2942;
+    border-radius: 16px;
+    background-color: #1c1a2c;
+    color: #f2f0fa;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+#modal-window .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #2c2942;
+}
+
+#modal-window .headerText {
+    margin: 0;
+    color: #f2f0fa;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+#modal-window .close-btn {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #f2f0fa;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#modal-window .close-btn:hover,
+#modal-window .close-btn:focus-visible {
+    background-color: red;
+}
+
+#modal-window .content {
+    display: grid;
+    grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+    padding: 24px;
+}
+
+#modal-window .poster {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+#modal-window .posterImg {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+#modal-window .details {
+    min-width: 0;
+}
+
+#modal-window .details .headerText {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+#modal-window .textDetails {
+    margin: 0;
+    color: #c2bdd8;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    #modal-window #container-global {
+        width: 94vw;
+        max-height: 92vh;
+    }
+
+    #modal-window .header,
+    #modal-window .content {
+        padding: 16px;
+    }
+
+    #modal-window .content {
+        grid-template-columns: 1fr;
+    }
+
+    #modal-window .poster {
+        width: min(240px, 100%);
+        margin: 0 auto;
+    }
+}

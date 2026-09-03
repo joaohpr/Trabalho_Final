@@ -1,0 +1,327 @@
+/* ========================= */
+/* RESET GLOBAL */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: rgb(10, 10, 10);
+}
+
+
+/* ========================= */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#global-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    justify-items: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* ========================= */
+/* BACKGROUND BLUR */
+/* ========================= */
+
+#global-container::before {
+    content: "";
+
+    position: absolute;
+    inset: -20px;
+
+    background-image: url('../img/CineSearch.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(10px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+/* ========================= */
+/* CAMADA ESCURA */
+/* ========================= */
+
+#global-container::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.35);
+
+    z-index: -1;
+}
+
+/* ========================= */
+/* CARD PRINCIPAL */
+/* ========================= */
+
+#container {
+    width: 600px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgba(30, 30, 30, 0.90);
+
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 191, 255, 0.15);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+#textHeader {
+    font-size: 36px;
+    font-weight: bold;
+
+    color: deepskyblue;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================= */
+/* CONTAINER INPUTS */
+/* ========================= */
+
+#input-container {
+    width: 100%;
+
+    display: grid;
+
+    gap: 15px;
+}
+
+
+/* ========================= */
+/* LINHAS */
+/* ========================= */
+
+.row-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+/* ========================= */
+/* BOX INPUT */
+/* ========================= */
+
+.box-input {
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* ========================= */
+/* LABEL */
+/* ========================= */
+
+.label-input {
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: b
+}
+
+.label-input:hover {
+    color: deepskyblue;
+
+    transition: color 0.3s;
+}
+
+
+/* ========================= */
+/* INPUT */
+/* ========================= */
+
+.inputs {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+
+    outline: none;
+
+    background-color: rgba(85, 81, 81, 0.35);
+
+    color: white;
+    font-size: 15px;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+}
+
+.inputs::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.inputs:focus {
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 5px deepskyblue;
+
+    transform: scale(1.02);
+}
+
+.inputs:hover {
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 5px deepskyblue;
+    font-size: 18px;
+
+    transform: scale(1.02);
+}
+
+
+/* ========================= */
+/* BOTAO */
+/* ========================= */
+
+.row-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.buttons {
+    width: 50%;
+    height: 60px;
+
+    border: none;
+    border-radius: 35px;
+
+    cursor: pointer;
+
+    background-color: deepskyblue;
+
+    color: black;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        opacity 0.3s;
+}
+
+.buttons:hover {
+    transform: scale(1.03);
+
+    box-shadow: 0 0 14px deepskyblue;
+}
+
+.buttons:active {
+    opacity: 0.8;
+
+    box-shadow: 0 0 10px deepskyblue;
+
+    transform: scale(0.98);
+}
+
+
+/* ========================= */
+/* RODAPE */
+/* ========================= */
+
+#rodape {
+    width: 100%;
+
+    padding: 16px;
+
+    text-align: center;
+
+    background-color: transparent;
+}
+
+#textRodape {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.knowMore-ancora {
+    margin-left: 5px;
+
+    color: deepskyblue;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.knowMore-ancora:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    #container {
+        width: 90%;
+    }
+
+    .row-input {
+        grid-template-columns: 1fr;
+    }
+
+    #textHeader {
+        font-size: 28px;
+    }
+
+    .box-input {
+        padding: 10px;
+    }
+}

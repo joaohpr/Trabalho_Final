@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ==================================================
+         CONFIGURAÇÕES BÁSICAS DO DOCUMENTO
+         ================================================== -->
+
+    <!-- Define a codificação dos caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Permite que a página seja responsiva -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <!-- Título do documento -->
+    <title>Configurações</title>
+
+
+    <!-- ==================================================
+         BOOTSTRAP
+         ================================================== -->
+
+    <!-- Biblioteca CSS do Bootstrap -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    >
+
+
+    <!-- ==================================================
+         CSS DO PROJETO
+         ================================================== -->
+
+    <!-- CSS específico da janela de configurações -->
+    <link
+        rel="stylesheet"
+        href="../styleCSS/menuConfig.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ==================================================
+         CONTAINER PRINCIPAL DO MODAL
+         ==================================================
+
+         Este container representa o conteúdo da janela
+         de configurações.
+
+         Ele NÃO ocupa a tela inteira.
+
+         O #modal-window da página Home será responsável
+         por posicionar este elemento no centro da tela.
+         ================================================== -->
+
+    <div
+        id="cfg-container"
+        class="container-fluid"
+    >
+
+
+        <!-- ==================================================
+             CABEÇALHO DO MODAL
+             ================================================== -->
+
+        <div id="cfg-header">
+
+
+            <!-- --------------------------------------------------
+                 TÍTULO
+                 -------------------------------------------------- -->
+
+            <header
+                id="cfg-title"
+                class="cfg-title-text"
+            >
+                Settings
+            </header>
+
+
+            <!-- --------------------------------------------------
+                 BOTÃO FECHAR
+                 --------------------------------------------------
+
+                 Esse botão será utilizado pelo JavaScript
+                 para fechar o #modal-window.
+                 -------------------------------------------------- -->
+
+            <button
+                id="cfg-close-btn"
+                type="button"
+                aria-label="Fechar configurações"
+            >
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+
+        <!-- ==================================================
+             PREFERÊNCIAS DE CONTEÚDO
+             ================================================== -->
+
+
+
+        <!-- ==================================================
+             MOTOR DE RECOMENDAÇÃO
+             ================================================== -->
+
+        <div
+            id="cfg-recommendation"
+            class="cfg-section"
+        >
+
+
+            <!-- --------------------------------------------------
+                 CABEÇALHO DA SEÇÃO
+                 -------------------------------------------------- -->
+
+            <div class="cfg-row-header">
+
+
+                <!-- Ícone da seção -->
+                <img
+                    src="../img/CineSearch.png"
+                    alt="Ícone do motor de recomendação"
+                    class="cfg-icon"
+                >
+
+
+                <!-- Título -->
+                <h2 class="cfg-title-text">
+                    Motor de Recomendação
+                </h2>
+
+            </div>
+
+
+            <!-- ==================================================
+                 OPÇÕES DO MOTOR DE RECOMENDAÇÃO
+                 ================================================== -->
+
+            <div class="cfg-row">
+
+
+                <!-- Texto explicativo -->
+                <header class="cfg-subtitle">
+                    Basear recomendações nos:
+                </header>
+
+
+                <!-- --------------------------------------------------
+                     SWITCHES
+                     -------------------------------------------------- -->
+
+                <div id="cfg-options-block">
+
+
+                    <!-- ==================================================
+                         SWITCH: MEUS STREAMINGS
+                         ================================================== -->
+
+                    <div class="cfg-toggle-row">
+
+
+                        <!-- Texto da opção -->
+                        <span class="cfg-toggle-label">
+                            Meus streamings
+                        </span>
+
+
+                        <!--
+                            Checkbox real.
+
+                            Ele fica invisível através do CSS,
+                            enquanto o label abaixo funciona
+                            visualmente como o switch.
+
+                            value:
+                            identifica a opção para o JavaScript
+                            e futuramente para o backend.
+                        -->
+
+                        <input
+                            type="checkbox"
+                            role="switch"
+                            id="cfg-switch-streamings"
+                            class="cfg-switch-input"
+                            value="myStreamings"
+                        >
+
+
+                        <!-- Switch visual -->
+                        <label
+                            for="cfg-switch-streamings"
+                            class="cfg-toggle-slider"
+                        ></label>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         SWITCH: PESQUISAS
+                         ================================================== -->
+
+                    <div class="cfg-toggle-row">
+
+
+                        <!-- Texto da opção -->
+                        <span class="cfg-toggle-label">
+                            Pesquisas
+                        </span>
+
+
+                        <!-- Checkbox -->
+                        <input
+                            type="checkbox"
+                            role="switch"
+                            id="cfg-switch-search"
+                            class="cfg-switch-input"
+                            value="pesquisas"
+                        >
+
+
+                        <!-- Switch visual -->
+                        <label
+                            for="cfg-switch-search"
+                            class="cfg-toggle-slider"
+                        ></label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 STREAMINGS DO USUÁRIO
+                 ================================================== -->
+
+            <div class="cfg-row">
+
+
+                <!-- Título -->
+                <h2 class="cfg-subtitle">
+                    Seus Streamings
+                </h2>
+
+
+                <!--
+                    ==================================================
+                    CONTAINER DOS CARDS
+                    ==================================================
+
+                    Os cards ficam diretamente dentro deste
+                    container.
+
+                    Não utilizamos divs com class="col".
+
+                    O CSS controla automaticamente a quantidade
+                    de cards por linha.
+                -->
+
+                <div
+                    id="cfg-streaming-row"
+                >
+
+
+                    <!-- ==================================================
+                         CARD HBO MAX
+                         ================================================== -->
+
+                    <div class="cfg-card">
+
+                        <!-- Logo -->
+                        <img
+                            src="../img/imgStreaming/hboMax.png"
+                            alt="HBOMAX"
+                            value="HBOMAX"
+                            class="cfg-card-icon"
+                        >
+
+                        <!-- Nome -->
+                        <header class="cfg-card-title">
+                            HBOMAX
+                        </header>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         CARD NETFLIX
+                         ================================================== -->
+
+                    <div class="cfg-card">
+
+                        <!-- Logo -->
+                        <img
+                            src="../img/imgStreaming/netflix.png"
+                            alt="NETFLIX"
+                            value="NETFLIX"
+                            class="cfg-card-icon"
+                        >
+
+                        <!-- Nome -->
+                        <header class="cfg-card-title">
+                            NETFLIX
+                        </header>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         CARD AMAZON PRIME
+                         ================================================== -->
+
+                    <div class="cfg-card">
+
+                        <!-- Logo -->
+                        <img
+                            src="../img/imgStreaming/primeVideo.png"
+                            alt="AMAZON PRIME"
+                            value="AMAZONPRIME"
+                            class="cfg-card-icon"
+                        >
+
+                        <!-- Nome -->
+                        <header class="cfg-card-title">
+                            AMAZON PRIME
+                        </header>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         CARD DISNEY PLUS
+                         ================================================== -->
+
+                    <div class="cfg-card">
+
+                        <!-- Logo -->
+                        <img
+                            src="../img/imgStreaming/disneyPlus.png"
+                            alt="DISNEY PLUS"
+                            value="DISNEYPLUS"
+                            class="cfg-card-icon"
+                        >
+
+                        <!-- Nome -->
+                        <header class="cfg-card-title">
+                            DISNEY PLUS
+                        </header>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         CARD APPLE TV
+                         ================================================== -->
+
+                    <div class="cfg-card">
+
+                        <!-- Logo -->
+                        <img
+                            src="../img/imgStreaming/appleTv.png"
+                            alt="APPLETV"
+                            value="APPLETV"
+                            class="cfg-card-icon"
+                        >
+
+                        <!-- Nome -->
+                        <header class="cfg-card-title">
+                            APPLETV
+                        </header>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         CARD CRUNCHYROLL
+                         ================================================== -->
+
+                    <div class="cfg-card">
+
+                        <!-- Logo -->
+                        <img
+                            src="../img/imgStreaming/crunchyroll.png"
+                            alt="CRUNCHYROLL"
+                            value="CRUNCHYROLL"
+                            class="cfg-card-icon"
+                        >
+
+                        <!-- Nome -->
+                        <header class="cfg-card-title">
+                            CRUNCHYROLL
+                        </header>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+         ================================================== -->
+
+    <!-- jQuery -->
+    <script src="../javaScript/lib/jquery-4.0.0.js"></script>
+    <script src="../javaScript/selectOption.js"></script>
+
+
+    <!-- JavaScript do Bootstrap -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+
+</body>
+
+</html>

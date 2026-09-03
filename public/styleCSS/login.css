@@ -1,0 +1,387 @@
+/* ========================= */
+/* RESET GLOBAL */
+/* ========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: -20px;
+
+    background-image: url("../img/CineSearch.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(10px);
+
+    transform: scale(1.05);
+
+    z-index: -2;
+}
+
+
+/* ========================= */
+/* CONTAINER GLOBAL */
+/* ========================= */
+
+#continerGlobal{
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+#barraVertical{
+    width: 100%;
+}
+
+
+/* titulo superior */
+
+#CineSearch{
+    width: 100%;
+
+    padding: 16px;
+
+    background-color: transparent;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 2rem;
+    font-weight: bold;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ========================= */
+/* MAIN */
+/* ========================= */
+
+#containerConteudo{
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+
+    padding: 40px 20px;
+}
+
+
+/* ========================= */
+/* CARD LOGIN */
+/* ========================= */
+
+#Login{
+    width: 100%;
+    max-width: 420px;
+
+    padding: 32px;
+
+    border-radius: 18px;
+
+    background-color: rgba(30, 30, 30, 0.90);
+
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 191, 255, 0.15);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+#formLogin{
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+}
+
+
+/* ========================= */
+/* TITULO LOGIN */
+/* ========================= */
+
+#textLogin{
+    color: deepskyblue;
+
+    text-align: center;
+
+    font-size: 38px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+/* ========================= */
+/* DIV INPUT */
+/* ========================= */
+
+.divInput{
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* ========================= */
+/* LABELS */
+/* ========================= */
+
+.labelInput{
+    color: white;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.labelInput:hover{
+    color: deepskyblue;
+
+    transition: color 0.3s;
+}
+
+/* ========================= */
+/* INPUTS */
+/* ========================= */
+
+.inputs{
+    width: 100%;
+    height: 45px;
+
+    padding: 12px;
+
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 12px;
+
+    outline: none;
+
+    background-color: rgba(85, 81, 81, 0.35);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s,
+        transform 0.3s;
+}
+
+
+/* placeholder */
+
+.inputs::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* focus */
+
+.inputs:focus{
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.7);
+
+    transform: scale(1.01);
+}
+
+.inputs:hover{
+    transform: scale(1.03);
+
+    border-color: deepskyblue;
+
+    box-shadow: 0 0 10px deepskyblue;
+
+    outline: none;
+
+    font-size: 18px;
+}
+
+
+/* ========================= */
+/* BOTAO LOGIN */
+/* ========================= */
+
+#buttonLogin{
+    height: 48px;
+
+    border: none;
+    border-radius: 35px;
+
+    cursor: pointer;
+
+    background-color: deepskyblue;
+
+    color: black;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        opacity 0.3s;
+}
+
+
+/* hover */
+
+#buttonLogin:hover{
+    transform: scale(1.03);
+
+    box-shadow: 0 0 14px deepskyblue;
+}
+
+
+/* active */
+
+#buttonLogin:active{
+    transform: scale(0.98);
+}
+
+
+/* ========================= */
+/* TEXTO CREATE ACCOUNT */
+/* ========================= */
+
+#createAccount{
+    color: white;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================= */
+/* LINK */
+/* ========================= */
+
+#ancoraCreateAccount{
+    color: deepskyblue;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: opacity 0.3s;
+}
+
+
+/* hover link */
+
+#ancoraCreateAccount:hover{
+    text-decoration: underline;
+}
+
+
+/* ========================= */
+/* RODAPE */
+/* ========================= */
+
+#rodape{
+    width: 100%;
+
+    padding: 16px;
+
+    background-color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* texto rodape */
+
+#textRodape{
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+.knowMore-ancora{
+    text-decoration: none;
+    color:deepskyblue;
+}
+
+
+/* ========================= */
+/* RESPONSIVIDADE */
+/* ========================= */
+
+@media (max-width: 480px){
+
+    #containerConteudo{
+        padding: 20px;
+    }
+
+    #Login{
+        padding: 24px;
+    }
+
+    #CineSearch{
+        font-size: 1.5rem;
+    }
+
+    #textLogin{
+        font-size: 1.7rem;
+    }
+
+    .inputs{
+        height: 42px;
+
+        font-size: 14px;
+    }
+
+    #buttonLogin{
+        height: 44px;
+
+        font-size: 14px;
+    }
+
+    #textRodape{
+        font-size: 12px;
+    }
+}

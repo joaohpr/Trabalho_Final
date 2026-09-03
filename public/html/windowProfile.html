@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <!-- ==================================================
+         CONFIGURAÇÕES BÁSICAS
+         ================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Profile</title>
+
+
+    <!-- ==================================================
+         FONT AWESOME
+         ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+
+    <!-- ==================================================
+         BOOTSTRAP
+         ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    >
+
+
+    <!-- ==================================================
+         CSS DO PERFIL
+         ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../styleCSS/windowProfile.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         CONTAINER GLOBAL
+         ================================================== -->
+
+    <div
+        id="Global"
+        class="container-fluid"
+    >
+
+
+        <!-- ==================================================
+             CONTAINER DO CONTEÚDO
+             ================================================== -->
+
+        <div
+            id="container-content"
+            class="container-fluid"
+        >
+
+
+            <!-- ==================================================
+                 HEADER
+                 ================================================== -->
+
+            <div id="header">
+
+
+                <!-- Botão fechar -->
+
+                <button
+                    id="btn-close"
+                    class="btn btn-danger"
+                    type="button"
+                    aria-label="Fechar"
+                >
+                    X
+                </button>
+
+
+                <!-- Título -->
+
+                <header class="text-header">
+                    Settings's Profile
+                </header>
+
+
+            </div>
+
+
+            <!-- ==================================================
+                 CONTEÚDO PRINCIPAL
+                 ================================================== -->
+
+            <main
+                id="conteudo"
+                class="container-fluid"
+            >
+
+
+                <!-- ==================================================
+                     FOTO DE PERFIL
+                     ================================================== -->
+
+                <div class="row-edit avatar-row">
+
+
+                    <!-- Foto -->
+
+                    <img
+                        id="prof-avatar-preview"
+                        class="rounded-circle"
+                        src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23333'/%3E%3Ccircle cx='50' cy='38' r='18' fill='%23777'/%3E%3Cpath d='M20 90c0-22 14-36 30-36s30 14 30 36' fill='%23777'/%3E%3C/svg%3E"
+                        alt="Foto de perfil"
+                    >
+
+
+                    <!-- Botão da câmera -->
+
+                    <label
+                        for="prof-avatar-input"
+                        id="prof-avatar-edit"
+                    >
+
+                        <i class="fa-solid fa-camera"></i>
+
+                    </label>
+
+
+                    <!-- Input da imagem -->
+
+                    <input
+                        type="file"
+                        id="prof-avatar-input"
+                        accept="image/*"
+                        hidden
+                    >
+
+
+                </div>
+
+
+                <!-- ==================================================
+                     NOME
+                     ================================================== -->
+
+                <div class="row-edit">
+
+                    <input
+                        type="text"
+                        id="input-name"
+                        class="form-control"
+                        placeholder="Name"
+                        required
+                    >
+
+                    <div class="invalid-feedback">Informe seu nome.</div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     USERNAME
+                     ================================================== -->
+
+                <div class="row-edit">
+
+                    <input
+                        type="text"
+                        id="input-username"
+                        class="form-control"
+                        placeholder="Username"
+                        required
+                    >
+
+                    <div class="invalid-feedback">Informe seu nome de usuário.</div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     EMAIL
+                     ================================================== -->
+
+                <div class="row-edit">
+
+                    <input
+                        type="email"
+                        id="input-email"
+                        class="form-control"
+                        placeholder="Email"
+                        required
+                    >
+
+                    <div class="invalid-feedback">Informe um e-mail válido.</div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     SENHA
+                     ================================================== -->
+
+                <div class="row-edit">
+
+                    <input
+                        type="password"
+                        id="input-password"
+                        class="form-control"
+                        placeholder="Password"
+                        minlength="6"
+                        required
+                    >
+
+                    <div class="invalid-feedback">A senha deve ter pelo menos 6 caracteres.</div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     BOTÃO SALVAR
+                     ================================================== -->
+
+                <div class="row-edit">
+
+                    <button
+                        id="btn-save"
+                        class="btn btn-primary"
+                        type="button"
+                    >
+                        Edit and Save
+                    </button>
+
+                </div>
+
+
+            </main>
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

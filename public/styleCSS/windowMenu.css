@@ -1,0 +1,434 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container-main {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.settings-window {
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 25px;
+
+    background-color: rgb(30, 29, 34);
+    color: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.settings-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.text-header {
+    margin: 0;
+
+    color: white;
+
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#backButton {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+#backButton:hover {
+    background-color: crimson;
+
+    transform: scale(1.08);
+}
+
+#backButton:active {
+    transform: scale(0.95);
+    background-color: rgb(27, 27, 27);
+}
+
+
+#container-recomendations {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 0 0 25px 0;
+    padding: 15px;
+
+    border: 2px solid #555;
+    border-radius: 12px;
+
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.settings-option {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 10px;
+}
+
+.text-subtitle {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    transition: color 0.2s ease, font-weight 0.2s ease, transform 0.2s ease;
+}
+
+.text-subtitle:hover {
+    color: deepskyblue;
+    font-weight: bold;
+    transform: scale(1.02);
+}
+
+.toggle-switch {
+    position: relative;
+
+    display: inline-block;
+
+    width: 50px;
+    height: 28px;
+
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    cursor: pointer;
+
+    background-color: #666;
+
+    border-radius: 34px;
+
+    transition: 0.3s ease;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    left: 3px;
+    bottom: 3px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.2);
+
+    transition: 0.3s ease;
+}
+
+.toggle-switch input:checked+.slider {
+    background: deepskyblue;
+}
+
+.toggle-switch input:checked+.slider::before {
+    transform: translateX(22px);
+}
+
+.cfg-row {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.cfg-subtitle {
+    margin: 0;
+
+    color: white;
+
+    font-size: 23px;
+    font-weight: bold;
+    transition: color 0.2s ease, font-weight 0.2s ease, transform 0.2s ease;
+}
+
+.cfg-subtitle :hover {
+    color: deepskyblue;
+    font-weight: bold;
+    transform: scale(1.02);
+}
+
+
+
+#cfg-streaming-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    gap: 20px;
+
+    padding: 10px 0;
+}
+
+.cfg-card {
+    width: 100%;
+    height: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    background-color: rgb(45, 44, 50);
+
+    border: 2px solid transparent;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cfg-card:hover {
+    transform: scale(1.03);
+}
+
+.cfg-card-selected {
+    transform: scale(1.03);
+
+    border-color: green;
+
+    box-shadow:
+        0 0 15px green;
+}
+
+.cfg-card-icon-selected {
+    width: 120px;
+    height: 120px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.25s ease,
+        border 0.25s ease;
+    border-color: green;
+
+    box-shadow:
+        0 0 15px green;
+}
+
+.cfg-card.cfg-card-selecionado {
+    border-color: deepskyblue;
+
+    box-shadow:
+        0 0 16px deepskyblue;
+}
+.cfg-card-icon {
+    width: 120px;
+    height: 120px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.25s ease,
+        border 0.25s ease;
+}
+
+.cfg-card-title {
+    width: 100%;
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    text-align: center;
+
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+
+    .settings-window {
+        max-width: 95vw;
+
+        padding: 20px;
+    }
+
+    .text-header {
+        font-size: 25px;
+    }
+
+    .cfg-subtitle {
+        font-size: 20px;
+    }
+
+    #cfg-streaming-row {
+        gap: 15px;
+    }
+
+    .cfg-card {
+        height: 190px;
+    }
+
+    .cfg-card-icon {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    #container-main {
+        padding: 10px;
+    }
+
+    .settings-window {
+        width: 95vw;
+        max-width: 95vw;
+        max-height: 92vh;
+
+        padding: 15px;
+
+        border-radius: 12px;
+    }
+
+    .text-header {
+        font-size: 22px;
+    }
+
+    .text-subtitle {
+        font-size: 18px;
+    }
+
+    .cfg-subtitle {
+        font-size: 18px;
+    }
+
+    #container-recomendations {
+        padding: 10px;
+    }
+
+    .settings-option {
+        padding: 12px 5px;
+    }
+
+    #cfg-streaming-row {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+
+        gap: 10px;
+    }
+
+    .cfg-card {
+        height: 160px;
+
+        padding: 10px;
+    }
+
+    .cfg-card-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cfg-card-title {
+        font-size: 13px;
+    }
+}
