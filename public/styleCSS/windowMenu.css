@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+/* =========================
+   ESTRUTURA GERAL
+   ========================= */
+
 html,
 body {
     margin: 0;
@@ -11,7 +15,9 @@ body {
 body {
     width: 100%;
     min-height: 100vh;
+
     background: transparent;
+
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -19,19 +25,24 @@ body {
     min-height: 100vh;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     padding: 20px;
 }
+
+
+/* =========================
+   JANELA DE CONFIGURAÇÕES
+   ========================= */
 
 .settings-window {
     width: 100%;
     max-width: 850px;
     max-height: 90vh;
 
-    overflow-y: auto;
     overflow-x: hidden;
+    overflow-y: auto;
 
     padding: 25px;
 
@@ -40,9 +51,13 @@ body {
 
     border-radius: 18px;
 
-    box-shadow:
-        0 0 30px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 }
+
+
+/* =========================
+   CABEÇALHO
+   ========================= */
 
 .settings-header {
     width: 100%;
@@ -62,9 +77,15 @@ body {
     color: white;
 
     font-size: 35px;
-    text-align: center;
     font-weight: bold;
+
+    text-align: center;
 }
+
+
+/* =========================
+   BOTÃO VOLTAR
+   ========================= */
 
 #backButton {
     width: 40px;
@@ -73,8 +94,8 @@ body {
     flex-shrink: 0;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     padding: 0;
 
@@ -98,10 +119,15 @@ body {
 }
 
 #backButton:active {
-    transform: scale(0.95);
     background-color: rgb(27, 27, 27);
+
+    transform: scale(0.95);
 }
 
+
+/* =========================
+   SEÇÃO DE RECOMENDAÇÕES
+   ========================= */
 
 #container-recomendations {
     width: 100%;
@@ -114,11 +140,16 @@ body {
     margin: 0 0 25px 0;
     padding: 15px;
 
+    background-color: rgba(255, 255, 255, 0.02);
+
     border: 2px solid #555;
     border-radius: 12px;
-
-    background-color: rgba(255, 255, 255, 0.02);
 }
+
+
+/* =========================
+   OPÇÕES DE CONFIGURAÇÃO
+   ========================= */
 
 .settings-option {
     width: 100%;
@@ -134,17 +165,30 @@ body {
 
 .text-subtitle {
     margin: 0;
+
     color: white;
+
     font-size: 20px;
     font-weight: 500;
-    transition: color 0.2s ease, font-weight 0.2s ease, transform 0.2s ease;
+
+    transition:
+        color 0.2s ease,
+        font-weight 0.2s ease,
+        transform 0.2s ease;
 }
 
 .text-subtitle:hover {
     color: deepskyblue;
+
     font-weight: bold;
+
     transform: scale(1.02);
 }
+
+
+/* =========================
+   TOGGLE SWITCH
+   ========================= */
 
 .toggle-switch {
     position: relative;
@@ -158,10 +202,10 @@ body {
 }
 
 .toggle-switch input {
-    opacity: 0;
-
     width: 0;
     height: 0;
+
+    opacity: 0;
 }
 
 .slider {
@@ -175,7 +219,7 @@ body {
 
     border-radius: 34px;
 
-    transition: 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .slider::before {
@@ -193,19 +237,23 @@ body {
 
     border-radius: 50%;
 
-    box-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.toggle-switch input:checked+.slider {
-    background: deepskyblue;
+.toggle-switch input:checked + .slider {
+    background-color: deepskyblue;
 }
 
-.toggle-switch input:checked+.slider::before {
+.toggle-switch input:checked + .slider::before {
     transform: translateX(22px);
 }
+
+
+/* =========================
+   STREAMINGS
+   ========================= */
 
 .cfg-row {
     width: 100%;
@@ -223,16 +271,22 @@ body {
 
     font-size: 23px;
     font-weight: bold;
-    transition: color 0.2s ease, font-weight 0.2s ease, transform 0.2s ease;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.cfg-subtitle :hover {
+.cfg-subtitle:hover {
     color: deepskyblue;
-    font-weight: bold;
+
     transform: scale(1.02);
 }
 
 
+/* =========================
+   GRID DOS STREAMINGS
+   ========================= */
 
 #cfg-streaming-row {
     width: 100%;
@@ -247,13 +301,17 @@ body {
     padding: 10px 0;
 }
 
+
+/* =========================
+   CARDS
+   ========================= */
+
 .cfg-card {
     width: 100%;
     height: 210px;
 
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: center;
 
@@ -280,40 +338,22 @@ body {
     transform: scale(1.03);
 }
 
+
+/* =========================
+   CARD SELECIONADO
+   ========================= */
+
 .cfg-card-selected {
-    transform: scale(1.03);
-
     border-color: green;
 
-    box-shadow:
-        0 0 15px green;
+    box-shadow:15px green;
 }
 
-.cfg-card-icon-selected {
-    width: 120px;
-    height: 120px;
 
-    flex-shrink: 0;
+/* =========================
+   ÍCONE DO CARD
+   ========================= */
 
-    object-fit: contain;
-
-    border-radius: 50%;
-
-    transition:
-        transform 0.25s ease,
-        border 0.25s ease;
-    border-color: green;
-
-    box-shadow:
-        0 0 15px green;
-}
-
-.cfg-card.cfg-card-selecionado {
-    border-color: deepskyblue;
-
-    box-shadow:
-        0 0 16px deepskyblue;
-}
 .cfg-card-icon {
     width: 120px;
     height: 120px;
@@ -324,10 +364,13 @@ body {
 
     border-radius: 50%;
 
-    transition:
-        transform 0.25s ease,
-        border 0.25s ease;
+    transition: transform 0.25s ease;
 }
+
+
+/* =========================
+   TÍTULO DO CARD
+   ========================= */
 
 .cfg-card-title {
     width: 100%;
@@ -343,6 +386,11 @@ body {
 
     overflow-wrap: break-word;
 }
+
+
+/* =========================
+   TABLET
+   ========================= */
 
 @media (max-width: 768px) {
 
@@ -373,6 +421,11 @@ body {
         height: 100px;
     }
 }
+
+
+/* =========================
+   CELULAR
+   ========================= */
 
 @media (max-width: 500px) {
 
@@ -432,3 +485,4 @@ body {
         font-size: 13px;
     }
 }
+
