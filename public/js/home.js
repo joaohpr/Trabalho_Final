@@ -97,7 +97,7 @@ $(function () {
     function abrirCard(card) {
 
         $('#modal-window').load(
-            'expandCards.html #container-global',
+            'windowCards.html #container-global',
 
             function (response, status) {
 
@@ -122,7 +122,7 @@ $(function () {
        FECHAR CARD
        ===================================================== */
 
-    $(document).on('click', '.close-btn', function () {
+    $(document).on('click', '#close', function () {
 
         $('#modal-window')
             .css('display', 'none')
