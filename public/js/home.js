@@ -1,13 +1,16 @@
 $(function () {
 
+
     /* =====================================================
        CURTIR FILME
-       ===================================================== */
+    ===================================================== */
 
     $('.btn-curtir').each(function (index) {
 
         const button = $(this);
+
         const key = 'filme-curtido-' + index;
+
 
         function update(curtiu) {
 
@@ -16,87 +19,124 @@ $(function () {
                 .text(curtiu ? '♥' : '♡');
 
             localStorage.setItem(key, curtiu);
+
         }
 
-        update(localStorage.getItem(key) === 'true');
+
+        update(
+            localStorage.getItem(key) === 'true'
+        );
+
 
         button.on('click', function (event) {
 
             event.stopPropagation();
 
-            update(!button.hasClass('curtiu'));
+            update(
+                !button.hasClass('curtiu')
+            );
 
         });
 
     });
+
 
 
     /* =====================================================
        FAVORITAR FILME
-       ===================================================== */
+    ===================================================== */
 
     $('.btn-favorito').each(function (index) {
 
         const button = $(this);
+
         const key = 'filme-favorito-' + index;
+
 
         function update(isFavorite) {
 
-            button.toggleClass('favoritado', isFavorite);
+            button.toggleClass(
+                'favoritado',
+                isFavorite
+            );
 
-            localStorage.setItem(key, isFavorite);
+            localStorage.setItem(
+                key,
+                isFavorite
+            );
+
         }
 
-        update(localStorage.getItem(key) === 'true');
+
+        update(
+            localStorage.getItem(key) === 'true'
+        );
+
 
         button.on('click', function (event) {
 
             event.stopPropagation();
 
-            update(!button.hasClass('favoritado'));
+            update(
+                !button.hasClass('favoritado')
+            );
 
         });
 
     });
 
 
+
     /* =====================================================
-       ABRIR CARD
-       ===================================================== */
+       ABRIR WINDOW CARD
+    ===================================================== */
 
     let ultimoToque = 0;
 
-    $(document).on('dblclick', '.cards', function () {
 
-        abrirCard(this);
-
-    });
-
-
-    $(document).on('touchend', '.cards', function (evento) {
-
-        const agora = Date.now();
-
-        if (agora - ultimoToque < 300) {
-
-            evento.preventDefault();
+    $(document).on(
+        'dblclick',
+        '.cards',
+        function () {
 
             abrirCard(this);
 
-            ultimoToque = 0;
+        }
+    );
 
-        } else {
 
-            ultimoToque = agora;
+    $(document).on(
+        'touchend',
+        '.cards',
+        function (evento) {
+
+            const agora = Date.now();
+
+
+            if (agora - ultimoToque < 300) {
+
+                evento.preventDefault();
+
+                abrirCard(this);
+
+                ultimoToque = 0;
+
+            } else {
+
+                ultimoToque = agora;
+
+            }
 
         }
-
-    });
+    );
 
 
     function abrirCard(card) {
 
-        $('#modal-window').load(
+        const modalWindow = $('#modal-window');
+
+
+        modalWindow.load(
             'windowCards.html #container-global',
 
             function (response, status) {
@@ -104,13 +144,18 @@ $(function () {
                 if (status === 'error') {
 
                     console.error(
-                        'Erro ao carregar o conteúdo do card.'
+                        'Erro ao carregar o Window Card.'
                     );
 
                     return;
+
                 }
 
-                $('#modal-window').css('display', 'flex');
+
+                modalWindow.css(
+                    'display',
+                    'flex'
+                );
 
             }
         );
@@ -118,16 +163,173 @@ $(function () {
     }
 
 
+
     /* =====================================================
-       FECHAR CARD
-       ===================================================== */
+       FECHAR WINDOW CARD
+    ===================================================== */
 
-    $(document).on('click', '#close', function () {
+    $(document).on(
+        'click',
+        '#modal-window #close',
+        function () {
 
-        $('#modal-window')
-            .css('display', 'none')
-            .empty();
+            $('#modal-window')
+                .css('display', 'none')
+                .empty();
 
-    });
+        }
+    );
+
+
+
+    /* =====================================================
+       ABRIR POPUP DE AVALIAÇÃO
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '#bntAvaliar',
+        function (event) {
+
+            event.stopPropagation();
+
+
+            const modal = $('#modal');
+
+
+            modal.load(
+                'popupCards.html #popup-avaliacao',
+
+                function (response, status) {
+
+                    if (status === 'error') {
+
+                        console.error(
+                            'Erro ao carregar popupCards.html.'
+                        );
+
+                        return;
+
+                    }
+
+
+                    modal.css(
+                        'display',
+                        'flex'
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       SELECIONAR ESTRELAS
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '.btn-avaliar',
+        function () {
+
+            const notaSelecionada =
+                Number($(this).val());
+
+
+            $('.btn-avaliar').each(
+                function () {
+
+                    const valor =
+                        Number($(this).val());
+
+
+                    if (valor <= notaSelecionada) {
+
+                        $(this)
+                            .addClass('selecionada');
+
+                    } else {
+
+                        $(this)
+                            .removeClass('selecionada');
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+    /* =====================================================
+       FECHAR POPUP DE AVALIAÇÃO
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '#modal #close-avaliacao, #modal #cancelar',
+        function () {
+
+            $('#modal')
+                .css('display', 'none')
+                .empty();
+
+        }
+    );
+
+
+
+    /* =====================================================
+       ENVIAR AVALIAÇÃO
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '#modal #enviar',
+        function () {
+
+            let nota = 0;
+
+
+            $('.btn-avaliar.selecionada').each(
+                function () {
+
+                    nota = Math.max(
+                        nota,
+                        Number($(this).val())
+                    );
+
+                }
+            );
+
+
+            if (nota === 0) {
+
+                console.log(
+                    'Nenhuma nota foi selecionada.'
+                );
+
+                return;
+
+            }
+
+
+            console.log(
+                'Nota selecionada:',
+                nota
+            );
+
+
+            $('#modal')
+                .css('display', 'none')
+                .empty();
+
+        }
+    );
 
 });
