@@ -411,6 +411,13 @@ body {
 }
 
 
+#modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 /* RESPONSIVIDADE */
 
 @media (max-width: 700px) {
