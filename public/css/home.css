@@ -326,55 +326,6 @@ body {
     transition: 0.3s;
 }
 
-
-.btn-favorito,
-.btn-curtir {
-    position: absolute;
-    top: 12px;
-
-    display: grid;
-    width: 34px;
-    height: 34px;
-    place-items: center;
-
-    border: 0;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.55);
-    color: white;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-.btn-favorito {
-    right: 52px;
-}
-
-
-.btn-curtir {
-    right: 12px;
-}
-
-
-.btn-favorito:hover,
-.btn-curtir:hover {
-    transform: scale(1.12);
-}
-
-
-.btn-favorito.favoritado {
-    color: #ffd43b;
-}
-
-
-.btn-curtir.curtiu {
-    color: #ff4d6d;
-}
-
-
 /* imagens dos cards */
 
 .cards img {
