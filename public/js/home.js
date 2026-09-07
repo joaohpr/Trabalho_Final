@@ -1,90 +1,5 @@
+
 $(function () {
-
-
-    /* =====================================================
-       CURTIR FILME
-    ===================================================== */
-
-    $('.btn-curtir').each(function (index) {
-
-        const button = $(this);
-
-        const key = 'filme-curtido-' + index;
-
-
-        function update(curtiu) {
-
-            button
-                .toggleClass('curtiu', curtiu)
-                .text(curtiu ? '♥' : '♡');
-
-            localStorage.setItem(key, curtiu);
-
-        }
-
-
-        update(
-            localStorage.getItem(key) === 'true'
-        );
-
-
-        button.on('click', function (event) {
-
-            event.stopPropagation();
-
-            update(
-                !button.hasClass('curtiu')
-            );
-
-        });
-
-    });
-
-
-
-    /* =====================================================
-       FAVORITAR FILME
-    ===================================================== */
-
-    $('.btn-favorito').each(function (index) {
-
-        const button = $(this);
-
-        const key = 'filme-favorito-' + index;
-
-
-        function update(isFavorite) {
-
-            button.toggleClass(
-                'favoritado',
-                isFavorite
-            );
-
-            localStorage.setItem(
-                key,
-                isFavorite
-            );
-
-        }
-
-
-        update(
-            localStorage.getItem(key) === 'true'
-        );
-
-
-        button.on('click', function (event) {
-
-            event.stopPropagation();
-
-            update(
-                !button.hasClass('favoritado')
-            );
-
-        });
-
-    });
-
 
 
     /* =====================================================
@@ -138,7 +53,6 @@ $(function () {
 
         modalWindow.load(
             'windowCards.html #container-global',
-
             function (response, status) {
 
                 if (status === 'error') {
@@ -162,7 +76,35 @@ $(function () {
 
     }
 
+    /* =====================================================
+       CURTIR / DESCURTIR FILME
+    ===================================================== */
 
+    $(document).on(
+        'click',
+        '#bntCurtir',
+        function (event) {
+
+            event.stopPropagation();
+
+            var color = $(this).css('color');
+
+            if (color === 'rgb(255, 0, 0)') {
+
+                $(this)
+                    .css('color', 'gray')
+                    .css('border', 'solid gray');
+
+            } else {
+
+                $(this)
+                    .css('color', 'red')
+                    .css('border', 'solid red');
+
+            }
+
+        }
+    );
 
     /* =====================================================
        FECHAR WINDOW CARD
@@ -171,14 +113,22 @@ $(function () {
     $(document).on(
         'click',
         '#modal-window #close',
-        function () {
+        function (event) {
+
+            event.stopPropagation();
+
 
             $('#modal-window')
-                .css('display', 'none')
+                .css(
+                    'display',
+                    'none'
+                )
                 .empty();
 
         }
     );
+
+
 
 
 
@@ -199,7 +149,6 @@ $(function () {
 
             modal.load(
                 'popupCards.html #popup-avaliacao',
-
                 function (response, status) {
 
                     if (status === 'error') {
@@ -223,4 +172,173 @@ $(function () {
 
         }
     );
+
+
+    /* =====================================================
+       FECHAR POPUP PELO X
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '#modal #close-avaliacao',
+        function (event) {
+
+            event.stopPropagation();
+
+
+            $('#modal')
+                .css(
+                    'display',
+                    'none'
+                )
+                .empty();
+
+        }
+    );
+
+
+
+
+
+    /* =====================================================
+       CANCELAR AVALIAÇÃO
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '#modal #cancelar',
+        function (event) {
+
+            event.stopPropagation();
+
+
+            $('#modal')
+                .css(
+                    'display',
+                    'none'
+                )
+                .empty();
+
+        }
+    );
+
+
+
+
+
+    /* =====================================================
+       SELECIONAR ESTRELAS
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '#modal .btn-avaliar',
+        function (event) {
+
+            event.stopPropagation();
+
+
+            const notaSelecionada =
+                Number(
+                    $(this).val()
+                );
+
+
+            $('#modal .btn-avaliar').each(
+                function () {
+
+                    const valor =
+                        Number(
+                            $(this).val()
+                        );
+
+
+                    if (
+                        valor <=
+                        notaSelecionada
+                    ) {
+
+                        $(this)
+                            .addClass(
+                                'selecionada'
+                            );
+
+                    } else {
+
+                        $(this)
+                            .removeClass(
+                                'selecionada'
+                            );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+
+
+    /* =====================================================
+       ENVIAR AVALIAÇÃO
+    ===================================================== */
+
+    $(document).on(
+        'click',
+        '#modal #enviar',
+        function (event) {
+
+            event.stopPropagation();
+
+
+            let nota = 0;
+
+
+            $('#modal .btn-avaliar.selecionada')
+                .each(
+                    function () {
+
+                        nota = Math.max(
+                            nota,
+                            Number(
+                                $(this).val()
+                            )
+                        );
+
+                    }
+                );
+
+
+            if (nota === 0) {
+
+                console.log(
+                    'Nenhuma nota foi selecionada.'
+                );
+
+                return;
+
+            }
+
+
+            console.log(
+                'Nota selecionada:',
+                nota
+            );
+
+
+            $('#modal')
+                .css(
+                    'display',
+                    'none'
+                )
+                .empty();
+
+        }
+    );
+
+
 });
+
