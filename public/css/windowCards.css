@@ -56,8 +56,7 @@ body {
     border-radius: 10px;
 
     box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.6);
+        0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -191,10 +190,8 @@ body {
     padding: 50px;
 
     background:
-        linear-gradient(
-            rgba(20, 20, 25, 0.9),
-            rgba(20, 20, 25, 0.98)
-        );
+        linear-gradient(rgba(20, 20, 25, 0.9),
+            rgba(20, 20, 25, 0.98));
 }
 
 
@@ -411,7 +408,7 @@ body {
 }
 
 
-#modal{
+#modal {
     display: flex;
     justify-content: center;
     align-items: center;
