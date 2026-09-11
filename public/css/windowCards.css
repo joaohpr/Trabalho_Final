@@ -883,4 +883,18 @@ body {
         font-size: 26px;
     }
 
+    #enviar{
+        width: 42px;
+        height: 42px;
+
+        font-size: 16px;
+    }
+
+    #cancelar{
+        width: 42px;
+        height: 42px;
+
+        font-size: 16px;
+    }
+
 }
