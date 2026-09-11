@@ -1,4 +1,3 @@
-
 $(function () {
 
 
@@ -76,6 +75,7 @@ $(function () {
 
     }
 
+
     /* =====================================================
        CURTIR / DESCURTIR FILME
     ===================================================== */
@@ -87,7 +87,9 @@ $(function () {
 
             event.stopPropagation();
 
+
             var color = $(this).css('color');
+
 
             if (color === 'rgb(255, 0, 0)') {
 
@@ -105,6 +107,7 @@ $(function () {
 
         }
     );
+
 
     /* =====================================================
        FECHAR WINDOW CARD
@@ -127,9 +130,6 @@ $(function () {
 
         }
     );
-
-
-
 
 
     /* =====================================================
@@ -186,18 +186,10 @@ $(function () {
             event.stopPropagation();
 
 
-            $('#modal')
-                .css(
-                    'display',
-                    'none'
-                )
-                .empty();
+            fecharAvaliacao();
 
         }
     );
-
-
-
 
 
     /* =====================================================
@@ -212,18 +204,22 @@ $(function () {
             event.stopPropagation();
 
 
-            $('#modal')
-                .css(
-                    'display',
-                    'none'
-                )
-                .empty();
+            fecharAvaliacao();
 
         }
     );
 
 
+    function fecharAvaliacao() {
 
+        $('#modal')
+            .css(
+                'display',
+                'none'
+            )
+            .empty();
+
+    }
 
 
     /* =====================================================
@@ -279,9 +275,6 @@ $(function () {
     );
 
 
-
-
-
     /* =====================================================
        ENVIAR AVALIAÇÃO
     ===================================================== */
@@ -312,6 +305,10 @@ $(function () {
                 );
 
 
+            let comentario =
+                $('#modal .input-comentario').val();
+
+
             if (nota === 0) {
 
                 console.log(
@@ -329,16 +326,15 @@ $(function () {
             );
 
 
-            $('#modal')
-                .css(
-                    'display',
-                    'none'
-                )
-                .empty();
+            console.log(
+                'Comentário:',
+                comentario
+            );
+
+
+            fecharAvaliacao();
 
         }
     );
 
-
 });
-
