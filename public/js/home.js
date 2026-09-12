@@ -286,9 +286,7 @@ $(function () {
 
             event.stopPropagation();
 
-
             let nota = 0;
-
 
             $('#modal .btn-avaliar.selecionada')
                 .each(
@@ -304,36 +302,21 @@ $(function () {
                     }
                 );
 
-
             let comentario =
                 $('#modal .input-comentario').val();
 
+            if (comentario == '' && nota == 0) {
 
-            if (nota === 0) {
+                $('.input-comentario')
+                    .attr('placeholder',
+                        'Informe uma nota ou escreva um comentário para criar uma avaliação!'
+                    );
 
-                console.log(
-                    'Nenhuma nota foi selecionada.'
-                );
+            } else {
 
-                return;
+                fecharAvaliacao();
 
             }
-
-
-            console.log(
-                'Nota selecionada:',
-                nota
-            );
-
-
-            console.log(
-                'Comentário:',
-                comentario
-            );
-
-
-            fecharAvaliacao();
-
         }
     );
 
