@@ -11,12 +11,11 @@ body {
     background-color: rgba(0, 0, 0, 0.808);
 
     overflow: hidden;
+
+    font-family: 'Poppins', sans-serif;
+
 }
 
-
-/* ========================= */
-/* LAYOUT PRINCIPAL */
-/* ========================= */
 
 /* ========================= */
 /* LAYOUT PRINCIPAL */
@@ -379,7 +378,7 @@ body {
 
     color: white;
 
-    height: 30px;
+    height: 5px;
 
     margin-bottom: 30px;
 
@@ -952,13 +951,14 @@ body {
 
     #cards-row {
         width: 100%;
-        overflow-x: auto;
+        display: flex;
         gap: 15px;
+        overflow-x: auto;
     }
 
     #cards-row .cards {
         min-width: 200px;
-        min-height: 280px;
+        min-height: 260px;
     }
 
     .cards {

@@ -309,7 +309,7 @@ $(function () {
 
                 $('.input-comentario')
                     .attr('placeholder',
-                        'Informe uma nota ou escreva um comentário para criar uma avaliação!'
+                        'Você deve praticar alguma ação para poder criar uma avaliação!'
                     );
 
             } else {
