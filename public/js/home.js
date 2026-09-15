@@ -309,8 +309,10 @@ $(function () {
 
                 $('.input-comentario')
                     .attr('placeholder',
-                        'Você deve praticar alguma ação para poder criar uma avaliação!'
-                    );
+                        'Você deve praticar alguma ação para poder criar uma avaliação!')
+                        .addClass('border-danger');
+
+
 
             } else {
 
