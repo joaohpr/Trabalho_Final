@@ -44,7 +44,7 @@
 
             <section id="Login">
 
-                <form id="formLogin">
+                <form id="formLogin" action="test.php" method="POST">
 
                     <!-- titulo -->
 
@@ -63,7 +63,7 @@
                         </label>
 
                         <input type="text" id="inputUsername" class="inputs" placeholder="Username"
-                            autocomplete="username" required>
+                            autocomplete="username" name=nameuser required>
 
                     </div>
 
@@ -78,7 +78,7 @@
                         </label>
 
                         <input type="password" id="inputPassword" class="inputs" placeholder="Password"
-                            autocomplete="current-password" required >
+                            autocomplete="current-password" name="password" required >
 
                     </div>
 
