@@ -19,7 +19,7 @@ $(document).ready(function () {
             return;
         }
 
-        window.location.href = "home.html";
+        window.location.href = "home.php";
 
     });
 

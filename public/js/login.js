@@ -40,7 +40,7 @@ $(document).ready(function () {
             return;
         }
 
-        window.location.href = "public/html/home.html";
+        window.location.href = "public/pages/home.php";
 
     });
 

@@ -51,7 +51,7 @@ $(function () {
 
 
         modalWindow.load(
-            'windowCards.html #container-global',
+            'windowCards.php #container-global',
             function (response, status) {
 
                 if (status === 'error') {
@@ -148,7 +148,7 @@ $(function () {
 
 
             modal.load(
-                'popupCards.html #popup-avaliacao',
+                'popupCards.php #popup-avaliacao',
                 function (response, status) {
 
                     if (status === 'error') {

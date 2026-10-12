@@ -23,7 +23,7 @@ $(document).ready(function () {
     function abrirModal(modal) {
 
         modal.load(
-            "../html/windowMenu.html #container-main",
+            "../pages/windowMenu.php #container-main",
             function (response, status) {
 
                 if (status === "error") {

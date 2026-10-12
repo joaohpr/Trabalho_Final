@@ -50,7 +50,7 @@ $(document).ready(function () {
     onDoubleTapOrClick("#openProfile", function () {
 
         modal.load(
-            "windowProfile.html #Global",
+            "windowProfile.php #Global",
             function (_, status, xhr) {
 
                 if (status === "error") {
