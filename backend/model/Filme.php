@@ -1,6 +1,7 @@
 <?php 
 
     class Filme{ 
+        
         private $nome;
         private $idTmdb;
         private $notaTmdb;
@@ -8,7 +9,7 @@
         private $dataLancamento;
         private $imagem;
 
-        public function __construct($nome,$id,$idTmdb,$notaTmdb,$description,$dataLancamento,$imagem){
+        public function __construct($nome,$idTmdb,$notaTmdb,$description,$dataLancamento,$imagem){
            $this->nome = $nome;
            $this->idTmdb = $idTmdb;
            $this->notaTmdb = $notaTmdb;
