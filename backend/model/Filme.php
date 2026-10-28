@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 require_once __DIR__ . "/Genero.php";
 
 class Filme { 
 
-    private $genero;
+    private $generos;
 
     private $nome;
     private $idTmdb;
@@ -20,8 +20,7 @@ class Filme {
         $notaTmdb,
         $description,
         $dataLancamento,
-        $imagem,
-        $genero
+        $imagem
     ) {
         $this->nome = $nome;
         $this->idTmdb = $idTmdb;
@@ -29,7 +28,7 @@ class Filme {
         $this->description = $description;
         $this->dataLancamento = $dataLancamento;
         $this->imagem = $imagem;
-        $this->genero = $genero;
+        $this->generos = [];
     }
 
 
@@ -37,6 +36,7 @@ class Filme {
     public function getNome() {
         return $this->nome;
     }
+
     public function setNome($nome) {
         $this->nome = $nome;
     }
@@ -46,6 +46,7 @@ class Filme {
     public function getIdTmdb() {
         return $this->idTmdb;
     }
+
     public function setIdTmdb($idTmdb) {
         $this->idTmdb = $idTmdb;
     }
@@ -55,6 +56,7 @@ class Filme {
     public function getNotaTmdb() {
         return $this->notaTmdb;
     }
+
     public function setNotaTmdb($notaTmdb) {
         $this->notaTmdb = $notaTmdb;
     }
@@ -64,6 +66,7 @@ class Filme {
     public function getDescription() {
         return $this->description;
     }
+
     public function setDescription($description) {
         $this->description = $description;
     }
@@ -73,6 +76,7 @@ class Filme {
     public function getDataLancamento() {
         return $this->dataLancamento;
     }
+
     public function setDataLancamento($dataLancamento) {
         $this->dataLancamento = $dataLancamento;
     }
@@ -82,17 +86,23 @@ class Filme {
     public function getImagem() {
         return $this->imagem;
     }
+
     public function setImagem($imagem) {
         $this->imagem = $imagem;
     }
 
 
-    // Métodos genero
-    public function getGenero() {
-        return $this->genero;
+    // Métodos generos
+    public function getGeneros() {
+        return $this->generos;
     }
-    public function setGenero($genero) {
-        $this->genero = $genero;
+
+    public function setGeneros($generos) {
+        $this->generos = $generos;
+    }
+
+    public function adicionarGenero($genero) {
+        $this->generos[] = $genero;
     }
 
 }
