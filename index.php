@@ -96,7 +96,7 @@
 
                         Don't have an account?
 
-                        <a href="public/pagges/createAccount.php" id="ancoraCreateAccount">
+                        <a href="public/pages/createAccount.php" id="ancoraCreateAccount">
 
                             Create your Account
 
