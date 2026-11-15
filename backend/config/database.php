@@ -5,22 +5,22 @@ $dbname = "Trabalho_Final";
 $user = "root";
 $password = "";
 
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
 try {
 
-    $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+    $conexao = mysqli_connect(
+        $host,
         $user,
-        $password
+        $password,
+        $dbname
     );
 
-    $pdo->setAttribute(
-        PDO::ATTR_ERRMODE,
-        PDO::ERRMODE_EXCEPTION
-    );
+    mysqli_set_charset($conexao, "utf8mb4");
 
     echo "Conectado com sucesso!";
 
-} catch (PDOException $e) {
+} catch (mysqli_sql_exception $e) {
 
     echo "Erro na conexão: " . $e->getMessage();
 
