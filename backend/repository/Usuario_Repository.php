@@ -70,7 +70,7 @@ class Usuario_Repository
     }
 
 
-    public function findUsuario($email){
+    public function findUsuarioByEmail($email){
 
         $sql = "SELECT * FROM Usuario WHERE email = ?";
 
@@ -81,6 +81,24 @@ class Usuario_Repository
         mysqli_stmt_execute($stmt);
 
         $resultado = mysqli_stmt_get_result($stmt);
+
+        $usuario = mysqli_fetch_assoc($resultado);
+
+        mysqli_stmt_close($stmt);
+
+        return $usuario ?: null;
+    }
+
+
+    public function findUsuarioByNome($nome){
+        
+    $sql = "SELECT * FROM Usuario WHERE nome = ?";
+
+        $stmt = mysqli_prepare($this->conexao,$sql);
+
+        mysqli_stmt_execute($smtm);
+
+        $resultado = mysqli_stmt_get_result($smtm);
 
         $usuario = mysqli_fetch_assoc($resultado);
 

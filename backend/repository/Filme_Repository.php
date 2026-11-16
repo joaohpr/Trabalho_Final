@@ -1,10 +1,10 @@
+
 <?php
 
 require_once __DIR__ . "/../model/Filme.php";
 
 class Filme_Repository
 {
-
     private $conexao;
 
     public function __construct($conexao)
@@ -12,11 +12,9 @@ class Filme_Repository
         $this->conexao = $conexao;
     }
 
-
-
-    public function findFilme($nomeFilme){
+    public function findFilme($nomeFilme)
+    {
         $nomeFilme = urlencode($nomeFilme);
-
 
         $url = "https://api.themoviedb.org/3/search/movie";
         $url .= "?api_key=" . $_ENV['TMDB_API_KEY'];
@@ -24,7 +22,6 @@ class Filme_Repository
         $url .= "&language=pt-BR";
 
         try {
-
             $resposta = file_get_contents($url);
 
             if ($resposta === false) {
@@ -37,11 +34,10 @@ class Filme_Repository
                 return false;
             }
 
-            return ($dados);
+            return $dados;
+
         } catch (Throwable $erro) {
             return false;
         }
     }
-
-
 }
