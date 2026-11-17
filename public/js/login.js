@@ -40,7 +40,11 @@ $(document).ready(function () {
             return;
         }
 
+<<<<<<< HEAD
         window.location.href = "public/html/home.html";
+=======
+        window.location.href = "public/pages/home.php";
+>>>>>>> joao-branch
 
     });
 

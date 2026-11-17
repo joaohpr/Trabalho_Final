@@ -44,7 +44,11 @@
 
             <section id="Login">
 
+<<<<<<< HEAD
                 <form id="formLogin">
+=======
+                <form id="formLogin" action="test.php" method="POST">
+>>>>>>> joao-branch
 
                     <!-- titulo -->
 
@@ -63,7 +67,11 @@
                         </label>
 
                         <input type="text" id="inputUsername" class="inputs" placeholder="Username"
+<<<<<<< HEAD
                             autocomplete="username" required>
+=======
+                            autocomplete="username" name=nameuser required>
+>>>>>>> joao-branch
 
                     </div>
 
@@ -78,7 +86,11 @@
                         </label>
 
                         <input type="password" id="inputPassword" class="inputs" placeholder="Password"
+<<<<<<< HEAD
                             autocomplete="current-password" required >
+=======
+                            autocomplete="current-password" name="password" required >
+>>>>>>> joao-branch
 
                     </div>
 
@@ -96,7 +108,11 @@
 
                         Don't have an account?
 
+<<<<<<< HEAD
                         <a href="public/html/createAccount.html" id="ancoraCreateAccount">
+=======
+                        <a href="public/pagges/createAccount.php" id="ancoraCreateAccount">
+>>>>>>> joao-branch
 
                             Create your Account
 

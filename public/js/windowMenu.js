@@ -23,7 +23,11 @@ $(document).ready(function () {
     function abrirModal(modal) {
 
         modal.load(
+<<<<<<< HEAD
             "../html/windowMenu.html #container-main",
+=======
+            "../pages/windowMenu.php #container-main",
+>>>>>>> joao-branch
             function (response, status) {
 
                 if (status === "error") {

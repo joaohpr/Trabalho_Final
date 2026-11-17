@@ -50,7 +50,11 @@ $(document).ready(function () {
     onDoubleTapOrClick("#openProfile", function () {
 
         modal.load(
+<<<<<<< HEAD
             "windowProfile.html #Global",
+=======
+            "windowProfile.php #Global",
+>>>>>>> joao-branch
             function (_, status, xhr) {
 
                 if (status === "error") {

@@ -51,7 +51,11 @@ $(function () {
 
 
         modalWindow.load(
+<<<<<<< HEAD
             'windowCards.html #container-global',
+=======
+            'windowCards.php #container-global',
+>>>>>>> joao-branch
             function (response, status) {
 
                 if (status === 'error') {
@@ -148,7 +152,11 @@ $(function () {
 
 
             modal.load(
+<<<<<<< HEAD
                 'popupCards.html #popup-avaliacao',
+=======
+                'popupCards.php #popup-avaliacao',
+>>>>>>> joao-branch
                 function (response, status) {
 
                     if (status === 'error') {

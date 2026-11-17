@@ -19,7 +19,11 @@ $(document).ready(function () {
             return;
         }
 
+<<<<<<< HEAD
         window.location.href = "home.html";
+=======
+        window.location.href = "home.php";
+>>>>>>> joao-branch
 
     });
 
