@@ -12,6 +12,7 @@ class Filme_Repository
         $this->conexao = $conexao;
     }
 
+    // Consultar filmes pelo nome
     public function findFilme($nomeFilme)
     {
         $nomeFilme = urlencode($nomeFilme);
@@ -21,7 +22,44 @@ class Filme_Repository
         $url .= "&query=" . $nomeFilme;
         $url .= "&language=pt-BR";
 
+        return $this->requestApi($url);
+    }
+
+    // Consultar detalhes de um filme pelo ID
+    public function findFilmeById($idTmdb)
+    {
+        $url = "https://api.themoviedb.org/3/movie/" . $idTmdb;
+        $url .= "?api_key=" . $_ENV['TMDB_API_KEY'];
+        $url .= "&language=pt-BR";
+
+        return $this->requestApi($url);
+    }
+
+    // Consultar filmes semelhantes
+    public function findSimilarFilmes($idTmdb)
+    {
+        $url = "https://api.themoviedb.org/3/movie/" . $idTmdb . "/similar";
+        $url .= "?api_key=" . $_ENV['TMDB_API_KEY'];
+        $url .= "&language=pt-BR";
+
+        return $this->requestApi($url);
+    }
+
+    // Consultar filmes populares
+    public function findPopularFilmes()
+    {
+        $url = "https://api.themoviedb.org/3/movie/popular";
+        $url .= "?api_key=" . $_ENV['TMDB_API_KEY'];
+        $url .= "&language=pt-BR";
+
+        return $this->requestApi($url);
+    }
+
+    // Realizar requisição à API
+    private function requestApi($url)
+    {
         try {
+
             $resposta = file_get_contents($url);
 
             if ($resposta === false) {
@@ -37,7 +75,9 @@ class Filme_Repository
             return $dados;
 
         } catch (Throwable $erro) {
+
             return false;
+
         }
     }
 }
