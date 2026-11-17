@@ -9,31 +9,20 @@ class Avaliacao
     private $usuario;
     private $filme;
 
-    private $idAvaliacao;
+    
     private $nota;
     private $comentario;
     private $dataCriacao;
 
 
-    function __construct($usuario, $filme, $idAvaliacao,
+    function __construct($usuario, $filme, 
                         $nota, $comentario, $dataCriacao){
 
         $this->usuario = $usuario;
         $this->filme = $filme;
-        $this->idAvaliacao = $idAvaliacao;
         $this->nota = $nota;
         $this->comentario = $comentario;
         $this->dataCriacao = $dataCriacao;
-    }
-
-    // Getter e Setter idAvaliacao
-    public function getIdAvaliacao()
-    {
-        return $this->idAvaliacao;
-    }
-    public function setIdAvaliacao($idAvaliacao)
-    {
-        $this->idAvaliacao = $idAvaliacao;
     }
 
 
