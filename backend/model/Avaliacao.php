@@ -15,8 +15,7 @@ class Avaliacao
     private $dataCriacao;
 
 
-    function __construct($usuario, $filme, 
-                        $nota, $comentario, $dataCriacao){
+    function __construct($usuario, $filme, $nota, $comentario, $dataCriacao){
 
         $this->usuario = $usuario;
         $this->filme = $filme;
