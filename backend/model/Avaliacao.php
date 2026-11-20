@@ -5,18 +5,19 @@ require_once __DIR__ . "/Filme.php";
 
 class Avaliacao
 {
-
+    // Atributos
+    private $id;
     private $usuario;
     private $filme;
-
-    
     private $nota;
     private $comentario;
     private $dataCriacao;
 
 
-    function __construct($usuario, $filme, $nota, $comentario, $dataCriacao){
-
+    // Construtor
+    public function __construct($usuario, $filme, $nota, $comentario, $dataCriacao, $id = null)
+    {
+        $this->id = $id;
         $this->usuario = $usuario;
         $this->filme = $filme;
         $this->nota = $nota;
@@ -25,11 +26,24 @@ class Avaliacao
     }
 
 
+    // Getter e Setter id
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+
     // Getter e Setter nota
     public function getNota()
     {
         return $this->nota;
     }
+
     public function setNota($nota)
     {
         $this->nota = $nota;
@@ -41,6 +55,7 @@ class Avaliacao
     {
         return $this->comentario;
     }
+
     public function setComentario($comentario)
     {
         $this->comentario = $comentario;
@@ -52,6 +67,7 @@ class Avaliacao
     {
         return $this->dataCriacao;
     }
+
     public function setDataCriacao($dataCriacao)
     {
         $this->dataCriacao = $dataCriacao;
@@ -63,6 +79,7 @@ class Avaliacao
     {
         return $this->usuario;
     }
+
     public function setUsuario($usuario)
     {
         $this->usuario = $usuario;
@@ -74,8 +91,11 @@ class Avaliacao
     {
         return $this->filme;
     }
+
     public function setFilme($filme)
     {
         $this->filme = $filme;
     }
 }
+
+?>

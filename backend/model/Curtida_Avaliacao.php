@@ -7,17 +7,15 @@ class Curtida_Avaliacao
     private $data_curtida;
     private $Avaliacao_id;
     private $Usuario_id;
-    private $Filme_id;
 
 
     // Construtor
-    public function __construct($id, $data_curtida, $Avaliacao_id, $Usuario_id, $Filme_id)
+    public function __construct($id, $data_curtida, $Avaliacao_id, $Usuario_id)
     {
         $this->id = $id;
         $this->data_curtida = $data_curtida;
         $this->Avaliacao_id = $Avaliacao_id;
         $this->Usuario_id = $Usuario_id;
-        $this->Filme_id = $Filme_id;
     }
 
 
@@ -42,11 +40,6 @@ class Curtida_Avaliacao
         return $this->Usuario_id;
     }
 
-    public function getFilmeId()
-    {
-        return $this->Filme_id;
-    }
-
 
     // Setters
     public function setDataCurtida($data_curtida)
@@ -63,9 +56,6 @@ class Curtida_Avaliacao
     {
         $this->Usuario_id = $Usuario_id;
     }
-
-    public function setFilmeId($Filme_id)
-    {
-        $this->Filme_id = $Filme_id;
-    }
 }
+
+?>
