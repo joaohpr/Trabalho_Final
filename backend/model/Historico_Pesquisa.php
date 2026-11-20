@@ -1,14 +1,16 @@
 <?php
 
     require_once __DIR__ . "/Usuario.php";
+    require_once __DIR__ . "/Filme.php";
+    
 
     class HistoricoPesquisa {
 
         private $idHistoricoPesquisa;
         private $termo;
         private $dataPesquisa;
-        private $filme_id;
-        private $usuario;
+        private Filme $filme;
+        private Usuario $usuario;
 
 
         public function __construct($idHistoricoPesquisa, $termo, $dataPesquisa, $usuario) {
@@ -45,6 +47,13 @@
             $this->dataPesquisa = $dataPesquisa;
         }
 
+        //Getter e Setter Filme
+        public function getFilme(){
+            return $this->filme;
+        }
+        public function setFilme($filme){
+            $this->filme = $filme;
+        }
 
         // Getter e Setter usuario
         public function getUsuario() {
