@@ -7,6 +7,7 @@
         private $idHistoricoPesquisa;
         private $termo;
         private $dataPesquisa;
+        private $filme_id;
         private $usuario;
 
 
