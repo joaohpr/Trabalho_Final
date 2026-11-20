@@ -17,7 +17,7 @@ class Historico_Pesquisa_Repository
 
 
     // Inserir registro no histórico de pesquisa
-    public function insertHistoricoPesquisa(Historico_Pesquisa $historico)
+    public function insertHistoricoPesquisa(HistoricoPesquisa $historico)
     {
 
         $sql = "INSERT INTO Historico_Pesquisa (termo, data_pesquisa, Filme_id, Usuario_id)
@@ -27,8 +27,8 @@ class Historico_Pesquisa_Repository
 
         $termo = $historico->getTermo();
         $dataPesquisa = $historico->getDataPesquisa();
-        $idFilme = $historico->filme->getIdFilme();
-        $idUsuario = $historico->usuario->getIdUsuario();
+        $idFilme = $historico->getFilme()->getIdFilme();
+        $idUsuario = $historico->getUsuario()->getIdUsuario();
 
         mysqli_stmt_bind_param($stmt, "ssii", $termo, $dataPesquisa, $idFilme, $idUsuario);
 
@@ -89,15 +89,15 @@ class Historico_Pesquisa_Repository
 
 
     // Buscar registro específico do histórico
-    public function findHistoricoById($id, $idFilme, $idUsuario)
+    public function findHistoricoById($idHistoricoPesquisa)
     {
 
         $sql = "SELECT * FROM Historico_Pesquisa
-                WHERE id = ? AND Filme_id = ? AND Usuario_id = ?";
+                WHERE id = ?";
 
         $stmt = mysqli_prepare($this->conexao, $sql);
 
-        mysqli_stmt_bind_param($stmt, "iii", $id, $idFilme, $idUsuario);
+        mysqli_stmt_bind_param($stmt, "i", $idHistoricoPesquisa);
 
         mysqli_stmt_execute($stmt);
 
@@ -112,15 +112,15 @@ class Historico_Pesquisa_Repository
 
 
     // Excluir registro específico do histórico
-    public function deleteHistoricoPesquisa($id, $idFilme, $idUsuario)
+    public function deleteHistoricoPesquisa($idHistoricoPesquisa)
     {
 
         $sql = "DELETE FROM Historico_Pesquisa
-                WHERE id = ? AND Filme_id = ? AND Usuario_id = ?";
+                WHERE id = ?";
 
         $stmt = mysqli_prepare($this->conexao, $sql);
 
-        mysqli_stmt_bind_param($stmt, "iii", $id, $idFilme, $idUsuario);
+        mysqli_stmt_bind_param($stmt, "i", $idHistoricoPesquisa);
 
         mysqli_stmt_execute($stmt);
 
