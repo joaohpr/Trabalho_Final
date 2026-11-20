@@ -7,15 +7,16 @@ class Avaliacao
 {
     // Atributos
     private $id;
-    private $usuario;
-    private $filme;
+    private Usuario $usuario;
+    private Filme $filme;
     private $nota;
     private $comentario;
     private $dataCriacao;
 
 
     // Construtor
-    public function __construct($usuario, $filme, $nota, $comentario, $dataCriacao, $id = null)
+    // Construtor
+    public function __construct(Usuario $usuario, Filme $filme, $nota, $comentario, $dataCriacao, $id = null)
     {
         $this->id = $id;
         $this->usuario = $usuario;
@@ -97,5 +98,3 @@ class Avaliacao
         $this->filme = $filme;
     }
 }
-
-?>
