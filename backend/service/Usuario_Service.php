@@ -9,7 +9,7 @@ class Usuario_Service
 
     public function __construct()
     {
-        require __DIR__ . "/../config/Conexao.php";
+        require __DIR__ . "/../config/database.php";
 
         $this->usuario_repository = new Usuario_Repository($conexao);
     }
