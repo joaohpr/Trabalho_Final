@@ -5,7 +5,7 @@ require_once __DIR__ . "/Usuario.php";
 require_once __DIR__ . "/Filme.php";
 
 
-class HistoricoPesquisa
+class Historico_Pesquisa
 {
 
     private $idHistoricoPesquisa;

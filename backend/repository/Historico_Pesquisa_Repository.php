@@ -17,7 +17,7 @@ class Historico_Pesquisa_Repository
 
 
     // Inserir registro no histórico de pesquisa
-    public function insertHistoricoPesquisa(HistoricoPesquisa $historico)
+    public function insertHistoricoPesquisa(Historico_Pesquisa $historico)
     {
 
         $sql = "INSERT INTO Historico_Pesquisa (termo, data_pesquisa, Filme_id, Usuario_id)
