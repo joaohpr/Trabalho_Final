@@ -33,12 +33,6 @@ class Avaliacao
         return $this->id;
     }
 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-
     // Getter e Setter nota
     public function getNota()
     {
