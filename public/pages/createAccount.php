@@ -20,7 +20,7 @@
                 Create Account
             </header>
 
-            <form id="formCreateAccount">
+            <form id="formCreateAccount" action="/backend/controller/Usuario_Controller.php" method="POST" name="cadastro">
 
                 <div id="input-container">
 
