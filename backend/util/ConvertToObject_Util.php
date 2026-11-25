@@ -22,56 +22,62 @@
         private Usuario $usuario;
 
 
-        private function convertToAvaliacao($comentario,$data_criacao,$nota,Usuario $usuario_id,Filme $filme_id){
+        public function __construct()
+        {
+            throw new \Exception('Not implemented');
+        }
+
+
+        public function convertToAvaliacao($comentario,$data_criacao,$nota,Usuario $usuario_id,Filme $filme_id){
 
             $avaliacao = new Avaliacao($usuario_id,$filme_id,$nota,$comentario,$data_criacao,null);
 
             return $avaliacao;
         }
 
-        private function convertToCurtida_Avaliacao($id,$data_criacao,$Avaliacao_id,$Usuario_id){
+        public function convertToCurtida_Avaliacao($id,$data_criacao,$Avaliacao_id,$Usuario_id){
            
             $curtida_Avaliacao = new Curtida_Avaliacao($id,$data_criacao,$Avaliacao_id,$Usuario_id); 
             
             return $curtida_Avaliacao;
         }
 
-        private function convertToCurtido($usuario_id,$filme_id,$id,$data_curtida){
+        public function convertToCurtido($usuario_id,$filme_id,$id,$data_curtida){
             
             $curtido = new Curtido($usuario_id,$filme_id,$id,$data_curtida);
 
             return $curtido;
         }
 
-        private function convertToFilme($nome,$idTmdb,$notaTmdb,$description,$dataLancamento,$imagem){
+        public function convertToFilme($nome,$idTmdb,$notaTmdb,$description,$dataLancamento,$imagem){
 
             $filme = new Filme($nome,$idTmdb,$notaTmdb,$description,$dataLancamento,$imagem);
 
             return $filme;
         }
 
-        private function convertToGenero_Filme($idGenero, $idFilme){
+        public function convertToGenero_Filme($idGenero, $idFilme){
             
             $genero_filme = new Genero_Filme($idGenero, $idFilme);
 
             return $genero_filme;
         }
 
-        private function convertToGenero($idGenero,$nome,$descricao){
+        public function convertToGenero($idGenero,$nome,$descricao){
 
             $genero = new Genero($idGenero,$nome,$descricao);
 
             return $genero;
         }
 
-        private function convertToHistorico_Pesquisa($idHistoricoPesquisa, $termo, $dataPesquisa, Filme $filme, Usuario $usuario){
+        public function convertToHistorico_Pesquisa($idHistoricoPesquisa, $termo, $dataPesquisa, Filme $filme, Usuario $usuario){
             
             $historico_pesquisa = new Historico_Pesquisa ($idHistoricoPesquisa, $termo, $dataPesquisa, $filme, $usuario);
 
             return $historico_pesquisa;
         }
 
-        private function convertToUsuario($idUsuario,$nome,$email,$senha){
+        public function convertToUsuario($idUsuario,$nome,$email,$senha){
 
             $usuario = new Usuario($idUsuario,$nome,$email,$senha);
 

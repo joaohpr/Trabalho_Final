@@ -68,33 +68,6 @@ class Genero_Filme_Repository
     }
 
 
-    // Buscar até dois gêneros associados a um filme
-    public function findGeneroByFilme($idFilme)
-    {
-
-        $sql = "SELECT Genero.*
-                FROM Genero
-                INNER JOIN Genero_Filme
-                    ON Genero.idGenero = Genero_Filme.Genero_id
-                WHERE Genero_Filme.Filme_id = ?
-                LIMIT 2;";
-
-        $stmt = mysqli_prepare($this->conexao, $sql);
-
-        mysqli_stmt_bind_param($stmt, "i", $idFilme);
-
-        mysqli_stmt_execute($stmt);
-
-        $resultado = mysqli_stmt_get_result($stmt);
-
-        $generos = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
-
-        mysqli_stmt_close($stmt);
-
-        return $generos ?: null;
-    }
-
-
     // Buscar filmes associados a um gênero
     public function findFilmeByGenero($idGenero)
     {
@@ -102,7 +75,7 @@ class Genero_Filme_Repository
         $sql = "SELECT Filme.*
                 FROM Filme
                 INNER JOIN Genero_Filme
-                    ON Filme.idFilme = Genero_Filme.Filme_id
+                    ON Filme.id = Genero_Filme.Filme_id
                 WHERE Genero_Filme.Genero_id = ?;";
 
         $stmt = mysqli_prepare($this->conexao, $sql);
@@ -120,4 +93,29 @@ class Genero_Filme_Repository
         return $filmes ?: null;
     }
 
+
+    // Buscar até dois gêneros associados a um filme
+    public function findGeneroByFilme($idFilme)
+    {
+        $sql = "SELECT Genero.*
+            FROM Genero
+            INNER JOIN Genero_Filme
+                ON Genero.id = Genero_Filme.Genero_id
+            WHERE Genero_Filme.Filme_id = ?
+            LIMIT 2";
+
+        $stmt = mysqli_prepare($this->conexao, $sql);
+
+        mysqli_stmt_bind_param($stmt, "i", $idFilme);
+
+        mysqli_stmt_execute($stmt);
+
+        $resultado = mysqli_stmt_get_result($stmt);
+
+        $generos = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+
+        mysqli_stmt_close($stmt);
+
+        return $generos ?: null;
+    }
 }
