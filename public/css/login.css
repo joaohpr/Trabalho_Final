@@ -1,387 +1,262 @@
-/* ========================= */
-/* RESET GLOBAL */
-/* ========================= */
+:root {
+    --fundo: black;
+    --painel: black;
+    --borda: #354252;
+    --texto: #f2f5f8;
+    --texto-suave: #b5c0cc;
+    --azul: #20bde8;
+    --azul-escuro: #1198c2;
+    --transicao: 0.25s ease;
+}
 
-*{
+/* Reseta espaçamentos e usa a caixa como referência do tamanho. */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/* ========================= */
-/* BODY */
-/* ========================= */
-
+/* Define o fundo geral da página de login. */
 body {
     min-height: 100vh;
-
-    font-family: Arial, Helvetica, sans-serif;
-
     position: relative;
     overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
 }
 
+/* Aplica a imagem de fundo desfocada sem alterar o conteúdo da página. */
 body::before {
     content: "";
-
     position: fixed;
-    inset: -20px;
-
-    background-image: url("../img/CineSearch.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    filter: blur(10px);
-
-    transform: scale(1.05);
-
+    inset: -15px;
     z-index: -2;
+    background: url("../img/CineSearch.png") center / cover no-repeat;
+    filter: blur(7px);
 }
 
+/* Escurece a imagem de fundo para melhorar o contraste. */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.72);
+}
 
-/* ========================= */
-/* CONTAINER GLOBAL */
-/* ========================= */
-
-#continerGlobal{
+/* Organiza a página em uma estrutura vertical. */
+#conteinerGlobal {
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
 }
 
-
-/* ========================= */
-/* HEADER */
-/* ========================= */
-
-#barraVertical{
+/* Mantém o topo ocupando toda a largura. */
+#barraVertical {
     width: 100%;
 }
 
-
-/* titulo superior */
-
-#CineSearch{
+/* Estiliza a identificação visual CineSearch no topo. */
+#CineSearch {
     width: 100%;
-
-    padding: 16px;
-
-    background-color: transparent;
-
-    color: white;
-
+    padding: 18px;
+    color: var(--texto);
     text-align: center;
-
     font-size: 2rem;
     font-weight: bold;
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
-
-/* ========================= */
-/* MAIN */
-/* ========================= */
-
-#containerConteudo{
+/* Centraliza o cartão de login no centro da página. */
+#conteinerConteudo {
     flex: 1;
-
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-
-    padding: 40px 20px;
+    padding: 35px 20px;
 }
 
-
-/* ========================= */
-/* CARD LOGIN */
-/* ========================= */
-
-#Login{
+/* Desenha o cartão principal do formulário de login. */
+#Login {
     width: 100%;
     max-width: 420px;
-
     padding: 32px;
-
-    border-radius: 18px;
-
-    background-color: rgba(30, 30, 30, 0.90);
-
-    box-shadow:
-        0 0 20px rgba(0, 0, 0, 0.5),
-        0 0 10px rgba(0, 191, 255, 0.15);
-
-    backdrop-filter: blur(5px);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+    animation: aparecer 0.35s ease;
 }
 
-
-/* ========================= */
-/* FORM */
-/* ========================= */
-
-#formLogin{
+/* Organiza os campos e o botão do formulário em coluna. */
+#formLogin {
     display: flex;
     flex-direction: column;
-
-    gap: 40px;
+    gap: 24px;
 }
 
-
-/* ========================= */
-/* TITULO LOGIN */
-/* ========================= */
-
-#textLogin{
-    color: deepskyblue;
-
+/* Destaca o título principal do formulário. */
+#textLogin {
+    margin-bottom: 8px;
+    color: var(--azul);
     text-align: center;
-
-    font-size: 38px;
+    font-size: 34px;
     font-weight: bold;
-
-    margin-bottom: 10px;
 }
 
-
-/* ========================= */
-/* DIV INPUT */
-/* ========================= */
-
-.divInput{
+/* Agrupa cada rótulo com seu respectivo campo. */
+.divInput {
     display: flex;
     flex-direction: column;
-
     gap: 8px;
 }
 
-
-/* ========================= */
-/* LABELS */
-/* ========================= */
-
-.labelInput{
-    color: white;
-
-    font-size: 1.25rem;
+/* Define a aparência dos nomes dos campos. */
+.labelInput {
+    color: var(--texto);
+    font-size: 16px;
     font-weight: bold;
+    transition: color var(--transicao);
 }
 
-.labelInput:hover{
-    color: deepskyblue;
-
-    transition: color 0.3s;
+/* Muda o rótulo quando o campo recebe interação. */
+.divInput:focus-within .labelInput,
+.divInput:hover {
+    color: var(--azul);
 }
 
-/* ========================= */
-/* INPUTS */
-/* ========================= */
-
-.inputs{
+/* Estiliza os campos de usuário e senha. */
+.inputs {
     width: 100%;
-    height: 45px;
-
-    padding: 12px;
-
-    border: 1px solid rgba(128, 128, 128, 0.5);
-    border-radius: 12px;
-
+    height: 46px;
+    padding: 11px 13px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
     outline: none;
-
-    background-color: rgba(85, 81, 81, 0.35);
-
-    color: white;
-
+    background: black;
+    color: var(--texto);
     font-size: 15px;
-
-    transition:
-        border-color 0.3s,
-        box-shadow 0.3s,
-        transform 0.3s;
+    transition: border-color var(--transicao), box-shadow var(--transicao), background-color var(--transicao);
 }
 
-
-/* placeholder */
-
-.inputs::placeholder{
-    color: rgba(255, 255, 255, 0.6);
+/* Suaviza a cor do texto de exemplo dentro dos campos. */
+.inputs::placeholder {
+    color: #8996a5;
 }
 
-
-/* focus */
-
-.inputs:focus{
-    border-color: deepskyblue;
-
-    box-shadow: 0 0 12px rgba(0, 191, 255, 0.7);
-
-    transform: scale(1.01);
+/* Destaca a borda ao passar o mouse sobre o campo. */
+.inputs:hover {
+    border-color: var(--azul);
 }
 
-.inputs:hover{
-    transform: scale(1.03);
-
-    border-color: deepskyblue;
-
-    box-shadow: 0 0 10px deepskyblue;
-
-    outline: none;
-
-    font-size: 18px;
+/* Destaca o campo ativo sem manter o contorno padrão do navegador. */
+.inputs:focus {
+    border-color: var(--azul);
+    background: black;
+    box-shadow: 0 0 0 3px rgba(32, 189, 232, 0.15);
 }
 
-
-/* ========================= */
-/* BOTAO LOGIN */
-/* ========================= */
-
-#buttonLogin{
-    height: 48px;
-
+/* Define o visual principal do botão de acesso. */
+#buttonLogin {
+    min-height: 48px;
     border: none;
-    border-radius: 35px;
-
-    cursor: pointer;
-
-    background-color: deepskyblue;
-
+    border-radius: 10px;
+    background: var(--azul);
     color: black;
-
     font-size: 15px;
     font-weight: bold;
-
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s,
-        opacity 0.3s;
+    cursor: pointer;
+    transition: background-color var(--transicao), transform var(--transicao), box-shadow var(--transicao);
 }
 
-
-/* hover */
-
-#buttonLogin:hover{
-    transform: scale(1.03);
-
-    box-shadow: 0 0 14px deepskyblue;
+/* Cria o efeito de elevação ao passar o mouse no botão. */
+#buttonLogin:hover {
+    background: #49cef1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px rgba(32, 189, 232, 0.2);
 }
 
-
-/* active */
-
-#buttonLogin:active{
+/* Simula uma pressão leve ao clicar no botão. */
+#buttonLogin:active {
     transform: scale(0.98);
 }
 
-
-/* ========================= */
-/* TEXTO CREATE ACCOUNT */
-/* ========================= */
-
-#createAccount{
-    color: white;
-
+/* Formata o texto de criação de conta. */
+#creatAccount {
+    color: var(--texto-suave);
     text-align: center;
-
     font-size: 14px;
-
     line-height: 1.5;
 }
 
-
-/* ========================= */
-/* LINK */
-/* ========================= */
-
-#ancoraCreateAccount{
-    color: deepskyblue;
-
-    text-decoration: none;
-
+/* Padroniza os links de cadastro e "saiba mais". */
+#ancoraCreatAccount,
+.knowMore-ancora {
+    color: var(--azul);
     font-weight: bold;
-
-    transition: opacity 0.3s;
+    text-decoration: none;
+    transition: color var(--transicao);
 }
 
-
-/* hover link */
-
-#ancoraCreateAccount:hover{
+/* Mostra claramente a interação com os links. */
+#ancoraCreatAccount:hover,
+.knowMore-ancora:hover {
+    color: #8be5fa;
     text-decoration: underline;
 }
 
-
-/* ========================= */
-/* RODAPE */
-/* ========================= */
-
-#rodape{
+/* Centraliza o rodapé na parte inferior da página. */
+#rodape {
     width: 100%;
-
-    padding: 16px;
-
-    background-color: transparent;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 16px;
 }
 
-
-/* texto rodape */
-
-#textRodape{
-    color: rgba(255, 255, 255, 0.7);
-
-    font-size: 14px;
-
+/* Define a aparência do texto no rodapé. */
+#textRodape {
+    color: var(--texto-suave);
+    font-size: 13px;
     text-align: center;
 }
 
-.knowMore-ancora{
-    text-decoration: none;
-    color:deepskyblue;
+/* Anima a entrada suave do cartão de login. */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 
-
-/* ========================= */
-/* RESPONSIVIDADE */
-/* ========================= */
-
-@media (max-width: 480px){
-
-    #containerConteudo{
-        padding: 20px;
+/* Ajusta espaçamentos e tamanhos em telas estreitas. */
+@media (max-width: 480px) {
+    #conteinerConteudo {
+        padding: 20px 14px;
     }
 
     #Login{
-        padding: 24px;
+        padding: 24px 20px;
     }
 
-    #CineSearch{
-        font-size: 1.5rem;
+    #CineSearch {
+        font-size: 1.6rem;
     }
 
     #textLogin{
-        font-size: 1.7rem;
+        font-size: 28px;
     }
 
-    .inputs{
-        height: 42px;
-
+    .inputs {
+        height: 43px;
         font-size: 14px;
     }
 
-    #buttonLogin{
-        height: 44px;
-
+    #buttonLogin {
+        min-height: 44px;
         font-size: 14px;
     }
 
-    #textRodape{
+    #textRodape {
         font-size: 12px;
     }
 }
